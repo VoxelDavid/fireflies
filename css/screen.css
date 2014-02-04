@@ -20,10 +20,10 @@ body {
 	text-rendering: optimizelegibility;
 
 	color: #FFFFFF;
-	background-color: #5AB00B;
-	background-image: url("../img/bg-highway.jpg");
+	background-color: #5AB00B;;
+	/*background-image: url("../img/highway.jpg");
 	-webkit-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 
 	width: 70%;
 	margin: 15% auto 0 auto;
