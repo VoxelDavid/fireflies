@@ -55,9 +55,22 @@ body {
 	text-decoration: none;
 	-webkit-transition all 0.2s ease;
 	transition: all 0.2s ease;
+
+
+.underline {
+	display: inline-block;
 }
 
-.quote cite a:hover {
-	/* This is the absolute most perfect place to use that transform effect
-	   I have! Vertical Rhythm is not a problem and it'd look so cool! */
+.underline span {
+	background-color: #FFEE7C;
+	position: relative;
+	display: block;
+	height: 2px;
+	transform: scaleX(0);
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+.underline:hover span {
+	transform: scaleX(1);
 }
