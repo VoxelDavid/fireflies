@@ -1,0 +1,63 @@
+
+/* Normalize 3.0.0 */
+
+@import url(http://necolas.github.io/normalize.css/3.0.0/normalize.css);
+
+
+/* Fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif);
+
+
+html {
+	min-height: 100%;
+}
+
+body {
+	font-size: 1em;
+	line-height: 1.5;
+	font-family: "Droid Sans", sans-serif;
+	text-rendering: optimizelegibility;
+
+	color: #FFFFFF;
+	background-color: #5AB00B;
+	background-image: url("../img/bg-highway.jpg");
+	-webkit-background-size: cover;
+	background-size: cover;
+
+	width: 70%;
+	margin: 15% auto 0 auto;
+}
+
+
+.quote {
+	font-family: "Droid Serif", serif;
+}
+
+.quote p {
+	font-size: 1.5em;
+	text-align: center;
+	hyphens: auto;
+}
+
+.quote cite {
+	text-transform: lowercase;
+	text-align: right;
+	display: block;
+}
+
+.quote cite:before {
+	content: "\2014";
+}
+
+.quote cite a {
+	color: #FFFFFF;
+	text-decoration: none;
+	-webkit-transition all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.quote cite a:hover {
+	/* This is the absolute most perfect place to use that transform effect
+	   I have! Vertical Rhythm is not a problem and it'd look so cool! */
+}
