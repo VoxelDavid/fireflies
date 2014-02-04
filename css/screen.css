@@ -29,32 +29,34 @@ body {
 	margin: 15% auto 0 auto;
 }
 
-
-.quote {
-	font-family: "Droid Serif", serif;
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #4CCAED;
 }
 
 .quote p {
 	font-size: 1.5em;
+	font-family: "Droid Serif", serif;
 	text-align: center;
 	hyphens: auto;
 }
 
 .quote cite {
+	font-size: 0.9em;
+	font-style: normal;
 	text-transform: lowercase;
 	text-align: right;
 	display: block;
 }
 
-.quote cite:before {
+/*.quote cite:before {
 	content: "\2014";
-}
+}*/
 
 .quote cite a {
-	color: #FFFFFF;
-	text-decoration: none;
-	-webkit-transition all 0.2s ease;
-	transition: all 0.2s ease;
+	color: #FFEE7C;
+}
 
 
 .underline {
