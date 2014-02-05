@@ -3,10 +3,10 @@
 $(document).ready(function() {
 
 	// HTML elements.
-	var quote        = $('.quote'),
-	    quote_p      = $('.quote p'),
-	    quote_cite   = $('.quote cite'),
-	    quote_source = $('.quote cite a');
+	var quote      = $('.quote'),
+	    quote_p    = $('.quote p'),
+	    quote_cite = $('.quote cite');
+
 
 	/**
 	 * The main logic, gets the data.json file and
