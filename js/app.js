@@ -37,6 +37,11 @@ $(document).ready(function() {
 		setTextColor(chosen_bg.style);
 	}
 
+	function setBackgroundImage(image) {
+		$('body').css('background-image', 'url(img/' + image + ')');
+	}
+
+
 	function setTextColor(bg_style) {
 		// Choose which color text to display depending on
 		// the background's Style value.
@@ -47,9 +52,6 @@ $(document).ready(function() {
 		}
 	}
 
-	function setBackgroundImage(image) {
-		$('body').css('background-image', 'url(img/' + image + ')');
-	}
 
 
 	/**
