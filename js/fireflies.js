@@ -1,3 +1,5 @@
+/* Copyright (c) 2014 David Minnerly - Licensed under the MIT License. */
+
 $(document).ready(function() {
 
 	// HTML elements.
