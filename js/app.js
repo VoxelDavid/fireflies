@@ -47,7 +47,7 @@ $(document).ready(function() {
 	 */
 	function getRandomQuote(data) {
 		var i = randomInt(0, data.quotes.length);
-		quote_p.html(data.quotes[i]._001.quote);
+		quote_p.html(data.quotes[i].one.quote);
 		quote_cite.html(data.quotes[i].author);
 
 		// if (data.quotes[i]._001.source != undefined) {
