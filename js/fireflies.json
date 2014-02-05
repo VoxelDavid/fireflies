@@ -20,9 +20,10 @@
 	],
 
 	"backgrounds": [
+		// 'url' variables are prefixed with the image directory.
 		{
-			"image": "bg-highway.jpg", // located in img/
-			"style": "dark"            // used to choose what color text to use
+			"url": "bg-highway.jpg",
+			"style": "dark"
 		}
 	]
 }
