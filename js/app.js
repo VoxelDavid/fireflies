@@ -2,11 +2,6 @@
 
 $(document).ready(function() {
 
-	// HTML elements.
-	var quote_p    = $('.quote p'),
-	    quote_cite = $('.quote cite');
-
-
 	/**
 	 * The main logic, gets the data.json file and
 	 * sets a Quote and Background.
@@ -51,9 +46,27 @@ $(document).ready(function() {
 		// .length starts counting at 1 instead of 0, so 1 needs
 		// to be subtracted to get correct array length.
 		var i = randomInt(0, data.quotes.length - 1);
+		var chosen_quote = data.quotes[i];
 
-		quote_p.html(data.quotes[i].one.quote);
-		quote_cite.html(data.quotes[i].author);
+		$('<p>')
+			.appendTo(".quote")
+			.html(chosen_quote.one.quote)
 
+		if (chosen_quote.author) {
+			$('<cite>')
+				.appendTo(".quote")
+				.html(chosen_quote.author);
+		} else {
+			$('<cite>')
+				.appendTo(".quote")
+				.html("Unknown");
+		}
+
+		if (chosen_quote.source) {
+			$('<a>')
+				.appendTo(".quote cite")
+				.html(chosen_quote.source)
+		}
 	}
+
 });
