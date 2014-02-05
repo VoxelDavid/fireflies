@@ -15,7 +15,6 @@ $(document).ready(function() {
 	$.getJSON('data.json', function(data) {
 		quote(data);
 		background(data);
-		$('body').css('background-image', 'url(img/bg-highway.jpg)');
 	});
 
 	/**
