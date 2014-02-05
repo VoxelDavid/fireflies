@@ -3,8 +3,7 @@
 $(document).ready(function() {
 
 	// HTML elements.
-	var quote      = $('.quote'),
-	    quote_p    = $('.quote p'),
+	var quote_p    = $('.quote p'),
 	    quote_cite = $('.quote cite');
 
 
