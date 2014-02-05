@@ -8,10 +8,10 @@ $(document).ready(function() {
 	    quote_cite = $('.quote cite');
 
 	/**
-	 * The main logic, gets the fireflies.json file and
+	 * The main logic, gets the data.json file and
 	 * sets a Quote and Background.
 	 */
-	$.getJSON('fireflies.json', function(data) {
+	$.getJSON('data.json', function(data) {
 		quote(data);
 		background(data);
 		$('body').css('background-image', 'url(img/bg-highway.jpg)');
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	}
 
 	/**
-	 * Hooks into the fireflies.json file and gets a random
+	 * Hooks into the data.json file and gets a random
 	 * image from the backgrounds array to display.
 	 */
 	function background(data) {
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 	/**
 	 * Get a random Quote with corresponding Citation and source
-	 * link from fireflies.json and display them on screen.
+	 * link from data.json and display them on screen.
 	 */
 	function quote(data) {
 		var i = randomInt(0, data.quotes.length);
