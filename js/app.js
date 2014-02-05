@@ -55,8 +55,5 @@ $(document).ready(function() {
 		quote_p.html(data.quotes[i].one.quote);
 		quote_cite.html(data.quotes[i].author);
 
-		// if (data.quotes[i]._001.source != undefined) {
-		// 	console.log("Rabbits");
-		// }
 	}
 });
