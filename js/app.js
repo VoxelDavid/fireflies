@@ -34,13 +34,16 @@ $(document).ready(function() {
 		var chosen_bg = data.backgrounds[i];
 
 		setBackgroundImage(chosen_bg.url)
+		setTextColor(chosen_bg.style);
+	}
 
+	function setTextColor(bg_style) {
 		// Choose which color text to display depending on
 		// the background's Style value.
-		if (chosen_bg.style == "light") {
-			console.log("Background style is Light")
-		} else if (chosen_bg.style == "dark") {
-			console.log("Background style is Dark");
+		if (bg_style == 'light') {
+			$(quote_element).addClass('light-background');
+		} else if (bg_style == 'dark') {
+			$(quote_element).addClass('dark-background');
 		}
 	}
 

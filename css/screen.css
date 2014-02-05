@@ -72,6 +72,15 @@ a {
 }
 
 
+.dark-background {
+	color: #DEDEDE;
+}
+
+.light-background {
+	color: #202020;
+}
+
+
 .underline {
 	display: inline-block;
 }
