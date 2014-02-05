@@ -1,5 +1,6 @@
 {
 	"quotes": [
+
 		{
 			"author": "chibird",
 
@@ -21,7 +22,6 @@
 	],
 
 	"backgrounds": [
-		// 'url' variables are prefixed with the image directory.
 		{
 			"url": "bg-highway.jpg",
 			"style": "dark"
