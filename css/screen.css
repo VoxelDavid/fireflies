@@ -19,11 +19,13 @@ body {
 	font-family: "Droid Sans", sans-serif;
 	text-rendering: optimizelegibility;
 
-	color: #FFFFFF;
-	background-color: #5AB00B;;
-	/*background-image: url("../img/highway.jpg");
+	color: #DBDBDB;
+	background-color: #13141A;
+
+	/* Used when a background is applied to the body
+	   via fireflies.js */
 	-webkit-background-size: cover;
-	background-size: cover;*/
+	background-size: cover;
 
 	width: 70%;
 	margin: 15% auto 0 auto;
