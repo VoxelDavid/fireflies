@@ -56,13 +56,13 @@ $(document).ready(function() {
 	function getRandomQuote(data) {
 		// .length starts counting at 1 instead of 0, so 1 needs
 		// to be subtracted to get correct array length.
-		var i = randomInt(0, data.quotes.length - 1);
-		var quotes = data.quotes[i];
+		var i = randomInt(0, data.quotes.length -1),
+		    quote_root = data.quotes[i];
 
-		var x = randomInt(0, quotes.quote_list.length -1);
-		var chosen_quote = quotes.quote_list[x];
+		var x = randomInt(0, quote_root.quote_list.length -1),
+		    chosen_quote = quote_root.quote_list[x];
 
-		generateQuoteMarkup(quotes, chosen_quote);
+		generateQuoteMarkup(quote_root, chosen_quote);
 	}
 
 	function generateQuoteMarkup(quote_root, chosen_quote) {
