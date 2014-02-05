@@ -29,8 +29,17 @@ $(document).ready(function() {
 		// .length starts counting at 1 instead of 0, so 1 needs
 		// to be subtracted to get correct array length.
 		var i = randomInt(0, data.backgrounds.length - 1);
+		var chosen_bg = data.backgrounds[i];
 
-		setBackgroundImage(data.backgrounds[i].url)
+		setBackgroundImage(chosen_bg.url)
+
+		// Choose which color text to display depending on
+		// the background's Style value.
+		if (chosen_bg.style == "light") {
+			console.log("Background style is Light")
+		} else if (chosen_bg.style == "dark") {
+			console.log("Background style is Dark");
+		}
 	}
 
 	function setBackgroundImage(image) {
