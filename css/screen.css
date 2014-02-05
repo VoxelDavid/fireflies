@@ -37,6 +37,17 @@ a {
 	color: #4CCAED;
 }
 
+
+.no-js {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.no-js .sad {
+	font-size: 1.35em;
+}
+
+
 .quote p {
 	font-size: 1.35em;
 	font-family: "Droid Serif", serif;
