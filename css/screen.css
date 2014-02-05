@@ -56,16 +56,16 @@ a {
 }
 
 .quote cite {
-	font-size: 0.9em;
+	margin-right: 10%; /* Push the citation inward a bit */
 	font-style: normal;
 	text-transform: lowercase;
 	text-align: right;
 	display: block;
 }
 
-/*.quote cite:before {
+.quote cite:before {
 	content: "\2014";
-}*/
+}
 
 .quote cite a {
 	color: #FFEE7C;
