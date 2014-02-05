@@ -57,8 +57,8 @@ $(document).ready(function() {
 		var i = randomInt(0, data.quotes.length - 1);
 		var quotes = data.quotes[i];
 
-		var x = randomInt(0, quotes.quote_list.length -1 );
-		var chosen_quote = quotes.quote_list[i];
+		var x = randomInt(0, quotes.quote_list.length -1);
+		var chosen_quote = quotes.quote_list[x];
 
 		generateQuoteMarkup(quotes, chosen_quote);
 	}
