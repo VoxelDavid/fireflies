@@ -63,25 +63,38 @@ $(document).ready(function() {
 		generateQuoteMarkup(quotes, chosen_quote);
 	}
 
-	function generateQuoteMarkup(quotes, chosen_quote) {
+	function generateQuoteMarkup(quote_root, chosen_quote) {
+
 		$('<p>')
-			.appendTo(".quote")
-			.html(chosen_quote.text)
+			.appendTo(quote_element)
+			.html(chosen_quote.text);
 
-		if (chosen_quote.author) {
-			$('<cite>')
-				.appendTo(".quote")
-				.html(chosen_quote.author);
-		} else {
-			$('<cite>')
-				.appendTo(".quote")
-				.html("Unknown");
-		}
+		$('<cite>')
+			.appendTo(quote_element);
 
-		if (chosen_quote.source) {
+		// I want to use the following variable, but I don't
+		// know how to concatenate 'cite' to it later on.
+		//
+		// var quote_element = $('.quote');
+
+		// Create the citation and optional link for the author
+		// of the quote.
+		if (chosen_quote.source && quote_root.author) {
 			$('<a>')
-				.appendTo(".quote cite")
-				.html(chosen_quote.source)
+				.appendTo('.quote cite')
+				.attr('href', chosen_quote.source)
+				.html(quote_root.author);
+
+			if (quote_root.title) {
+				$('.quote cite a')
+					.attr('title', quote_root.title)
+			}
+		} else if (quote_root.author) {
+			$('.quote cite')
+				.html(quote_root.author);
+		} else {
+			$('.quote cite')
+				.html("Unknown");
 		}
 	}
 
