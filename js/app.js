@@ -2,6 +2,8 @@
 
 $(document).ready(function() {
 
+	var quote_element = $('.quote');
+
 	/**
 	 * The main logic, gets the data.json file and
 	 * sets a Quote and Background.
@@ -71,11 +73,6 @@ $(document).ready(function() {
 
 		$('<cite>')
 			.appendTo(quote_element);
-
-		// I want to use the following variable, but I don't
-		// know how to concatenate 'cite' to it later on.
-		//
-		// var quote_element = $('.quote');
 
 		// Create the citation and optional link for the author
 		// of the quote.
