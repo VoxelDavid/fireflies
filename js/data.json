@@ -1,23 +1,33 @@
 {
 	"quotes": [
-
 		{
-			"author": "chibird",
+			"author": "Chibird",
+			"title": "View Chibird's post on Tumblr",
 
-			"one": {
-				"quote": "Sometimes you don't do ANYTHING all day. And then you feel guilty but <em>still</em> do nothing. But we shouldn't feel guilty because those days just happen. You're allowed to do nothing sometimes, especially when you just don't feel up to anything else.",
-				"source": "http://chibird.com/post/74996652847/",
-				"source_title": "View Chibird's post on Tumblr!"
-			}
+			"quote_list": [
+				{
+					"text": "Sometimes you don't do ANYTHING all day. And then you feel guilty but <em>still</em> do nothing. But we shouldn't feel guilty because those days just happen. You're allowed to do nothing sometimes, especially when you just don't feel up to anything else.",
+					"source": "http://chibird.com/post/74996652847/"
+				}
+			]
 		},
 
 		{
 			"author": "Boogie",
 
-			"one": {
-				"quote": "So what if God, or nature, or random chance put your life on hardmode. Play the game anyway.",
-				"source": ""
-			}
+			"quote_list": [
+				{
+					"text": "So what if God, or nature, or random chance put your life on hardmode. Play the game anyway."
+				}
+			]
+		},
+
+		{
+			"quote_list": [
+				{
+					"text": "Sometimes I dream of cheese."
+				}
+			],
 		}
 	],
 
@@ -25,6 +35,11 @@
 		{
 			"url": "bg-highway.jpg",
 			"style": "dark"
+		},
+
+		{
+			"url": "bg-snow.png",
+			"style": "light"
 		}
 	]
 }

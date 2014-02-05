@@ -46,11 +46,18 @@ $(document).ready(function() {
 		// .length starts counting at 1 instead of 0, so 1 needs
 		// to be subtracted to get correct array length.
 		var i = randomInt(0, data.quotes.length - 1);
-		var chosen_quote = data.quotes[i];
+		var quotes = data.quotes[i];
 
+		var x = randomInt(0, quotes.quote_list.length -1 );
+		var chosen_quote = quotes.quote_list[i];
+
+		generateQuoteMarkup(quotes, chosen_quote);
+	}
+
+	function generateQuoteMarkup(quotes, chosen_quote) {
 		$('<p>')
 			.appendTo(".quote")
-			.html(chosen_quote.one.quote)
+			.html(chosen_quote.text)
 
 		if (chosen_quote.author) {
 			$('<cite>')
