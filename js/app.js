@@ -18,8 +18,8 @@ $(document).ready(function() {
 
 	// Generates a random integer to get the index of an array.
 
-	function randomArrayIndex(array_length) {
-		return Math.floor(Math.random() * array_length);
+	function randomArrayIndex(array) {
+		return Math.floor(Math.random() * array.length);
 	}
 
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 	// image from the backgrounds array to display.
 
 	function getRandomBackground(bg_data) {
-		var i = randomArrayIndex(bg_data.backgrounds.length),
+		var i = randomArrayIndex(bg_data.backgrounds),
 			chosen_bg = bg_data.backgrounds[i];
 
 		setBackgroundImage(chosen_bg.url);
@@ -58,10 +58,10 @@ $(document).ready(function() {
 	// param (string) data - Quotes and background data from 'data.json'.
 
 	function getRandomQuote(quote_data) {
-		var i = randomArrayIndex(quote_data.quotes.length),
+		var i = randomArrayIndex(quote_data.quotes),
 			quote_root = quote_data.quotes[i];
 
-		var x = randomArrayIndex(quote_root.quote_list.length),
+		var x = randomArrayIndex(quote_root.quote_list),
 			chosen_quote = quote_root.quote_list[x];
 
 		generateQuoteMarkup(quote_root, chosen_quote);
