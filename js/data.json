@@ -32,17 +32,17 @@
 	],
 
 	"backgrounds": [
-		{ "url": "bg-city-streets.jpg", },
+		{ "url": "bg-city-streets.jpg" },
 
-		{ "url": "bg-highway.jpg", },
+		{ "url": "bg-highway.jpg" },
 
 		{
 			"url": "bg-orange-tree.jpg",
 			"style": "light"
 		},
 
-		{ "url": "bg-snow.png", },
+		{ "url": "bg-snow.png" },
 
-		{ "url": "bg-sorcerers-tower.jpg", }
+		{ "url": "bg-sorcerers-tower.jpg" }
 	]
 }
