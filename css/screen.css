@@ -33,7 +33,7 @@ body {
 a {
 	text-decoration: none;
 	font-weight: bold;
-	color: #4CCAED;
+	color: #FFEE7C;
 }
 
 
@@ -64,10 +64,6 @@ a {
 
 .quote cite:before {
 	content: "\2014";
-}
-
-.quote cite a {
-	color: #FFEE7C;
 }
 
 
