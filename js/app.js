@@ -35,7 +35,8 @@ $(document).ready(function() {
 	}
 
 	function setBackgroundImage(image) {
-		$('body').css('background-image', 'url(img/' + image + ')');
+		var bg_hook = $('#js-bg');
+		$(bg_hook).css('background-image', 'url(img/' + image + ')');
 	}
 
 
