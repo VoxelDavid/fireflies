@@ -78,13 +78,9 @@
 
 			"image_list": [
 				{
-					"url": "bg-sorcerers-tower.jpg",
-					"source": ""
-				},
-
-				{
 					"url": "bg-snow.png",
-					"source": ""
+					"source": "",
+					"download": "/img/hd"
 				}
 			]
 		}
