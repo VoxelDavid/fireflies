@@ -33,6 +33,8 @@
 		},
 
 		{
+			"_comment": "Unattributed quotes. If the source is found add them to their own object.",
+
 			"quote_list": [
 				{
 					"text": "Sometimes I dream of cheese."
