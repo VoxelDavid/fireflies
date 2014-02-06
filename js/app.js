@@ -43,9 +43,12 @@ $(document).ready(function() {
 	//                           for each background image.
 
 	function setTextColor(bg_style) {
-		// Use a different text color depending on the value of the 'style' key.
+		var color_hook = $('#js-color');
+
+		// Use a different text color depending on the value of the 'style'
+		// key in the json file.
 		if (bg_style == 'light') {
-			$(quote_element).addClass('dark-text');
+			$(color_hook).addClass('dark-text');
 		}
 	}
 
