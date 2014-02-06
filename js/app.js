@@ -90,7 +90,12 @@ $(document).ready(function() {
 				.appendTo('#js-quote cite')
 				.attr('href', chosen_quote.source)
 				.attr('target', '_blank')
+				.addClass('underline')
 				.html(quote_root.author);
+
+			// Used with the 'underline' class.
+			$('<span>')
+				.appendTo('#js-quote cite a');
 
 			if (quote_root.title) {
 				$('#js-quote cite a')
