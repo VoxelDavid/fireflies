@@ -76,18 +76,22 @@ $(document).ready(function() {
 
 	function generateQuoteMarkup(quote_root, chosen_quote) {
 
+		// Temporary fix until I can figure out how to use the
+		// 'quote_element' object with a string.
+		var quote_elem = '#js-quote';
+
 		$('<p>')
-			.appendTo(quote_element)
+			.appendTo(quote_elem)
 			.html(chosen_quote.text);
 
 		$('<cite>')
-			.appendTo(quote_element);
+			.appendTo(quote_elem);
 
 		// Create the citation and optional link for the author
 		// of the quote.
 		if (chosen_quote.source && quote_root.author) {
 			$('<a>')
-				.appendTo('#js-quote cite')
+				.appendTo(quote_elem + ' cite')
 				.attr('href', chosen_quote.source)
 				.attr('target', '_blank')
 				.addClass('underline')
@@ -95,17 +99,17 @@ $(document).ready(function() {
 
 			// Used with the 'underline' class.
 			$('<span>')
-				.appendTo('#js-quote cite a');
+				.appendTo(quote_elem + ' cite a');
 
 			if (quote_root.title) {
-				$('#js-quote cite a')
+				$(quote_elem + ' cite a')
 					.attr('title', quote_root.title);
 			}
 		} else if (quote_root.author) {
-			$('#js-quote cite')
+			$(quote_elem + ' cite')
 				.html(quote_root.author);
 		} else {
-			$('#js-quote cite')
+			$(quote_elem + ' cite')
 				.html("Unknown");
 		}
 	}
