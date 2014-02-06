@@ -47,21 +47,48 @@
 				}
 			]
 		}
+
 	],
 
 	"backgrounds": [
-		{ "url": "bg-autmn-grass.jpg" },
 
-		{ "url": "bg-city-streets.jpg" },
+		{
+			"author": "Rhean Propp",
 
-		{ "url": "bg-highway.jpg" },
+			"image_list": [
+				{
+					"url": "bg-autmn-grass.jpg",
+					"download": "/img/hd/autumn-grass.jpg"
+				},
 
-		{ "url": "bg-majestic-log.jpg" },
+				{
+					"url": "bg-majestic-log.jpg",
+					"download": "/img/hd/majestic-log.jpg"
+				},
 
-		{ "url": "bg-pathway-lamp.jpg" },
+				{
+					"url": "bg-pathway-lamp.jpg",
+					"download": "/img/hd/pathway-lamp.jpg"
+				}
+			]
+		},
 
-		{ "url": "bg-snow.png" },
+		{
+			"_comment": "Unattributed images. Locate the source and add them to their own objects.",
 
-		{ "url": "bg-sorcerers-tower.jpg" }
+			"image_list": [
+				{
+					"url": "bg-sorcerers-tower.jpg",
+					"source": ""
+				},
+
+				{
+					"url": "bg-snow.png",
+					"source": ""
+				}
+			]
+		}
+
 	]
+
 }

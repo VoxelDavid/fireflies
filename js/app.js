@@ -26,9 +26,12 @@ $(document).ready(function() {
 	// Hooks into the data.json file and gets a random
 	// image from the backgrounds array to display.
 
-	function getRandomBackground(bg_data) {
-		var i = randomArrayIndex(bg_data.backgrounds),
-			chosen_bg = bg_data.backgrounds[i];
+	function getRandomBackground(data) {
+		var i = randomArrayIndex(data.backgrounds),
+			bg_root = data.backgrounds[i];
+
+		var x = randomArrayIndex(bg_root.image_list),
+			chosen_bg = bg_root.image_list[x]
 
 		setBackgroundImage(chosen_bg.url);
 		setTextColor(chosen_bg.style);
