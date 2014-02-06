@@ -9,9 +9,9 @@ $(document).ready(function() {
 	// sets a Quote and Background.
 
 	function main() {
-		$.getJSON('js/data.json', function(data) {
-			getRandomQuote(data);
-			getRandomBackground(data);
+		$.getJSON('js/data.json', function(json_data) {
+			getRandomQuote(json_data);
+			getRandomBackground(json_data);
 		});
 	}
 
@@ -26,9 +26,9 @@ $(document).ready(function() {
 	// Hooks into the data.json file and gets a random
 	// image from the backgrounds array to display.
 
-	function getRandomBackground(data) {
-		var i = randomArrayIndex(data.backgrounds.length),
-			chosen_bg = data.backgrounds[i];
+	function getRandomBackground(bg_data) {
+		var i = randomArrayIndex(bg_data.backgrounds.length),
+			chosen_bg = bg_data.backgrounds[i];
 
 		setBackgroundImage(chosen_bg.url);
 		setTextColor(chosen_bg.style);
@@ -54,9 +54,9 @@ $(document).ready(function() {
 	// ================================
 	// param (string) data - Quotes and background data from 'data.json'.
 
-	function getRandomQuote(data) {
-		var i = randomArrayIndex(data.quotes.length),
-			quote_root = data.quotes[i];
+	function getRandomQuote(quote_data) {
+		var i = randomArrayIndex(quote_data.quotes.length),
+			quote_root = quote_data.quotes[i];
 
 		var x = randomArrayIndex(quote_root.quote_list.length),
 			chosen_quote = quote_root.quote_list[x];
