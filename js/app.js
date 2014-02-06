@@ -94,15 +94,15 @@ $(document).ready(function() {
 
 		// Create the citation and optional link for the author
 		// of the quote.
-		if (chosen_quote.source && quote_root.author) {
+
+		if (chosen_quote.source) {
 			$('<a>')
 				.appendTo(quote_elem + ' cite')
-				.attr('href', chosen_quote.source)
 				.attr('target', '_blank')
-				.addClass('underline')
-				.html(quote_root.author);
+				.attr('href', chosen_quote.source)
+				.addClass('underline');
+				// The html for the link is set farther down.
 
-			// Used with the 'underline' class.
 			$('<span>')
 				.appendTo(quote_elem + ' cite a');
 
@@ -110,13 +110,29 @@ $(document).ready(function() {
 				$(quote_elem + ' cite a')
 					.attr('title', quote_root.title);
 			}
+		}
+
+		// This is kind of a complicated mess, and it doesn't adhere to the Don't Repeat
+		// Yourself rule, but it works and will be revised later.
+
+		if (quote_root.author && chosen_quote.source) {
+			$(quote_elem + ' cite a')
+				.html(quote_root.author);
+
 		} else if (quote_root.author) {
 			$(quote_elem + ' cite')
 				.html(quote_root.author);
+
+		} else if (quote_root.source) {
+			$(quote_elem + ' cite a')
+				.html('Unknown');
+
 		} else {
-			$(quote_elem + ' cite')
-				.html("Unknown");
+			$(quote_elem + ' cite a')
+				.html('Unknown');
+
 		}
+
 	}
 
 	// Run the script.
