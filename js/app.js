@@ -93,6 +93,7 @@ $(document).ready(function() {
 			$('<a>')
 				.appendTo('.quote cite')
 				.attr('href', chosen_quote.source)
+				.attr('target', '_blank')
 				.html(quote_root.author);
 
 			if (quote_root.title) {
