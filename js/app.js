@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-	var quote_element = $('.quote');
+	var quote_element = $('#js-quote');
 
 
 	// The main logic, gets the data.json file and
@@ -88,20 +88,20 @@ $(document).ready(function() {
 		// of the quote.
 		if (chosen_quote.source && quote_root.author) {
 			$('<a>')
-				.appendTo('.quote cite')
+				.appendTo('#js-quote cite')
 				.attr('href', chosen_quote.source)
 				.attr('target', '_blank')
 				.html(quote_root.author);
 
 			if (quote_root.title) {
-				$('.quote cite a')
+				$('#js-quote cite a')
 					.attr('title', quote_root.title);
 			}
 		} else if (quote_root.author) {
-			$('.quote cite')
+			$('#js-quote cite')
 				.html(quote_root.author);
 		} else {
-			$('.quote cite')
+			$('#js-quote cite')
 				.html("Unknown");
 		}
 	}
