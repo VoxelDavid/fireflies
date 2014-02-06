@@ -57,9 +57,7 @@ a {
 .quote cite {
 	margin-right: 10%; /* Push the citation inward a bit */
 	font-style: normal;
-	text-transform: lowercase;
-	text-align: right;
-	display: block;
+	float: right;
 }
 
 .quote cite:before {
@@ -82,7 +80,7 @@ a {
 	background-color: #FFEE7C;
 	position: relative;
 	display: block;
-	height: 2px;
+	height: 1px;
 	transform: scaleX(0);
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
