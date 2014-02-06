@@ -33,12 +33,27 @@
 
 	"backgrounds": [
 		{
+			"url": "bg-city-streets.jpg",
+			"style": "dark"
+		},
+
+		{
 			"url": "bg-highway.jpg",
 			"style": "dark"
 		},
 
 		{
+			"url": "bg-orange-tree.jpg",
+			"style": "light"
+		},
+
+		{
 			"url": "bg-snow.png",
+			"style": "dark"
+		},
+
+		{
+			"url": "bg-sorcerers-tower.jpg",
 			"style": "dark"
 		}
 	]
