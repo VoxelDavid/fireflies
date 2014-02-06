@@ -48,11 +48,6 @@
 
 		{ "url": "bg-highway.jpg" },
 
-		{
-			"url": "bg-orange-tree.jpg",
-			"style": "light"
-		},
-
 		{ "url": "bg-snow.png" },
 
 		{ "url": "bg-sorcerers-tower.jpg" }
