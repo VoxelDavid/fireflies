@@ -8,11 +8,12 @@ $(document).ready(function() {
 	// The main logic, gets the data.json file and
 	// sets a Quote and Background.
 
-	$.getJSON('js/data.json', function(data) {
-		getRandomQuote(data);
-		getRandomBackground(data);
-	});
-
+	function main() {
+		$.getJSON('js/data.json', function(data) {
+			getRandomQuote(data);
+			getRandomBackground(data);
+		});
+	}
 
 
 	// Generate a random integer, primarily used for getting
@@ -106,4 +107,6 @@ $(document).ready(function() {
 		}
 	}
 
+	// Run the script.
+	main();
 });
