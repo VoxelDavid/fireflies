@@ -45,12 +45,9 @@ $(document).ready(function() {
 	//                           for each background image.
 
 	function setTextColor(bg_style) {
-		// Choose which color text to display depending on
-		// the background's Style value.
+		// Use a different text color depending on the value of the 'style' key.
 		if (bg_style == 'light') {
-			$(quote_element).addClass('light-background');
-		} else if (bg_style == 'dark') {
-			$(quote_element).addClass('dark-background');
+			$(quote_element).addClass('dark-text');
 		}
 	}
 
