@@ -39,18 +39,19 @@ $(document).ready(function() {
 
 	function setBackgroundImage(image) {
 		var bg_hook = $('#js-bg');
+
 		$(bg_hook).css('background-image', 'url(img/' + image + ')');
 	}
 
 
+	// Sets a different text color depending on the value of the 'style' key in the json file.
+	// ================================
 	// param (string) bg_style - The style of background. Specified in data.json
 	//                           for each background image.
 
 	function setTextColor(bg_style) {
 		var color_hook = $('#js-color');
 
-		// Use a different text color depending on the value of the 'style'
-		// key in the json file.
 		if (bg_style == 'light') {
 			$(color_hook).addClass('dark-text');
 		}
