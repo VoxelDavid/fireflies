@@ -49,9 +49,15 @@
 	],
 
 	"backgrounds": [
+		{ "url": "bg-autmn-grass.jpg" },
+
 		{ "url": "bg-city-streets.jpg" },
 
 		{ "url": "bg-highway.jpg" },
+
+		{ "url": "bg-majestic-log.jpg" },
+
+		{ "url": "bg-pathway-lamp.jpg" },
 
 		{ "url": "bg-snow.png" },
 
