@@ -79,8 +79,7 @@
 			"image_list": [
 				{
 					"url": "bg-snow.png",
-					"source": "",
-					"download": "/img/hd"
+					"download": "/img/hd/snow.png"
 				}
 			]
 		}
