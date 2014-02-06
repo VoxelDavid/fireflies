@@ -14,16 +14,15 @@ html {
 }
 
 body {
-	font-size: 1em;
+	font-size: 0.875em;
 	line-height: 1.5;
 	font-family: "Droid Sans", sans-serif;
 	text-rendering: optimizelegibility;
 
 	color: #DBDBDB;
 	background-color: #13141A;
-
 	/* Used when a background is applied to the body
-	   via fireflies.js */
+	   via the main javascript file */
 	-webkit-background-size: cover;
 	background-size: cover;
 
@@ -39,17 +38,17 @@ a {
 
 
 .no-js {
-	font-size: 1.2em;
+	font-size: 1.35em;
 	text-align: center;
 }
 
 .no-js .sad {
-	font-size: 1.35em;
+	font-size: 1.4em;
 }
 
 
 .quote p {
-	font-size: 1.35em;
+	font-size: 1.5em;
 	font-family: "Droid Serif", serif;
 	text-align: center;
 	hyphens: auto;
