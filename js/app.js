@@ -103,6 +103,10 @@ $(document).ready(function() {
 				.addClass('underline');
 				// The html for the link is set farther down.
 
+			// Used with the 'underline' class.
+			//
+			// This is broken because of the html of the link being reset farther down
+			// in the messed up if block.
 			$('<span>')
 				.appendTo(quote_elem + ' cite a');
 
