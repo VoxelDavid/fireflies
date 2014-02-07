@@ -44,8 +44,8 @@ body {
 	-webkit-background-size: cover;
 	background-size: cover;
 
-	max-width: 920px;
-	margin: 15% auto 0 auto;
+	max-width: 960px;
+	margin: 15% auto;
 }
 
 p {
