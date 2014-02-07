@@ -26,7 +26,7 @@ body {
 	-webkit-background-size: cover;
 	background-size: cover;
 
-	width: 70%;
+	max-width: 920px;
 	margin: 15% auto 0 auto;
 }
 
@@ -72,7 +72,7 @@ a:hover {
 	font-style: normal;
 	text-align: right;
 	display: block;
-	margin-right: 10%; /* Push the citation inward a bit */
+	margin-right: 6em; /* Push the citation inward a bit */
 }
 
 .quote cite:before {
