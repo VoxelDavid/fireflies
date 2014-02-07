@@ -116,9 +116,6 @@ $(document).ready(function() {
 				// The html for the link is set farther down.
 
 			// Used with the 'underline' class.
-			//
-			// This is broken because of the html of the link being reset farther down
-			// in the messed up if block.
 			$('<span>')
 				.appendTo(hooks.quote + ' cite a');
 
@@ -128,25 +125,14 @@ $(document).ready(function() {
 			}
 		}
 
-		// This is kind of a complicated mess, and it doesn't adhere to the Don't Repeat
-		// Yourself rule, but it works and will be revised later.
-
 		if (quote_root.author && chosen_quote.source) {
-			$(hooks.quote + ' cite a')
-				.html(quote_root.author);
-
+			$(hooks.quote + ' cite a').prepend(quote_root.author);
 		} else if (quote_root.author) {
-			$(hooks.quote + ' cite')
-				.html(quote_root.author);
-
-		} else if (quote_root.source) {
-			$(hooks.quote + ' cite a')
-				.html('Unknown');
-
+			$(hooks.quote + ' cite').prepend(quote_root.author);
+		} else if (chosen_quote.source) {
+			$(hooks.quote + ' cite a').prepend('Unknown');
 		} else {
-			$(hooks.quote + ' cite')
-				.html('Unknown');
-
+			$(hooks.quote + ' cite').prepend('Unknown');
 		}
 
 	}
