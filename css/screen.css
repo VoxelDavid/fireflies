@@ -17,8 +17,8 @@ body {
 	font-size: 0.875em;
 	line-height: 1.5;
 	font-family: "Droid Sans", sans-serif;
-
 	text-rendering: optimizelegibility;
+	color: #202020;
 
 	background-color: #13141A;
 	/* Used when a background is applied to the body
@@ -28,6 +28,10 @@ body {
 
 	max-width: 920px;
 	margin: 15% auto 0 auto;
+}
+
+p {
+	margin-bottom: 1.5em;
 }
 
 a {
