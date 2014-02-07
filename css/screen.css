@@ -85,8 +85,8 @@ a:hover {
 }
 
 .quote a {
-	color: #FFEE7C;
-	text-shadow: 0 2px 3px #38351D;
+	color: #FFDD76;
+	text-shadow: 0 2px 3px #453C16;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -123,10 +123,10 @@ a:hover {
 }
 
 .underline span {
-	background-color: #FFEE7C;
+	background-color: #FFDD76;
 	position: relative;
 	display: block;
-	height: 1px;
+	height: 2px;
 	transform: scaleX(0);
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
