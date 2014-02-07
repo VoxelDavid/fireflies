@@ -9,9 +9,9 @@ $(document).ready(function() {
 	// sets a Quote and Background.
 
 	function main() {
-		$.getJSON('js/data.json', function(json_data) {
-			getRandomQuote(json_data);
-			getRandomBackground(json_data);
+		$.getJSON('js/data.json', function(json) {
+			getRandomBackground(json);
+			getRandomQuote(json);
 		});
 	}
 
