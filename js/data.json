@@ -1,10 +1,12 @@
 {
-	"quotes": [
+	"quotes":
+	[
 		{
 			"author": "chibird",
 			"title": "View Chibird's post on Tumblr",
 
-			"quote_list": [
+			"quote_list":
+			[
 				{
 					"text": "Sometimes you don't do ANYTHING all day. And then you feel guilty but <em>still</em> do nothing. But we shouldn't feel guilty because those days just happen. You're allowed to do nothing sometimes, especially when you just don't feel up to anything else.",
 					"source": "http://chibird.com/post/74996652847/"
@@ -15,7 +17,8 @@
 		{
 			"author": "Grace Hopper",
 
-			"quote_list": [
+			"quote_list":
+			[
 				{
 					"text": "A ship in a harbour is safe, but that is not what ships are for."
 				}
@@ -25,7 +28,8 @@
 		{
 			"author": "Steven &ldquo;Boogie&rdquo; Williams",
 
-			"quote_list": [
+			"quote_list":
+			[
 				{
 					"text": "So what if God, or fate, or nature, or random chance put your life on hard-mode. Beat the game anyway.",
 					"source": "http://youtu.be/HKI_oYMUNK4"
@@ -36,7 +40,8 @@
 		{
 			"author": "Steven Furtick",
 
-			"quote_list": [
+			"quote_list":
+			[
 				{
 					"text": "The reason we struggle with insecurity is because we compare our behind-the-scenes to everyone else's highlight reel."
 				}
@@ -46,7 +51,8 @@
 		{
 			"_comment": "Unattributed quotes. If the source is found add them to their own object.",
 
-			"quote_list": [
+			"quote_list":
+			[
 				{
 					"text": "Sometimes I dream of cheese."
 				},
@@ -60,12 +66,14 @@
 
 	],
 
-	"backgrounds": [
+	"backgrounds":
+	[
 
 		{
 			"author": "Rhean Propp",
 
-			"image_list": [
+			"image_list":
+			[
 				{
 					"url": "bg-autumn-grass.jpg",
 					"download": "/img/hd/autumn-grass.jpg"
@@ -86,7 +94,8 @@
 		{
 			"_comment": "Unattributed images. Locate the source and add them to their own objects.",
 
-			"image_list": [
+			"image_list":
+			[
 				{
 					"url": "bg-snow.png",
 					"download": "/img/hd/snow.png"
