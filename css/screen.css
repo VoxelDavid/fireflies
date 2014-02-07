@@ -135,3 +135,12 @@ a:hover {
 /* 5. Media Queries
  ============================================================================ */
 
+@media (max-width: 480px) {
+	.quote {
+		margin: 0 1em;
+	}
+
+	.quote cite {
+		margin-right: 0;
+	}
+}
