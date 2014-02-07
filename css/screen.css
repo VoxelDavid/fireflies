@@ -54,16 +54,16 @@ a {
 }
 
 .quote p {
-	font-family: "Droid Serif", serif;
 	font-size: 1.5em;
+	font-family: "Droid Serif", serif;
 	text-align: center;
 }
 
 .quote cite {
-	margin-right: 10%; /* Push the citation inward a bit */
 	font-style: normal;
-	display: block;
 	text-align: right;
+	display: block;
+	margin-right: 10%; /* Push the citation inward a bit */
 }
 
 .quote cite:before {
