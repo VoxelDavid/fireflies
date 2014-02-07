@@ -39,6 +39,7 @@ $(document).ready(function() {
 
 		setBackgroundImage(chosen_bg.url);
 		setTextColor(chosen_bg.style);
+		fadeInBackground();
 	}
 
 	function setBackgroundImage(image) {
@@ -48,6 +49,14 @@ $(document).ready(function() {
 	}
 
 
+	function fadeInBackground() {
+		var bg = hooks.background;
+
+		// This was just thrown together and needs to be revised.
+		$(bg).css('opacity', '0');
+		$(bg).animate({
+			'opacity': '1'
+		}, {duration: 1000});
 	}
 
 

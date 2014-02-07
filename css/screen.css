@@ -37,15 +37,7 @@ body {
 	font-family: "Droid Sans", sans-serif;
 	text-rendering: optimizelegibility;
 	color: #202020;
-
 	background-color: #13141A;
-	/* Used when a background is applied to the body
-	   via the main javascript file */
-	-webkit-background-size: cover;
-	background-size: cover;
-
-	max-width: 960px;
-	margin: 15% auto;
 }
 
 p {
@@ -65,6 +57,12 @@ a:hover {
 /* 3. Structure
  ============================================================================ */
 
+.container {
+	max-width: 960px;
+	margin: 15% auto;
+}
+
+
 .no-js {
 	font-size: 1.35em;
 	text-align: center;
@@ -73,6 +71,7 @@ a:hover {
 .no-js .sad {
 	font-size: 1.4em;
 }
+
 
 .quote {
 	color: #F0EEDF;
@@ -101,6 +100,18 @@ a:hover {
 
 .quote cite:before {
 	content: "\2014";
+}
+
+
+.background-image {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: -100; /* Set the background below everything else. */
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 
 
