@@ -68,6 +68,46 @@
 
 	"backgrounds":
 	[
+		{
+			"author": "Desmond Wong",
+
+			"image_list":
+			[
+				{
+					"url": "bg-lanterns-in-the-sky.jpg",
+					"source": "http://fav.me/d5wx4k7"
+				},
+
+				{
+					"url": "bg-the-ocean-sky.jpg",
+					"source": "http://fav.me/d5zs9y1"
+				}
+			]
+		},
+
+		{
+			"author": "Nuri",
+
+			"image_list":
+			[
+				{
+					"url": "bg-leap.jpg",
+					"source": "http://fav.me/d614tj2"
+				}
+			]
+		},
+
+		{
+			"author": "Piotr Stanislawski",
+
+			"image_list":
+			[
+				{
+					"url": "bg-noc-kupaly.jpg",
+					"source": "https://secure.flickr.com/photos/pedro4d/5859464596/"
+				}
+			]
+		},
 
 		{
 			"author": "Rhean Propp",
