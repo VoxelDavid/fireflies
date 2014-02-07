@@ -2,7 +2,11 @@
 
 $(document).ready(function() {
 
-	var quote_element = $('#js-quote');
+	var	hooks = {
+		background: '#js-bg',
+		text_color: '#js-color',
+		quote:      '#js-quote'
+	}
 
 
 	// The main logic, gets the data.json file and
@@ -38,9 +42,12 @@ $(document).ready(function() {
 	}
 
 	function setBackgroundImage(image) {
-		var bg_hook = $('#js-bg');
+		var bg = hooks.background;
 
-		$(bg_hook).css('background-image', 'url(img/' + image + ')');
+		$(bg).css('background-image', 'url(img/' + image + ')');
+	}
+
+
 	}
 
 
@@ -50,7 +57,7 @@ $(document).ready(function() {
 	//                           for each background image.
 
 	function setTextColor(bg_style) {
-		var color_hook = $('#js-color');
+		var color_hook = hooks.text_color;
 
 		if (bg_style == 'light') {
 			$(color_hook).addClass('dark-text');
@@ -81,23 +88,19 @@ $(document).ready(function() {
 
 	function generateQuoteMarkup(quote_root, chosen_quote) {
 
-		// Temporary fix until I can figure out how to use the
-		// 'quote_element' object with a string.
-		var quote_elem = '#js-quote';
-
 		$('<p>')
-			.appendTo(quote_elem)
+			.appendTo(hooks.quote)
 			.html(chosen_quote.text);
 
 		$('<cite>')
-			.appendTo(quote_elem);
+			.appendTo(hooks.quote);
 
 		// Create the citation and optional link for the author
 		// of the quote.
 
 		if (chosen_quote.source) {
 			$('<a>')
-				.appendTo(quote_elem + ' cite')
+				.appendTo(hooks.quote + ' cite')
 				.attr('target', '_blank')
 				.attr('href', chosen_quote.source)
 				.addClass('underline');
@@ -108,10 +111,10 @@ $(document).ready(function() {
 			// This is broken because of the html of the link being reset farther down
 			// in the messed up if block.
 			$('<span>')
-				.appendTo(quote_elem + ' cite a');
+				.appendTo(hooks.quote + ' cite a');
 
 			if (quote_root.title) {
-				$(quote_elem + ' cite a')
+				$(hooks.quote + ' cite a')
 					.attr('title', quote_root.title);
 			}
 		}
@@ -120,19 +123,19 @@ $(document).ready(function() {
 		// Yourself rule, but it works and will be revised later.
 
 		if (quote_root.author && chosen_quote.source) {
-			$(quote_elem + ' cite a')
+			$(hooks.quote + ' cite a')
 				.html(quote_root.author);
 
 		} else if (quote_root.author) {
-			$(quote_elem + ' cite')
+			$(hooks.quote + ' cite')
 				.html(quote_root.author);
 
 		} else if (quote_root.source) {
-			$(quote_elem + ' cite a')
+			$(hooks.quote + ' cite a')
 				.html('Unknown');
 
 		} else {
-			$(quote_elem + ' cite')
+			$(hooks.quote + ' cite')
 				.html('Unknown');
 
 		}
