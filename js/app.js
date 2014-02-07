@@ -69,9 +69,9 @@ $(document).ready(function() {
 	// ================================
 	// param (string) data - Quotes and background data from 'data.json'.
 
-	function getRandomQuote(quote_data) {
-		var i = randomArrayIndex(quote_data.quotes),
-			quote_root = quote_data.quotes[i];
+	function getRandomQuote(data) {
+		var i = randomArrayIndex(data.quotes),
+			quote_root = data.quotes[i];
 
 		var x = randomArrayIndex(quote_root.quote_list),
 			chosen_quote = quote_root.quote_list[x];
