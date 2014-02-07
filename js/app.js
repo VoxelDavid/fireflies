@@ -132,7 +132,7 @@ $(document).ready(function() {
 				.html('Unknown');
 
 		} else {
-			$(quote_elem + ' cite a')
+			$(quote_elem + ' cite')
 				.html('Unknown');
 
 		}
