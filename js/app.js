@@ -14,10 +14,12 @@ $(function() {
 
 	$.getJSON('js/data.json', function(data) {
 		var image_object = getRandomBackground(data),
-			quote_array = getRandomQuote(data);
+			quote_array = getRandomQuote(data),
+			url_parameters = getUrlParameters();
+
+		setBackgroundImage(image_object);
 
 		generateQuoteMarkup(quote_array);
-		setBackgroundImage(image_object);
 	});
 
 
@@ -140,4 +142,32 @@ $(function() {
 			$(hooks.quote + ' cite').prepend('Unknown');
 		}
 	}
+
+
+	/**
+	 * @name getUrlParameters
+	 *
+	 * Converts the query string in the browser URL into an object
+	 * for other functions to hook into.
+	 *
+	 * @return {object} The query string converted into an object.
+	 */
+	function getUrlParameters() {
+		// source: http://stackoverflow.com/a/2880929
+		// Slightly modified.
+
+		var match,
+			pl     = /\+/g, // Regex for replacing addition symbol with a space
+			search = /([^&=]+)=?([^&]*)/g,
+			decode = function(s) { return decodeURIComponent(s.replace(pl, " ")); },
+			query  = window.location.search.substring(1),
+			results = {};
+
+		while (match = search.exec(query)) {
+			results[decode(match[1])] = decode(match[2]);
+		}
+
+		return results;
+	}
+
 });
