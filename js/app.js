@@ -10,11 +10,11 @@ $(document).ready(function() {
 
 
 	$.getJSON('js/data.json', function(data) {
-		var image = getRandomBackground(data),
+		var image_object = getRandomBackground(data),
 			quote = getRandomQuote(data);
 
-		setBackgroundImage(image);
 		generateQuoteMarkup();
+		setBackgroundImage(image_object);
 	});
 
 
@@ -53,12 +53,12 @@ $(document).ready(function() {
 	 *
 	 * Applys the randomly chosen background image to the body.
 	 *
-	 * @param {image} image  The randomly chosen image from getBackgroundImage.
+	 * @param {object} image  The randomly chosen image from getBackgroundImage.
 	 */
 	function setBackgroundImage(image) {
 		var bg = hooks.background;
 
-		$(bg).css('background-image', 'url(img/' + image + ')');
+		$(bg).css('background-image', 'url(img/' + image.url + ')');
 	}
 
 	/**
@@ -127,7 +127,9 @@ $(document).ready(function() {
 	 *                              the author/title values are stores.
 	 * @param {object} chosen_quote The quote chosen under quote_root.quote_list.
 	 */
-	function generateQuoteMarkup(quote_root, chosen_quote) {
+	function generateQuoteMarkup(quote_array) {
+		var quote_root = quote_array[0],
+			chosen_quote = quote_array[1];
 
 		$('<p>')
 			.appendTo(hooks.quote)
