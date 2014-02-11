@@ -143,7 +143,27 @@ a:hover {
 }
 
 
-/* 5. Media Queries
+/* 5. Background Images
+ ============================================================================ */
+
+.bg-autumn-grass        { background-image: url("/img/bg-autumn-grass.jpg") }
+
+.bg-lanterns-in-the-sky { background-image: url("/img/bg-lanterns-in-the-sky.jpg") }
+
+.bg-leap                { background-image: url("/img/bg-leap.jpg") }
+
+.bg-majestic-log        { background-image: url("/img/bg-majestic-log.jpg") }
+
+.bg-noc-kupaly          { background-image: url("/img/bg-noc-kupaly.jpg") }
+
+.bg-pathway-lamp        { background-image: url("/img/bg-pathway-lamp.jpg") }
+
+.bg-snow                { background-image: url("/img/bg-snow.png") }
+
+.bg-the-ocean-sky       { background-image: url("/img/bg-the-ocean-sky.jpg") }
+
+
+/* 6. Media Queries
  ============================================================================ */
 
 @media (max-width: 480px) {

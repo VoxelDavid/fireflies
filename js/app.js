@@ -63,7 +63,8 @@ $(function() {
 	function setBackgroundImage(image) {
 		var bg = hooks.background;
 
-		$(bg).css('background-image', 'url(img/' + image.url + ')');
+		// Adds the class coresponding to the file name of theimage (minus the extension)
+		$(bg).addClass(image.url.replace(/\.[^/.]+$/, ""));
 	}
 
 	/**
