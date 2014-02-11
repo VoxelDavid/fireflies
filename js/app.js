@@ -2,7 +2,11 @@
 
 $(document).ready(function() {
 
-	var	hooks = {
+	/**
+	 * Fragment identifiers in the HTML for JavaScript hooks.
+	 * @type {Object}
+	 */
+	var hooks = {
 		background: '#js-bg',
 		text_color: '#js-color',
 		quote:      '#js-quote'
