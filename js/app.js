@@ -19,6 +19,7 @@ $(document).ready(function() {
 
 		generateQuoteMarkup(quote_array);
 		setBackgroundImage(image_object);
+		fadeInBackground();
 	});
 
 
