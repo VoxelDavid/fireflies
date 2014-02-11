@@ -8,18 +8,15 @@ $(document).ready(function() {
 		quote:      '#js-quote'
 	};
 
-	/**
-	 * @name main
-	 *
-	 * Runs all of the functions in the script. Called at the bottom
-	 * of the script.
-	 */
-	function main() {
-		$.getJSON('js/data.json', function(json) {
-			getRandomBackground(json);
-			getRandomQuote(json);
-		});
-	}
+
+	$.getJSON('js/data.json', function(data) {
+		var image = getRandomBackground(data),
+			quote = getRandomQuote(data);
+
+		setBackgroundImage(image);
+		generateQuoteMarkup();
+	});
+
 
 	/**
 	 * @name randomArrayIndex
@@ -171,7 +168,4 @@ $(document).ready(function() {
 		}
 
 	}
-
-	// Run the script.
-	main();
 });
