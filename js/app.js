@@ -17,6 +17,9 @@ $(function() {
 			quote_array = getRandomQuote(data),
 			url_parameters = getUrlParameters();
 
+		overrideBackgroundImage(url_parameters);
+		overrideQuote(url_parameters);
+
 		setBackgroundImage(image_object);
 
 		generateQuoteMarkup(quote_array);
@@ -170,4 +173,43 @@ $(function() {
 		return results;
 	}
 
+	/**
+	 * @name overrideBackgroundImage
+	 *
+	 * Overrides the getRandomBackground function to display an image
+	 * specified in the query string.
+	 *
+	 * @usage http://fireflies.voxeldavid.com?image=1 or ?image=bg-majestic-log.jpg
+	 * @param {object} query_string  Object of current query string values.
+	 */
+	function overrideBackgroundImage(query_string) {
+		var image;
+
+		if (query_string.image)
+			image = query_string.image;
+		else
+			return;
+
+		// code
+	}
+
+	/**
+	 * @name overrideQuote
+	 *
+	 * Overrides the getRandomQuote function to display a quote
+	 * specified in the query string.
+	 *
+	 * @usage http://fireflies.voxeldavid.com?quote=1
+	 * @param {object} query_string  Object of current query string values.
+	 */
+	function overrideQuote(query_string) {
+		var quote;
+
+		if (query_string.quote)
+			quote = query_string.quote;
+		else
+			return;
+
+		// code
+	}
 });
