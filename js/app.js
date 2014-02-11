@@ -43,14 +43,12 @@ $(document).ready(function() {
 	 */
 	function getRandomBackground(data) {
 		var i = randomArrayIndex(data.backgrounds),
-			bg_root = data.backgrounds[i];
+			backgrounds = data.backgrounds[i],
 
-		var x = randomArrayIndex(bg_root.image_list),
-			chosen_bg = bg_root.image_list[x];
+			j = randomArrayIndex(backgrounds.image_list),
+			chosen_image = backgrounds.image_list[j];
 
-		setBackgroundImage(chosen_bg.url);
-		setTextColor(chosen_bg.style);
-		fadeInBackground();
+		return chosen_image;
 	}
 
 	/**
@@ -108,16 +106,19 @@ $(document).ready(function() {
 	 * Hooks into the primary json file, picks a random quote from the
 	 * quotes array and displays it on the screen.
 	 *
-	 * @param {object} data  The json data gathered from $.getJSON().
+	 * @param  {object} data  Json data gathered from $.getJSON().
+	 * @return {array}        Chosen quote and the root where the author/title is stored.
 	 */
 	function getRandomQuote(data) {
 		var i = randomArrayIndex(data.quotes),
-			quote_root = data.quotes[i];
+			quote_root = data.quotes[i],
 
-		var x = randomArrayIndex(quote_root.quote_list),
-			chosen_quote = quote_root.quote_list[x];
+			j = randomArrayIndex(quote_root.quote_list),
+			chosen_quote = quote_root.quote_list[j],
 
-		generateQuoteMarkup(quote_root, chosen_quote);
+			result = [quote_root, chosen_quote];
+
+		return result;
 	}
 
 	/**
