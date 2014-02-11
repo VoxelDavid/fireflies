@@ -74,11 +74,12 @@ $(document).ready(function() {
 	function fadeInBackground() {
 		var bg = hooks.background;
 
-		// This was just thrown together and needs to be revised. Mainly with
-		// running once the page is done loading.
 		$(bg).css('opacity', '0');
-		$(bg).animate({
-			'opacity': '1'
+		// This needs to animate the opacity once the image is loaded. The problem
+		// is the images seem to not be visible even once they're loaded, so I don't
+		// know how to do this.
+		$(bg).load().animate({
+			'opacity': 1
 		}, {duration: 1000});
 	}
 
