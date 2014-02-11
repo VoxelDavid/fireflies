@@ -6,7 +6,7 @@ $(document).ready(function() {
 		background: '#js-bg',
 		text_color: '#js-color',
 		quote:      '#js-quote'
-	}
+	};
 
 
 	// The main logic, gets the data.json file and
@@ -35,7 +35,7 @@ $(document).ready(function() {
 			bg_root = data.backgrounds[i];
 
 		var x = randomArrayIndex(bg_root.image_list),
-			chosen_bg = bg_root.image_list[x]
+			chosen_bg = bg_root.image_list[x];
 
 		setBackgroundImage(chosen_bg.url);
 		setTextColor(chosen_bg.style);
