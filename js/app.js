@@ -8,7 +8,6 @@ $(function() {
 	 */
 	var hooks = {
 		background: '#js-bg',
-		text_color: '#js-color',
 		quote:      '#js-quote'
 	};
 
@@ -82,25 +81,6 @@ $(function() {
 		$(bg).load().animate({
 			'opacity': 1
 		}, {duration: 1000});
-	}
-
-	/**
-	 * @deprecated For stylistic reasons the text color needs to stay a
-	 *             consistent color, making this function obsolete.
-	 *
-	 * @name setTextColor
-	 *
-	 * Set's a different text color depending on the value of the 'style'
-	 * key in a background's object.
-	 *
-	 * @param {string} bg_style  The style of background.
-	 */
-	function setTextColor(bg_style) {
-		var color_hook = hooks.text_color;
-
-		if (bg_style == 'light') {
-			$(color_hook).addClass('dark-text');
-		}
 	}
 
 
