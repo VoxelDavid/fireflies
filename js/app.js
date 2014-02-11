@@ -1,6 +1,6 @@
 /* Copyright (c) 2014 David Minnerly - Licensed under the MIT License. */
 
-$(document).ready(function() {
+$(function() {
 
 	/**
 	 * Fragment identifiers in the HTML for JavaScript hooks.
