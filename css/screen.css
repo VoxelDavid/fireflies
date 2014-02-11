@@ -136,12 +136,6 @@ a:hover {
 	transform: scaleX(1);
 }
 
-.dark-text {
-	/* Applied via app.js if the current background's 'style' key is set
-	   to 'light', to make text visible on brighter backgrounds. */
-	color: #202020;
-}
-
 
 /* 5. Background Images
  ============================================================================ */
