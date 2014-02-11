@@ -35,6 +35,7 @@ $(document).ready(function() {
 		return Math.floor(Math.random() * array.length);
 	}
 
+
 	/**
 	 * @name getRandomBackground
 	 *
@@ -165,6 +166,7 @@ $(document).ready(function() {
 			}
 		}
 
+		// This mess needs to get redone, though I can't think of how to do it.
 		if (quote_root.author && chosen_quote.source) {
 			$(hooks.quote + ' cite a').prepend(quote_root.author);
 		} else if (quote_root.author) {
@@ -174,6 +176,5 @@ $(document).ready(function() {
 		} else {
 			$(hooks.quote + ' cite').prepend('Unknown');
 		}
-
 	}
 });
