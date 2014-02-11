@@ -8,10 +8,12 @@ $(document).ready(function() {
 		quote:      '#js-quote'
 	};
 
-
-	// The main logic, gets the data.json file and
-	// sets a Quote and Background.
-
+	/**
+	 * @name main
+	 *
+	 * Runs all of the functions in the script. Called at the bottom
+	 * of the script.
+	 */
 	function main() {
 		$.getJSON('js/data.json', function(json) {
 			getRandomBackground(json);
@@ -19,17 +21,26 @@ $(document).ready(function() {
 		});
 	}
 
-
-	// Generates a random integer to get the index of an array.
-
+	/**
+	 * @name randomArrayIndex
+	 *
+	 * Generates an integer value from 0 to the array parameter's length.
+	 *
+	 * @param  {array} array  Array to index.
+	 * @return {number}       A random number between 0 to the array's length.
+	 */
 	function randomArrayIndex(array) {
 		return Math.floor(Math.random() * array.length);
 	}
 
-
-	// Hooks into the data.json file and gets a random
-	// image from the backgrounds array to display.
-
+	/**
+	 * @name getRandomBackground
+	 *
+	 * Hooks into the primary json file, picks a random image from the
+	 * backgrounds array and displays it on the screen.
+	 *
+	 * @param {object} data  The json data gathered from $.getJSON().
+	 */
 	function getRandomBackground(data) {
 		var i = randomArrayIndex(data.backgrounds),
 			bg_root = data.backgrounds[i];
@@ -42,29 +53,46 @@ $(document).ready(function() {
 		fadeInBackground();
 	}
 
+	/**
+	 * @name setBackgroundImage
+	 *
+	 * Applys the randomly chosen background image to the body.
+	 *
+	 * @param {image} image  The randomly chosen image from getBackgroundImage.
+	 */
 	function setBackgroundImage(image) {
 		var bg = hooks.background;
 
 		$(bg).css('background-image', 'url(img/' + image + ')');
 	}
 
-
+	/**
+	 * @name fadeInBackground
+	 *
+	 * Smoothly fades in the page's background image.
+	 */
 	function fadeInBackground() {
 		var bg = hooks.background;
 
-		// This was just thrown together and needs to be revised.
+		// This was just thrown together and needs to be revised. Mainly with
+		// running once the page is done loading.
 		$(bg).css('opacity', '0');
 		$(bg).animate({
 			'opacity': '1'
 		}, {duration: 1000});
 	}
 
-
-	// Sets a different text color depending on the value of the 'style' key in the json file.
-	// ================================
-	// param (string) bg_style - The style of background. Specified in data.json
-	//                           for each background image.
-
+	/**
+	 * @deprecated For stylistic reasons the text color needs to stay a
+	 *             consistent color, making this function obsolete.
+	 *
+	 * @name setTextColor
+	 *
+	 * Set's a different text color depending on the value of the 'style'
+	 * key in a background's object.
+	 *
+	 * @param {string} bg_style  The style of background.
+	 */
 	function setTextColor(bg_style) {
 		var color_hook = hooks.text_color;
 
@@ -74,10 +102,14 @@ $(document).ready(function() {
 	}
 
 
-	// Generate two random numbers to select a quote from the json file.
-	// ================================
-	// param (string) data - Quotes and background data from 'data.json'.
-
+	/**
+	 * @name getRandomQuote
+	 *
+	 * Hooks into the primary json file, picks a random quote from the
+	 * quotes array and displays it on the screen.
+	 *
+	 * @param {object} data  The json data gathered from $.getJSON().
+	 */
 	function getRandomQuote(data) {
 		var i = randomArrayIndex(data.quotes),
 			quote_root = data.quotes[i];
@@ -88,13 +120,15 @@ $(document).ready(function() {
 		generateQuoteMarkup(quote_root, chosen_quote);
 	}
 
-
-	// Creates the required markup for the Quotes
-	// ================================
-	// param (object) quote_root   - The first level in the 'quotes' array, where
-	//                               the author/title values are stored.
-	// param (object) chosen_quote - The quote chosen under quote_root.quote_list.
-
+	/**
+	 * @name generateQuoteMarkup
+	 *
+	 * Creates the quote's markup.
+	 *
+	 * @param {array}  quote_root   The first level in the 'quotes' array, where
+	 *                              the author/title values are stores.
+	 * @param {object} chosen_quote The quote chosen under quote_root.quote_list.
+	 */
 	function generateQuoteMarkup(quote_root, chosen_quote) {
 
 		$('<p>')
