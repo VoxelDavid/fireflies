@@ -18,7 +18,6 @@ $(function() {
 
 		generateQuoteMarkup(quote_array);
 		setBackgroundImage(image_object);
-		fadeInBackground();
 	});
 
 
@@ -65,23 +64,6 @@ $(function() {
 
 		// Adds the class coresponding to the file name of theimage (minus the extension)
 		$(bg).addClass(image.url.replace(/\.[^/.]+$/, ""));
-	}
-
-	/**
-	 * @name fadeInBackground
-	 *
-	 * Smoothly fades in the page's background image.
-	 */
-	function fadeInBackground() {
-		var bg = hooks.background;
-
-		$(bg).css('opacity', '0');
-		// This needs to animate the opacity once the image is loaded. The problem
-		// is the images seem to not be visible even once they're loaded, so I don't
-		// know how to do this.
-		$(bg).load().animate({
-			'opacity': 1
-		}, {duration: 1000});
 	}
 
 
