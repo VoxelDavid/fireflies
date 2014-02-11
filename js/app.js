@@ -11,9 +11,9 @@ $(document).ready(function() {
 
 	$.getJSON('js/data.json', function(data) {
 		var image_object = getRandomBackground(data),
-			quote = getRandomQuote(data);
+			quote_array = getRandomQuote(data);
 
-		generateQuoteMarkup();
+		generateQuoteMarkup(quote_array);
 		setBackgroundImage(image_object);
 	});
 
