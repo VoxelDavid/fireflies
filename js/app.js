@@ -222,14 +222,15 @@ $(function() {
 	 * @usage http://fireflies.voxeldavid.com?quote=1
 	 * @param {object} query_string  Object of current query string values.
 	 */
-	function overrideQuote(query_string) {
-		var quote;
+	function overrideQuote(json_data, query_string) {
+		var quote_id = hooks.quote,
+			keywords = ['quote', 'quote_sub']
+			quote = query_string[keywords[0]],
+			quote_sub = query_string[keywords[1]];
 
-		if (query_string.quote)
-			quote = query_string.quote;
-		else
-			return;
-
-		// code
+		// Setting up the background image override was fairly straightforward,
+		// but this function needs to make use of the generateQuoteMarkup function.
+		//
+		// This should be interesting.
 	}
 });
