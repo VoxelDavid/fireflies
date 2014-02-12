@@ -182,15 +182,26 @@ $(function() {
 	 * @usage http://fireflies.voxeldavid.com?image=1 or ?image=bg-majestic-log.jpg
 	 * @param {object} query_string  Object of current query string values.
 	 */
-	function overrideBackgroundImage(query_string) {
-		var image;
+	function overrideBackgroundImage(json_data, query_string) {
+		var bg_id = hooks.background,
+			keywords = ['bg', 'bg_sub']
+			bg = query_string[keywords[0]],
+			bg_sub = query_string[keywords[1]];
 
-		if (query_string.image)
-			image = query_string.image;
-		else
+		// If the 'bg' and 'bg_sub' values are set and bg is an object.
+		if (bg && bg_sub && typeof bg == 'object') {
+			var queried_image = json_data.backgrounds[bg].image_list[bg_sub];
+
+			$(bg_id).removeClass(/bg-/); // remove any class with 'bg-' in it's name.
+			setBackgroundImage(queried_image);
+
+		// If the 'bg' value is set and is a string.
+		} else if (bg && typeof bg == 'string') {
+			// Search through the 'backgrounds' and 'image_list' arrays to
+			// find the one containing the value of bg.
+		} else {
 			return;
-
-		// code
+		}
 	}
 
 	/**
