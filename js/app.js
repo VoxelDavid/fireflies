@@ -17,12 +17,12 @@ $(function() {
 			quote_array = getRandomQuote(data),
 			url_parameters = getUrlParameters();
 
-		overrideBackgroundImage(url_parameters);
-		overrideQuote(url_parameters);
-
 		setBackgroundImage(image_object);
-
 		generateQuoteMarkup(quote_array);
+
+		overrideBackgroundImage(data, url_parameters);
+		overrideQuote(data, url_parameters);
+
 	});
 
 
