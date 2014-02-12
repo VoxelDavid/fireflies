@@ -218,10 +218,10 @@ $(function() {
 		// Using a single string to navigate the array.
 		// fireflies.voxeldavid.com?bg=majestic-log.jpg
 		} else if (bg && !bg_sub) {
+
 			// Search through the 'backgrounds' and 'image_list' arrays to
 			// find the one containing the value of bg.
-		} else {
-			return;
+
 		}
 	}
 
