@@ -13,11 +13,14 @@ $(function() {
 
 
 	$.getJSON('js/data.json', function(data) {
-		var image_object = getRandomBackground(data),
-			quote_array = getRandomQuote(data),
+		var image_array = randomArrayFromJSON(data, 'backgrounds'),
+			quote_array = randomArrayFromJSON(data, 'quotes'),
 			url_parameters = getUrlParameters();
 
-		setBackgroundImage(image_object);
+		console.log(image_array);
+		console.log(quote_array);
+
+		setBackgroundImage(image_array);
 		generateQuoteMarkup(quote_array);
 
 		overrideBackgroundImage(data, url_parameters);
@@ -40,24 +43,6 @@ $(function() {
 
 
 	/**
-	 * @name getRandomBackground
-	 *
-	 * Hooks into the primary json file, picks a random image from the
-	 * backgrounds array and displays it on the screen.
-	 *
-	 * @param {object} data  The json data gathered from $.getJSON().
-	 */
-	function getRandomBackground(data) {
-		var i = randomArrayIndex(data.backgrounds),
-			backgrounds = data.backgrounds[i],
-
-			j = randomArrayIndex(backgrounds.image_list),
-			chosen_image = backgrounds.image_list[j];
-
-		return chosen_image;
-	}
-
-	/**
 	 * @name setBackgroundImage
 	 *
 	 * Applys the randomly chosen background image to the body.
@@ -68,30 +53,9 @@ $(function() {
 		var bg = hooks.background;
 
 		// Adds the class coresponding to the file name of the image (minus the extension)
-		$(bg).addClass(image.url.replace(/\.[^/.]+$/, ''));
+		$(bg).addClass(image[1].url.replace(/\.[^/.]+$/, ''));
 	}
 
-
-	/**
-	 * @name getRandomQuote
-	 *
-	 * Hooks into the primary json file, picks a random quote from the
-	 * quotes array and displays it on the screen.
-	 *
-	 * @param  {object} data  Json data gathered from $.getJSON().
-	 * @return {array}        Chosen quote and the root where the author/title is stored.
-	 */
-	function getRandomQuote(data) {
-		var i = randomArrayIndex(data.quotes),
-			quote_root = data.quotes[i],
-
-			j = randomArrayIndex(quote_root.quote_list),
-			chosen_quote = quote_root.quote_list[j],
-
-			result = [quote_root, chosen_quote];
-
-		return result;
-	}
 
 	/**
 	 * @name generateQuoteMarkup
@@ -244,5 +208,42 @@ $(function() {
 		// but this function needs to make use of the generateQuoteMarkup function.
 		//
 		// This should be interesting.
+	}
+
+
+	/**
+	 * @randomArrayFromJSON
+	 *
+	 * This function takes care of picking random arrays from the json file
+	 * loaded by jQuery's getJSON function.
+	 *
+	 * Example: var image_array = randomArrayFromJSON(date, 'backgrounds');
+	 *
+	 * In this case the 'backgrounds' string was passed as the array, so when the
+	 * function first initializes its variables it sets 'data' one level deeper as
+	 * the 'backgrounds' array.
+	 *
+	 * @param  {object} data  The json data retrived by jQuery's getJSON function.
+	 * @param  {string} array The array to look through in 'data', as a string.
+	 * @return {array}        The 'root' of the chosen image/quote and its list array.
+	 */
+	function randomArrayFromJSON(json, array) {
+		// Chooses a random Object from the 'backgrounds' or 'quotes'
+		// array, depending on the value of the 'array' parameter.
+		var json_array = json[array];
+			i = randomArrayIndex(json_array),
+			array_root = json_array[i];
+
+		if (array == 'backgrounds')
+			return randomSubArray(array_root.image_list);
+		else if (array == 'quotes')
+			return randomSubArray(array_root.quote_list);
+
+		function randomSubArray(sub_array) {
+			var i = randomArrayIndex(sub_array),
+				result = sub_array[i];
+
+			return [array_root, result]
+		}
 	}
 });
