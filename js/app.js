@@ -45,14 +45,14 @@ $(function() {
 	/**
 	 * @name setBackgroundImage
 	 *
-	 * Applys the randomly chosen background image to the body.
+	 * Applies the randomly chosen background image to the body.
 	 *
 	 * @param {object} image  The randomly chosen image from getBackgroundImage.
 	 */
 	function setBackgroundImage(image) {
 		var bg = hooks.background;
 
-		// Adds the class coresponding to the file name of the image (minus the extension)
+		// Adds the class corresponding to the file name of the image (minus the extension)
 		$(bg).addClass(image[1].url.replace(/\.[^/.]+$/, ''));
 	}
 
@@ -150,7 +150,7 @@ $(function() {
 	 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
 	 * entire backgrounds array to find a 'url' key with that value.
 	 *
-	 * @param  {object} json_data    The json data retrived by jQuery's getJSON function.
+	 * @param  {object} json_data    The json data retrieved by jQuery's getJSON function.
 	 * @param  {object} query_string Object of current query string values.
 	 */
 	function overrideBackgroundImage(json_data, query_string) {
@@ -223,7 +223,7 @@ $(function() {
 	 * function first initializes its variables it sets 'data' one level deeper as
 	 * the 'backgrounds' array.
 	 *
-	 * @param  {object} data  The json data retrived by jQuery's getJSON function.
+	 * @param  {object} data  The json data retrieved by jQuery's getJSON function.
 	 * @param  {string} array The array to look through in 'data', as a string.
 	 * @return {array}        The 'root' of the chosen image/quote and its list array.
 	 */
