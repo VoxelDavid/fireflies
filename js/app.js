@@ -204,7 +204,6 @@ $(function() {
 
 			setBackgroundImage(queried_image);
 
-		// If the 'bg' value is set and is a string.
 		} else if (bg && !bg_sub) {
 			// Search through the 'backgrounds' and 'image_list' arrays to
 			// find the one containing the value of bg.
