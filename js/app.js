@@ -187,11 +187,21 @@ $(function() {
 			bg = query_string[keywords[0]],
 			bg_sub = query_string[keywords[1]];
 
-		// If the 'bg' and 'bg_sub' values are set and bg is an object.
-		if (bg && bg_sub && typeof bg == 'object') {
+		if (bg && bg_sub) {
 			var queried_image = json_data.backgrounds[bg].image_list[bg_sub];
 
-			$(bg_id).removeClass(/bg-/); // remove any class with 'bg-' in it's name.
+			// I think a better solution for setting this up would be to have it
+			// using variables that getRandomBackground can hook in to, so it can
+			// see if the background is set by the query string.
+			//
+			// This is mainly something for me to use, though. It's not intended for
+			// the general public; the people that will be viewing the site.
+
+			// http://stackoverflow.com/a/2644364
+			$(bg_id).attr('class', function(i, c) {
+				return c.replace(/\bbg-\S+/g)
+			});
+
 			setBackgroundImage(queried_image);
 
 		// If the 'bg' value is set and is a string.
