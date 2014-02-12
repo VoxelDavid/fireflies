@@ -175,11 +175,19 @@ $(function() {
 	/**
 	 * @name overrideBackgroundImage
 	 *
-	 * Overrides the getRandomBackground function to display an image
-	 * specified in the query string.
+	 * Overrides the getRandomBackground function to display an image specified
+	 * in the query string.
 	 *
-	 * @usage http://fireflies.voxeldavid.com?image=1 or ?image=bg-majestic-log.jpg
-	 * @param {object} query_string  Object of current query string values.
+	 * You can select the background to display in two ways: numbers or string.
+	 *
+	 * http://fireflies.voxeldavid.com?bg=3&bg=1 — Selects the 4th object under
+	 * 'backgrounds' and the second object under 'image_list'.
+	 *
+	 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
+	 * entire backgrounds array to find a 'url' key with that value.
+	 *
+	 * @param  {object} json_data    The json data retrived by jQuery's getJSON function.
+	 * @param  {object} query_string Object of current query string values.
 	 */
 	function overrideBackgroundImage(json_data, query_string) {
 		var bg_id = hooks.background,
@@ -187,7 +195,10 @@ $(function() {
 			bg = query_string[keywords[0]],
 			bg_sub = query_string[keywords[1]];
 
+		// Using numbers to navigate the arrays.
+		// fireflies.voxeldavid.com?bg=3&bg_sub=1
 		if (bg && bg_sub) {
+
 			var queried_image = json_data.backgrounds[bg].image_list[bg_sub];
 
 			// I think a better solution for setting this up would be to have it
@@ -204,6 +215,8 @@ $(function() {
 
 			setBackgroundImage(queried_image);
 
+		// Using a single string to navigate the array.
+		// fireflies.voxeldavid.com?bg=majestic-log.jpg
 		} else if (bg && !bg_sub) {
 			// Search through the 'backgrounds' and 'image_list' arrays to
 			// find the one containing the value of bg.
