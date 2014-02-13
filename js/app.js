@@ -27,8 +27,6 @@ $(function() {
 
 	var Background = {
 		/**
-		 * @name setImage
-		 *
 		 * Applies the randomly chosen background image to the body.
 		 *
 		 * @param {Array} image_array  The array containing the background image objects.
@@ -86,8 +84,6 @@ $(function() {
 
 	var Quote = {
 		/**
-		 * @name createMarkup
-		 *
 		 * Creates the quote's markup.
 		 *
 		 * @param {Array} quote_array The array containing the randomly chosen quote objects.
@@ -157,8 +153,6 @@ $(function() {
 	};
 
 	/**
-	 * @name randomArrayIndex
-	 *
 	 * Generates an integer value from 0 to the array parameter's length.
 	 *
 	 * @param  {array} array  Array to index.
@@ -169,8 +163,6 @@ $(function() {
 	}
 
 	/**
-	 * @name getUrlParameters
-	 *
 	 * Converts the query string in the browser URL into an object
 	 * for other functions to hook into.
 	 *
@@ -181,10 +173,10 @@ $(function() {
 		// Slightly modified.
 
 		var match,
-			pl     = /\+/g, // Regex for replacing addition symbol with a space
-			search = /([^&=]+)=?([^&]*)/g,
-			decode = function(s) { return decodeURIComponent(s.replace(pl, ' ')); },
-			query  = window.location.search.substring(1),
+			pl      = /\+/g, // Regex for replacing addition symbol with a space
+			search  = /([^&=]+)=?([^&]*)/g,
+			decode  = function(s) { return decodeURIComponent(s.replace(pl, ' ')); },
+			query   = window.location.search.substring(1),
 			results = {};
 
 		while (match = search.exec(query))
@@ -194,8 +186,6 @@ $(function() {
 	}
 
 	/**
-	 * @randomArrayFromJSON
-	 *
 	 * This function takes care of picking random arrays from the json file
 	 * loaded by jQuery's getJSON function.
 	 *
