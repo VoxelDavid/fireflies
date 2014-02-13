@@ -37,7 +37,7 @@ body {
 	font-family: "Droid Sans", sans-serif;
 	text-rendering: optimizelegibility;
 	color: #202020;
-	background-color: #13141A;
+	background-color: #161616;
 }
 
 p {
@@ -64,12 +64,25 @@ a:hover {
 
 
 .no-js {
-	font-size: 1.35em;
+	color: #A1A1A1;
+	font-size: 1.3em;
 	text-align: center;
 }
 
 .no-js .sad {
 	font-size: 1.4em;
+}
+
+.no-js a {
+	color: #DBDBDB;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.no-js a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 
