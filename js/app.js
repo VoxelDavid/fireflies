@@ -18,7 +18,7 @@ $(function() {
 			url_parameters = getUrlParameters();
 
 		background.setImage(image_array);
-		generateQuoteMarkup(quote_array);
+		quote.createMarkup(quote_array);
 
 		overrideBackgroundImage(data, url_parameters);
 		overrideQuote(data, url_parameters);
@@ -42,6 +42,59 @@ $(function() {
 		}
 	}
 
+	var quote = {
+		/**
+		 * @name createMarkup
+		 *
+		 * Creates the quote's markup.
+		 *
+		 * @param {Array} quote_array The array containing the randomly chosen quote objects.
+		 */
+		createMarkup: function(quote_array) {
+			var quote_root = quote_array[0],
+				chosen_quote = quote_array[1];
+
+			$('<p>')
+				.appendTo(hooks.quote)
+				.html(chosen_quote.text);
+
+			$('<cite>')
+				.appendTo(hooks.quote);
+
+			// Create the citation and optional link for the author
+			// of the quote.
+
+			if (chosen_quote.source) {
+				$('<a>')
+					.appendTo(hooks.quote + ' cite')
+					.attr('target', '_blank')
+					.attr('href', chosen_quote.source)
+					.addClass('underline');
+					// The html for the link is set farther down.
+
+				// Used with the 'underline' class.
+				$('<span>')
+					.appendTo(hooks.quote + ' cite a');
+
+				if (quote_root.title) {
+					$(hooks.quote + ' cite a')
+						.attr('title', quote_root.title);
+				}
+			}
+
+			// This mess needs to get redone, though I can't think of how to do it.
+			if (quote_root.author && chosen_quote.source) {
+				$(hooks.quote + ' cite a').prepend(quote_root.author);
+			} else if (quote_root.author) {
+				$(hooks.quote + ' cite').prepend(quote_root.author);
+			} else if (chosen_quote.source) {
+				$(hooks.quote + ' cite a').prepend('Unknown');
+			} else {
+				$(hooks.quote + ' cite').prepend('Unknown');
+			}
+		}
+	}
+
 	/**
 	 * @name randomArrayIndex
 	 *
@@ -53,61 +106,6 @@ $(function() {
 	function randomArrayIndex(array) {
 		return Math.floor(Math.random() * array.length);
 	}
-
-
-	/**
-	 * @name generateQuoteMarkup
-	 *
-	 * Creates the quote's markup.
-	 *
-	 * @param {array}  quote_root   The first level in the 'quotes' array, where
-	 *                              the author/title values are stores.
-	 * @param {object} chosen_quote The quote chosen under quote_root.quote_list.
-	 */
-	function generateQuoteMarkup(quote_array) {
-		var quote_root = quote_array[0],
-			chosen_quote = quote_array[1];
-
-		$('<p>')
-			.appendTo(hooks.quote)
-			.html(chosen_quote.text);
-
-		$('<cite>')
-			.appendTo(hooks.quote);
-
-		// Create the citation and optional link for the author
-		// of the quote.
-
-		if (chosen_quote.source) {
-			$('<a>')
-				.appendTo(hooks.quote + ' cite')
-				.attr('target', '_blank')
-				.attr('href', chosen_quote.source)
-				.addClass('underline');
-				// The html for the link is set farther down.
-
-			// Used with the 'underline' class.
-			$('<span>')
-				.appendTo(hooks.quote + ' cite a');
-
-			if (quote_root.title) {
-				$(hooks.quote + ' cite a')
-					.attr('title', quote_root.title);
-			}
-		}
-
-		// This mess needs to get redone, though I can't think of how to do it.
-		if (quote_root.author && chosen_quote.source) {
-			$(hooks.quote + ' cite a').prepend(quote_root.author);
-		} else if (quote_root.author) {
-			$(hooks.quote + ' cite').prepend(quote_root.author);
-		} else if (chosen_quote.source) {
-			$(hooks.quote + ' cite a').prepend('Unknown');
-		} else {
-			$(hooks.quote + ' cite').prepend('Unknown');
-		}
-	}
-
 
 	/**
 	 * @name getUrlParameters
