@@ -17,7 +17,7 @@ $(function() {
 			quote_array = randomArrayFromJSON(data, 'quotes'),
 			url_parameters = getUrlParameters();
 
-		background.setImage(image_array);
+		background.setImage(image_array[1].url);
 		quote.createMarkup(quote_array);
 
 		overrideBackgroundImage(data, url_parameters);
@@ -33,9 +33,8 @@ $(function() {
 		 *
 		 * @param {Array} image_array  The array containing the background image objects.
 		 */
-		setImage: function(image_array) {
-			var bg = hooks.background,
-				image_url = image_array[1].url;
+		setImage: function(image_url) {
+			var bg = hooks.background;
 
 			// Adds the class corresponding to the file name of the image (minus the extension)
 			$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
@@ -146,10 +145,10 @@ $(function() {
 	 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
 	 * entire backgrounds array to find a 'url' key with that value.
 	 *
-	 * @param  {object} json_data    The json data retrieved by jQuery's getJSON function.
-	 * @param  {object} query_string Object of current query string values.
+	 * @param {Object} json         The json data retrieved by jQuery's getJSON function.
+	 * @param {Object} query_string Object of current query string values.
 	 */
-	function overrideBackgroundImage(json_data, query_string) {
+	function overrideBackgroundImage(data, query_string) {
 		var bg_id = hooks.background,
 			keywords = ['bg', 'bg_sub'],
 			bg = query_string[keywords[0]],
@@ -158,21 +157,14 @@ $(function() {
 		// Using numbers to navigate the arrays.
 		// fireflies.voxeldavid.com?bg=3&bg_sub=1
 		if (bg && bg_sub) {
-			var queried_image = json_data.backgrounds[bg].image_list[bg_sub];
-
-			// I think a better solution for setting this up would be to have it
-			// using variables that getRandomBackground can hook in to, so it can
-			// see if the background is set by the query string.
-			//
-			// This is mainly something for me to use, though. It's not intended for
-			// the general public; the people that will be viewing the site.
+			var queried_image = data.backgrounds[bg].image_list[bg_sub];
 
 			// http://stackoverflow.com/a/2644364
 			$(bg_id).attr('class', function(i, c) {
 				return c.replace(/\bbg-\S+/g);
 			});
 
-			setBackgroundImage(queried_image);
+			background.setImage(queried_image.url);
 
 		// Using a single string to navigate the array.
 		// fireflies.voxeldavid.com?bg=majestic-log.jpg
