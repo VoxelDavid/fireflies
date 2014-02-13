@@ -40,7 +40,7 @@ $(function() {
 			// Adds the class corresponding to the file name of the image (minus the extension)
 			$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
 		}
-	}
+	};
 
 	var quote = {
 		/**
@@ -93,7 +93,7 @@ $(function() {
 				$(hooks.quote + ' cite').prepend('Unknown');
 			}
 		}
-	}
+	};
 
 	/**
 	 * @name randomArrayIndex
@@ -151,14 +151,13 @@ $(function() {
 	 */
 	function overrideBackgroundImage(json_data, query_string) {
 		var bg_id = hooks.background,
-			keywords = ['bg', 'bg_sub']
+			keywords = ['bg', 'bg_sub'],
 			bg = query_string[keywords[0]],
 			bg_sub = query_string[keywords[1]];
 
 		// Using numbers to navigate the arrays.
 		// fireflies.voxeldavid.com?bg=3&bg_sub=1
 		if (bg && bg_sub) {
-
 			var queried_image = json_data.backgrounds[bg].image_list[bg_sub];
 
 			// I think a better solution for setting this up would be to have it
@@ -170,7 +169,7 @@ $(function() {
 
 			// http://stackoverflow.com/a/2644364
 			$(bg_id).attr('class', function(i, c) {
-				return c.replace(/\bbg-\S+/g)
+				return c.replace(/\bbg-\S+/g);
 			});
 
 			setBackgroundImage(queried_image);
@@ -196,7 +195,7 @@ $(function() {
 	 */
 	function overrideQuote(json_data, query_string) {
 		var quote_id = hooks.quote,
-			keywords = ['quote', 'quote_sub']
+			keywords = ['quote', 'quote_sub'],
 			quote = query_string[keywords[0]],
 			quote_sub = query_string[keywords[1]];
 
@@ -226,7 +225,7 @@ $(function() {
 	function randomArrayFromJSON(json, array) {
 		// Chooses a random Object from the 'backgrounds' or 'quotes'
 		// array, depending on the value of the 'array' parameter.
-		var json_array = json[array];
+		var json_array = json[array],
 			i = randomArrayIndex(json_array),
 			array_root = json_array[i];
 
@@ -239,7 +238,7 @@ $(function() {
 			var i = randomArrayIndex(sub_array),
 				result = sub_array[i];
 
-			return [array_root, result]
+			return [array_root, result];
 		}
 	}
 });
