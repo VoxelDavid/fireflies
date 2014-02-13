@@ -17,15 +17,15 @@ $(function() {
 			quote_array = randomArrayFromJSON(data, 'quotes'),
 			url_parameters = getUrlParameters();
 
-		background.setImage(image_array[1].url);
-		quote.createMarkup(quote_array);
+		Background.setImage(image_array[1].url);
+		Quote.createMarkup(quote_array);
 
-		background.queryOverride(data, url_parameters);
-		quote.queryOverride(data, url_parameters);
+		Background.queryOverride(data, url_parameters);
+		Quote.queryOverride(data, url_parameters);
 
 	});
 
-	var background = {
+	var Background = {
 		/**
 		 * @name setImage
 		 *
@@ -71,7 +71,7 @@ $(function() {
 					return c.replace(/\bbg-\S+/g);
 				});
 
-				background.setImage(queried_image.url);
+				Background.setImage(queried_image.url);
 
 			// Using a single string to navigate the array.
 			// fireflies.voxeldavid.com?bg=majestic-log.jpg
@@ -84,7 +84,7 @@ $(function() {
 		}
 	};
 
-	var quote = {
+	var Quote = {
 		/**
 		 * @name createMarkup
 		 *
