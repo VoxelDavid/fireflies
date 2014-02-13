@@ -17,8 +17,7 @@ $(function() {
 			quote_array = randomArrayFromJSON(data, 'quotes'),
 			url_parameters = getUrlParameters();
 
-
-		setBackgroundImage(image_array);
+		background.setImage(image_array);
 		generateQuoteMarkup(quote_array);
 
 		overrideBackgroundImage(data, url_parameters);
@@ -26,6 +25,22 @@ $(function() {
 
 	});
 
+	var background = {
+		/**
+		 * @name setImage
+		 *
+		 * Applies the randomly chosen background image to the body.
+		 *
+		 * @param {Array} image_array  The array containing the background image objects.
+		 */
+		setImage: function(image_array) {
+			var bg = hooks.background,
+				image_url = image_array[1].url;
+
+			// Adds the class corresponding to the file name of the image (minus the extension)
+			$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
+		}
+	}
 
 	/**
 	 * @name randomArrayIndex
@@ -37,21 +52,6 @@ $(function() {
 	 */
 	function randomArrayIndex(array) {
 		return Math.floor(Math.random() * array.length);
-	}
-
-
-	/**
-	 * @name setBackgroundImage
-	 *
-	 * Applies the randomly chosen background image to the body.
-	 *
-	 * @param {object} image  The randomly chosen image from getBackgroundImage.
-	 */
-	function setBackgroundImage(image) {
-		var bg = hooks.background;
-
-		// Adds the class corresponding to the file name of the image (minus the extension)
-		$(bg).addClass(image[1].url.replace(/\.[^/.]+$/, ''));
 	}
 
 
