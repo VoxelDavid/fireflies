@@ -17,8 +17,6 @@ $(function() {
 			quote_array = randomArrayFromJSON(data, 'quotes'),
 			url_parameters = getUrlParameters();
 
-		console.log(image_array);
-		console.log(quote_array);
 
 		setBackgroundImage(image_array);
 		generateQuoteMarkup(quote_array);
