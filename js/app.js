@@ -20,8 +20,8 @@ $(function() {
 		background.setImage(image_array[1].url);
 		quote.createMarkup(quote_array);
 
-		overrideBackgroundImage(data, url_parameters);
-		overrideQuote(data, url_parameters);
+		background.queryOverride(data, url_parameters);
+		quote.queryOverride(data, url_parameters);
 
 	});
 
@@ -38,6 +38,49 @@ $(function() {
 
 			// Adds the class corresponding to the file name of the image (minus the extension)
 			$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
+		},
+
+		/**
+		 * Overrides the getRandomBackground function to display an image specified
+		 * in the query string.
+		 *
+		 * You can select the background to display in two ways: numbers or string.
+		 *
+		 * http://fireflies.voxeldavid.com?bg=3&bg=1 — Selects the 4th object under
+		 * 'backgrounds' and the second object under 'image_list'.
+		 *
+		 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
+		 * entire backgrounds array to find a 'url' key with that value.
+		 *
+		 * @param {Object} json         The json data retrieved by jQuery's getJSON function.
+		 * @param {Object} query_string Object of current query string values.
+		 */
+		queryOverride: function(data, query_string) {
+			var bg_id = hooks.background,
+				keywords = ['bg', 'bg_sub'],
+				bg = query_string[keywords[0]],
+				bg_sub = query_string[keywords[1]];
+
+			// Using numbers to navigate the arrays.
+			// fireflies.voxeldavid.com?bg=3&bg_sub=1
+			if (bg && bg_sub) {
+				var queried_image = data.backgrounds[bg].image_list[bg_sub];
+
+				// http://stackoverflow.com/a/2644364
+				$(bg_id).attr('class', function(i, c) {
+					return c.replace(/\bbg-\S+/g);
+				});
+
+				background.setImage(queried_image.url);
+
+			// Using a single string to navigate the array.
+			// fireflies.voxeldavid.com?bg=majestic-log.jpg
+			} else if (bg && !bg_sub) {
+
+				// Search through the 'backgrounds' and 'image_list' arrays to
+				// find the one containing the value of bg.
+
+			}
 		}
 	};
 
@@ -91,6 +134,25 @@ $(function() {
 			} else {
 				$(hooks.quote + ' cite').prepend('Unknown');
 			}
+		},
+
+		/**
+		 * Overrides the getRandomQuote function to display a quote
+		 * specified in the query string.
+		 *
+		 * @usage http://fireflies.voxeldavid.com?quote=1
+		 * @param {object} query_string  Object of current query string values.
+		 */
+		queryOverride: function(json_data, query_string) {
+			var quote_id = hooks.quote,
+				keywords = ['quote', 'quote_sub'],
+				quote = query_string[keywords[0]],
+				quote_sub = query_string[keywords[1]];
+
+			// Setting up the background image override was fairly straightforward,
+			// but this function needs to make use of the generateQuoteMarkup function.
+			//
+			// This should be interesting.
 		}
 	};
 
@@ -130,73 +192,6 @@ $(function() {
 
 		return results;
 	}
-
-	/**
-	 * @name overrideBackgroundImage
-	 *
-	 * Overrides the getRandomBackground function to display an image specified
-	 * in the query string.
-	 *
-	 * You can select the background to display in two ways: numbers or string.
-	 *
-	 * http://fireflies.voxeldavid.com?bg=3&bg=1 — Selects the 4th object under
-	 * 'backgrounds' and the second object under 'image_list'.
-	 *
-	 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
-	 * entire backgrounds array to find a 'url' key with that value.
-	 *
-	 * @param {Object} json         The json data retrieved by jQuery's getJSON function.
-	 * @param {Object} query_string Object of current query string values.
-	 */
-	function overrideBackgroundImage(data, query_string) {
-		var bg_id = hooks.background,
-			keywords = ['bg', 'bg_sub'],
-			bg = query_string[keywords[0]],
-			bg_sub = query_string[keywords[1]];
-
-		// Using numbers to navigate the arrays.
-		// fireflies.voxeldavid.com?bg=3&bg_sub=1
-		if (bg && bg_sub) {
-			var queried_image = data.backgrounds[bg].image_list[bg_sub];
-
-			// http://stackoverflow.com/a/2644364
-			$(bg_id).attr('class', function(i, c) {
-				return c.replace(/\bbg-\S+/g);
-			});
-
-			background.setImage(queried_image.url);
-
-		// Using a single string to navigate the array.
-		// fireflies.voxeldavid.com?bg=majestic-log.jpg
-		} else if (bg && !bg_sub) {
-
-			// Search through the 'backgrounds' and 'image_list' arrays to
-			// find the one containing the value of bg.
-
-		}
-	}
-
-	/**
-	 * @name overrideQuote
-	 *
-	 * Overrides the getRandomQuote function to display a quote
-	 * specified in the query string.
-	 *
-	 * @usage http://fireflies.voxeldavid.com?quote=1
-	 * @param {object} query_string  Object of current query string values.
-	 */
-	function overrideQuote(json_data, query_string) {
-		var quote_id = hooks.quote,
-			keywords = ['quote', 'quote_sub'],
-			quote = query_string[keywords[0]],
-			quote_sub = query_string[keywords[1]];
-
-		// Setting up the background image override was fairly straightforward,
-		// but this function needs to make use of the generateQuoteMarkup function.
-		//
-		// This should be interesting.
-	}
-
 
 	/**
 	 * @randomArrayFromJSON
