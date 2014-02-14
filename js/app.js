@@ -11,7 +11,6 @@ $(function() {
 		quote:      '#js-quote'
 	};
 
-
 	$.getJSON('js/data.json', function(data) {
 		var image_array = randomArrayFromJSON(data, 'backgrounds'),
 			quote_array = randomArrayFromJSON(data, 'quotes'),
@@ -22,7 +21,6 @@ $(function() {
 
 		Background.queryOverride(data, url_parameters);
 		Quote.queryOverride(data, url_parameters);
-
 	});
 
 	var Background = {
@@ -206,6 +204,12 @@ $(function() {
 			i = randomArrayIndex(json_array),
 			array_root = json_array[i];
 
+		// I know I can make this work for any array name. Perhaps searching
+		// for '*_list' could find the image and quote array for each object.
+		//
+		// I could also potentially turn this function recursive to look through
+		// the chosen object's *_list array, instead of using the randomSubArray
+		// function.
 		if (array == 'backgrounds')
 			return randomSubArray(array_root.image_list);
 		else if (array == 'quotes')
