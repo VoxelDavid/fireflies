@@ -180,8 +180,8 @@ a:hover {
 
 .anim-slide-down {
 	position: relative;
-	-webkit-animation: slide-down 1.25s;
-	animation: slide-down 1.25s;
+	-webkit-animation: slide-down 1.25s ease-out;
+	animation: slide-down 1.25s ease-out;
 }
 
 @-webkit-keyframes fade-in {
@@ -194,11 +194,11 @@ a:hover {
 }
 
 @-webkit-keyframes slide-down {
-	from { bottom: 2em; }
+	from { bottom: 3em; }
 	to   { bottom: 0; }
 }
 @keyframes slide-down {
-	from { bottom: 2em; }
+	from { bottom: 3em; }
 	to   { bottom: 0; }
 }
 
