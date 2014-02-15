@@ -2,14 +2,10 @@
 
 (function($) {
 	$.Fireflies = function(options) {
-		/**
-		 * Fragment identifiers in the HTML for JavaScript hooks.
-		 * @type {Object}
-		 */
-		var hooks = {
-			background: '#js-bg',
-			quote:      '#js-quote'
-		};
+		var options = $.extend({
+			background_hook: '#js-bg',
+			quote_hook: '#js-quote'
+		}, options);
 
 		$.getJSON('js/data.json', function(data) {
 			var image_array = randomArrayFromJSON(data, 'backgrounds'),
@@ -30,7 +26,7 @@
 			 * @param {Array} image_array  The array containing the background image objects.
 			 */
 			setImage: function(image_url) {
-				var bg = hooks.background;
+				var bg = options.background_hook;
 
 				// Adds the class corresponding to the file name of the image (minus the extension)
 				$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
@@ -52,7 +48,7 @@
 			 * @param {Object} query_string Object of current query string values.
 			 */
 			queryOverride: function(data, query_string) {
-				var bg_id = hooks.background,
+				var bg_id = options.background_hook,
 					keywords = ['bg', 'bg_sub'],
 					bg = query_string[keywords[0]],
 					bg_sub = query_string[keywords[1]];
@@ -87,22 +83,23 @@
 			 * @param {Array} quote_array The array containing the randomly chosen quote objects.
 			 */
 			createMarkup: function(quote_array) {
-				var quote_root = quote_array[0],
+				var quote_id = options.quote_hook,
+					quote_root = quote_array[0],
 					chosen_quote = quote_array[1];
 
 				$('<p>')
-					.appendTo(hooks.quote)
+					.appendTo(quote_id)
 					.html(chosen_quote.text);
 
 				$('<cite>')
-					.appendTo(hooks.quote);
+					.appendTo(quote_id);
 
 				// Create the citation and optional link for the author
 				// of the quote.
 
 				if (chosen_quote.source) {
 					$('<a>')
-						.appendTo(hooks.quote + ' cite')
+						.appendTo(quote_id + ' cite')
 						.attr('target', '_blank')
 						.attr('href', chosen_quote.source)
 						.addClass('underline');
@@ -110,23 +107,23 @@
 
 					// Used with the 'underline' class.
 					$('<span>')
-						.appendTo(hooks.quote + ' cite a');
+						.appendTo(quote_id + ' cite a');
 
 					if (quote_root.title) {
-						$(hooks.quote + ' cite a')
+						$(quote_id + ' cite a')
 							.attr('title', quote_root.title);
 					}
 				}
 
 				// This mess needs to get redone, though I can't think of how to do it.
 				if (quote_root.author && chosen_quote.source) {
-					$(hooks.quote + ' cite a').prepend(quote_root.author);
+					$(quote_id + ' cite a').prepend(quote_root.author);
 				} else if (quote_root.author) {
-					$(hooks.quote + ' cite').prepend(quote_root.author);
+					$(quote_id + ' cite').prepend(quote_root.author);
 				} else if (chosen_quote.source) {
-					$(hooks.quote + ' cite a').prepend('Unknown');
+					$(quote_id + ' cite a').prepend('Unknown');
 				} else {
-					$(hooks.quote + ' cite').prepend('Unknown');
+					$(quote_id + ' cite').prepend('Unknown');
 				}
 			},
 
