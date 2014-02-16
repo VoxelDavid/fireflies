@@ -139,7 +139,7 @@
 			 * @param {object} query_string  Object of current query string values.
 			 */
 			queryOverride: function(json_data, query_string) {
-				var quote_id = hooks.quote,
+				var quote_id = options.quote_hook,
 					keywords = ['quote', 'quote_sub'],
 					quote = query_string[keywords[0]],
 					quote_sub = query_string[keywords[1]];
