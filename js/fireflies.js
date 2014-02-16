@@ -12,14 +12,21 @@
 				quote_data = extractArrayData(data, 'quotes'),
 				url_parameters = getUrlParameters();
 
-			Background.setImage(image_data.chosen_object.url);
-			Quote.createMarkup(quote_data);
-
 			Background.queryOverride(data, url_parameters);
 			Quote.queryOverride(data, url_parameters);
+
+			if (Background.query_override === false) {
+				Background.setImage(image_data.chosen_object.url);
+			}
+
+			if (Quote.query_override === false) {
+				Quote.createMarkup(quote_data);
+			}
 		});
 
 		var Background = {
+			query_override: false,
+
 			/**
 			 * Applies the randomly chosen background image to the body.
 			 *
@@ -58,26 +65,20 @@
 				// fireflies.voxeldavid.com?bg=3&bg_sub=1
 				if (bg && bg_sub) {
 					var queried_image = data.backgrounds[bg].image_list[bg_sub];
+
+					this.query_override = true;
 					setQueriedImage(queried_image.url);
-
-				// Using a single string to navigate the array.
-				// fireflies.voxeldavid.com?bg=majestic-log.jpg
-				} else if (bg && !bg_sub) {
-
 				}
 
 				function setQueriedImage(image) {
-					// http://stackoverflow.com/a/2644364
-					$(bg_id).attr('class', function(undefined, attr_class) {
-						return attr_class.replace(/\bbg-\S+/g);
-					});
-
 					Background.setImage(image);
 				}
 			}
 		};
 
 		var Quote = {
+			query_override: false,
+
 			/**
 			 * Creates the quote's markup.
 			 *
