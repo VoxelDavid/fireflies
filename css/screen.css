@@ -116,19 +116,28 @@ a:hover {
 }
 
 
-.background-image {
+.background-image,
+.background-overlay {
 	position: fixed;
 	top: 0;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+}
+
+.background-image {
 	z-index: -100; /* Set the background below everything else. */
 	-webkit-background-size: cover;
 	background-size: cover;
 }
 
-/* Background image classes, applied by the setBackgroundImage()
-   function in js/app.js */
+.background-overlay {
+	background-image: url("/img/overlay.png");
+	background-repeat: repeat;
+}
+
+/* Background image classes, applied by the setImage method
+   in js/fireflies.js */
 
 .bg-autumn-grass        { background-image: url("/img/bg-autumn-grass.jpg") }
 
