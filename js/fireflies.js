@@ -8,12 +8,12 @@
 		}, options);
 
 		$.getJSON('js/data.json', function(data) {
-			var image_array = randomArrayFromJSON(data, 'backgrounds'),
-				quote_array = randomArrayFromJSON(data, 'quotes'),
+			var image_data = extractArrayData(data, 'backgrounds'),
+				quote_data = extractArrayData(data, 'quotes'),
 				url_parameters = getUrlParameters();
 
-			Background.setImage(image_array[1].url);
-			Quote.createMarkup(quote_array);
+			Background.setImage(image_data.chosen_object.url);
+			Quote.createMarkup(quote_data);
 
 			Background.queryOverride(data, url_parameters);
 			Quote.queryOverride(data, url_parameters);
@@ -84,8 +84,12 @@
 			 */
 			createMarkup: function(quote_array) {
 				var quote_id = options.quote_hook,
-					quote_root = quote_array[0],
-					chosen_quote = quote_array[1];
+					quote_root = quote_array.root,
+					chosen_quote = quote_array.chosen_object;
+
+				// This function is far too big and doing far too much at once.
+				// I need to abstract it into smaller functions. That should take
+				// care of a lot of the mess.
 
 				$('<p>')
 					.appendTo(quote_id)
@@ -184,7 +188,7 @@
 		 * This function takes care of picking random arrays from the json file
 		 * loaded by jQuery's getJSON function.
 		 *
-		 * Example: var image_array = randomArrayFromJSON(date, 'backgrounds');
+		 * Example: var image_array = extractArrayData(date, 'backgrounds');
 		 *
 		 * In this case the 'backgrounds' string was passed as the array, so when the
 		 * function first initializes its variables it sets 'data' one level deeper as
@@ -194,30 +198,35 @@
 		 * @param  {string} array The array to look through in 'data', as a string.
 		 * @return {array}        The 'root' of the chosen image/quote and its list array.
 		 */
-		function randomArrayFromJSON(json, array) {
-			// Chooses a random Object from the 'backgrounds' or 'quotes'
-			// array, depending on the value of the 'array' parameter.
-			var json_array = json[array],
-				i = randomArrayIndex(json_array),
-				array_root = json_array[i];
+		function extractArrayData(json, array_name) {
+			var prime_array = json[array_name], // This being the 'backgrounds' or 'quotes' array.
+				prime_object = getRandomObject(prime_array),
+				list_array = getListArray(prime_object),
+				chosen_object = getRandomObject(list_array);
 
-			// I know I can make this work for any array name. Perhaps searching
-			// for '*_list' could find the image and quote array for each object.
-			//
-			// I could also potentially turn this function recursive to look through
-			// the chosen object's *_list array, instead of using the randomSubArray
-			// function.
-			if (array == 'backgrounds')
-				return randomSubArray(array_root.image_list);
-			else if (array == 'quotes')
-				return randomSubArray(array_root.quote_list);
-
-			function randomSubArray(sub_array) {
-				var i = randomArrayIndex(sub_array),
-					result = sub_array[i];
-
-				return [array_root, result];
+			function getRandomObject(array) {
+				var index = randomArrayIndex(array),
+					result = array[index];
+				return result;
 			}
+
+			// Finds a key with the word "list" in it's name.
+			function getListArray(object_to_search) {
+				var regex = /\*list/,
+					list_array;
+
+				for (regex in object_to_search)
+					list_array = object_to_search[regex];
+
+				return list_array;
+			}
+
+			return {
+				'root': prime_array,
+				'prime_object': prime_object,
+				'list_array': list_array,
+				'chosen_object': chosen_object
+			};
 		}
 	};
 })(jQuery);
