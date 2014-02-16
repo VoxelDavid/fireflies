@@ -57,21 +57,23 @@
 				// fireflies.voxeldavid.com?bg=3&bg_sub=1
 				if (bg && bg_sub) {
 					var queried_image = data.backgrounds[bg].image_list[bg_sub];
-
-					// http://stackoverflow.com/a/2644364
-					$(bg_id).attr('class', function(i, c) {
-						return c.replace(/\bbg-\S+/g);
-					});
-
-					Background.setImage(queried_image.url);
+					setQueriedImage(queried_image.url);
 
 				// Using a single string to navigate the array.
 				// fireflies.voxeldavid.com?bg=majestic-log.jpg
 				} else if (bg && !bg_sub) {
 
+				}
+
+				function setQueriedImage(image) {
+					// http://stackoverflow.com/a/2644364
+					$(bg_id).attr('class', function(undefined, attr_class) {
+						return attr_class.replace(/\bbg-\S+/g);
+					});
 					// Search through the 'backgrounds' and 'image_list' arrays to
 					// find the one containing the value of bg.
 
+					Background.setImage(image);
 				}
 			}
 		};
