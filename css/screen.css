@@ -64,25 +64,25 @@ a:hover {
 
 
 .no-js {
-	color: #A1A1A1;
-	font-size: 1.3em;
+	color: #DBDBDB;
+	font-size: 1.2em;
 	text-align: center;
 }
 
 .no-js .sad {
-	font-size: 1.4em;
+	font-size: 1.25em;
 }
 
 .no-js a {
-	color: #DBDBDB;
-	-webkit-transition: all .2s;
-	transition: all .2s;
+	color: #759C7E;
 }
 
-.no-js a:hover {
-	text-decoration: none;
-	color: #FFFFFF;
-	text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+	.no-js a:hover {
+		text-decoration: none;
+	}
+
+.no-js .underline span {
+	background-color: #8EAD95;
 }
 
 
