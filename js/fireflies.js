@@ -2,7 +2,7 @@
 
 (function($) {
 	$.Fireflies = function(options) {
-		var options = $.extend({
+		options = $.extend({
 			background_hook: '#js-bg',
 			quote_hook: '#js-quote'
 		}, options);
