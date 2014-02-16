@@ -28,7 +28,8 @@
 			setImage: function(image_url) {
 				var bg = options.background_hook;
 
-				// Adds the class corresponding to the file name of the image (minus the extension)
+				// Adds the class corresponding to the file name of
+				// the image (minus the extension)
 				$(bg).addClass(image_url.replace(/\.[^/.]+$/, ''));
 			},
 
@@ -70,8 +71,6 @@
 					$(bg_id).attr('class', function(undefined, attr_class) {
 						return attr_class.replace(/\bbg-\S+/g);
 					});
-					// Search through the 'backgrounds' and 'image_list' arrays to
-					// find the one containing the value of bg.
 
 					Background.setImage(image);
 				}
@@ -89,9 +88,6 @@
 					quote_root = quote_array.root,
 					chosen_quote = quote_array.chosen_object;
 
-				// This function is far too big and doing far too much at once.
-				// I need to abstract it into smaller functions. That should take
-				// care of a lot of the mess.
 
 				$('<p>')
 					.appendTo(quote_id)
@@ -171,8 +167,6 @@
 		 */
 		function getUrlParameters() {
 			// source: http://stackoverflow.com/a/2880929
-			// Slightly modified.
-
 			var match,
 				pl      = /\+/g, // Regex for replacing addition symbol with a space
 				search  = /([^&=]+)=?([^&]*)/g,
