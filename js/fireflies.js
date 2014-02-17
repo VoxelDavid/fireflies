@@ -4,7 +4,9 @@
 	$.Fireflies = function(options) {
 		options = $.extend({
 			background_hook: '#js-bg',
-			quote_hook: '#js-quote'
+			quote_hook: '#js-quote',
+			url_background_override: true,
+			url_quote_override: true
 		}, options);
 
 		$.getJSON('js/data.json', function(data) {
@@ -12,16 +14,17 @@
 				quote_data = extractArrayData(data, 'quotes'),
 				url_parameters = getUrlParameters();
 
-			Background.queryOverride(data, url_parameters);
-			Quote.queryOverride(data, url_parameters);
+			if (options.url_background_override)
+				Background.queryOverride(data, url_parameters);
 
-			if (Background.query_override === false) {
+			if (options.url_quote_override)
+				Quote.queryOverride(data, url_parameters);
+
+			if (!Background.query_override)
 				Background.setImage(image_data.chosen_object.url);
-			}
 
-			if (Quote.query_override === false) {
+			if (!Quote.query_override)
 				Quote.createMarkup(quote_data);
-			}
 		});
 
 		var Background = {
