@@ -67,6 +67,8 @@
 					this.query_override = true;
 					queried_image = data.backgrounds[bg];
 
+					// If 'bg_sub' is specified in the url use it to move through the
+					// image_list array, otherwise just set the index to the first element.
 					if (bg_sub)
 						queried_image = queried_image.image_list[bg_sub];
 					else
@@ -140,24 +142,46 @@
 			},
 
 			/**
-			 * Overrides the getRandomQuote function to display a quote
-			 * specified in the query string.
+			 * This method is used to override the main function from applying a
+			 * random background image.
 			 *
-			 * @usage http://fireflies.voxeldavid.com?quote=1
-			 * @param {object} query_string  Object of current query string values.
+			 *   // First object in 'quotes', defaults to first object in 'quote_list' array.
+			 *   fireflies.voxeldavid.com/?quote=0
+			 *
+			 * If the 'quote_list' array inside the quote object has more than one
+			 * object, you can use the 'quote_sub' variable to iterate over it.
+			 *
+			 *   // First object in 'quotes', second object in 'quote_list' array.
+			 *   fireflies.voxeldavid.com/?quote=0&quote_sub=1
+			 *
+			 * @param {JSON}   data         The json data retrieved by jQuery's getJSON function.
+			 * @param {Object} query_string Contains the query string gathered from getUrlParameters().
 			 */
-			queryOverride: function(json_data, query_string) {
-				var quote_id = options.quote_hook,
-					keywords = ['quote', 'quote_sub'],
+			queryOverride: function(data, query_string) {
+				var keywords = ['quote', 'quote_sub'],
 					quote = query_string[keywords[0]],
-					quote_sub = query_string[keywords[1]];
+					quote_sub = query_string[keywords[1]],
 
-				// Setting up the background image override was fairly straightforward,
-				// but this function needs to make use of the generateQuoteMarkup function.
-				//
-				// This should be interesting.
+					queried_quote = data.quotes[quote],
+					list_array;
+
+				if (quote) {
+					this.query_override = true;
+
+					// If 'quote_sub' is specified in the url use it to move through the
+					// image_list array, otherwise just set the index to the first element.
+					if (quote_sub)
+						list_array = queried_quote.quote_list[quote_sub];
+					else
+						list_array = queried_quote.quote_list[0];
+
+					// createMarkup method needs to be revised, then I can
+					// uncomment the below line.
+					// this.displayQuote(queried_quote, list_array);
+				}
 			}
 		};
+
 		// Used primarily to find images by value in the Background.queryOverride method.
 		// https://gist.github.com/iwek/3924925#file-find-in-json-js
 		function getObjects(obj, key, val) {
