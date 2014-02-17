@@ -166,11 +166,11 @@
 				if (obj.hasOwnProperty(i)) {
 					if (typeof obj[i] == 'object') {
 						objects = objects.concat(getObjects(obj[i], key, val));
-					} else if (i == key && obj[i] == val || i == key && val == '') {
+					} else if (i == key && obj[i] == val || i == key && val === '') {
 						// if key matches and value matches or if key matches and value is not passed
 						// (eliminating the case where key matches but passed value does not)
 						objects.push(obj);
-					} else if (obj[i] == val && key == '') {
+					} else if (obj[i] == val && key === '') {
 						//only add if the object is not already in the array
 						if (objects.lastIndexOf(obj) == -1) {
 							objects.push(obj);
@@ -244,8 +244,11 @@
 				var regex = /\*list/,
 					list_array;
 
-				for (regex in object_to_search)
-					list_array = object_to_search[regex];
+				for (regex in object_to_search) {
+					if (object_to_search[regex]) {
+						list_array = object_to_search[regex];
+					}
+				}
 
 				return list_array;
 			}
