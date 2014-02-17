@@ -56,22 +56,30 @@
 			 * @param {Object} query_string Object of current query string values.
 			 */
 			queryOverride: function(data, query_string) {
-				var bg_id = options.background_hook,
-					keywords = ['bg', 'bg_sub'],
+				var keywords = ['bg', 'bg_sub'],
 					bg = query_string[keywords[0]],
 					bg_sub = query_string[keywords[1]];
 
+				this.query_override = true;
+
 				// Using numbers to navigate the arrays.
 				// fireflies.voxeldavid.com?bg=3&bg_sub=1
-				if (bg && bg_sub) {
-					var queried_image = data.backgrounds[bg].image_list[bg_sub];
+				if (!isNaN(bg)) { // is a number
+					var queried_image = data.backgrounds[bg];
 
-					this.query_override = true;
-					setQueriedImage(queried_image.url);
-				}
+					if (bg_sub)
+						queried_image = queried_image.image_list[bg_sub];
+					else
+						queried_image = queried_image.image_list[0];
 
-				function setQueriedImage(image) {
-					Background.setImage(image);
+					this.setImage(queried_image.url);
+
+				// Using a single string to navigate the array.
+				// fireflies.voxeldavid.com?bg=majestic-log.jpg
+				} else {
+					var queried_image = getKeyByValue(data.backgrounds, bg);
+
+					this.setImage(queried_image.url);
 				}
 			}
 		};
