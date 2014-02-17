@@ -60,12 +60,11 @@
 					bg = query_string[keywords[0]],
 					bg_sub = query_string[keywords[1]];
 
-				this.query_override = true;
-
 				// Using numbers to navigate the arrays.
 				// fireflies.voxeldavid.com?bg=3&bg_sub=1
 				if (!isNaN(bg)) { // is a number
 					var queried_image = data.backgrounds[bg];
+					this.query_override = true;
 
 					if (bg_sub)
 						queried_image = queried_image.image_list[bg_sub];
@@ -76,8 +75,9 @@
 
 				// Using a single string to navigate the array.
 				// fireflies.voxeldavid.com?bg=majestic-log.jpg
-				} else {
+				} else if (bg) {
 					var queried_image = getKeyByValue(data.backgrounds, bg);
+					this.query_override = true;
 
 					this.setImage(queried_image.url);
 				}
