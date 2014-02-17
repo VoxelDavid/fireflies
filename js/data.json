@@ -86,6 +86,19 @@
 		},
 
 		{
+			"author": "Joni Niemel\u00E4",
+			"homepage": "http://www.joniniemela.com/",
+
+			"image_list":
+			[
+				{
+					"url": "bg-snowy-pine.jpg",
+					"source": "http://www.joniniemela.com/wp-content/uploads/7080.jpg"
+				}
+			]
+		},
+
+		{
 			"author": "Nuri",
 
 			"image_list":
@@ -137,8 +150,18 @@
 			"image_list":
 			[
 				{
+					"url": "bg-dock-street-market.jpg",
+					"source": "http://i.imgur.com/uGAulGd.jpg"
+				},
+
+				{
 					"url": "bg-snow.jpg",
 					"source": "/img/hd/snow.png"
+				},
+
+				{
+					"url": "bg-staircase-leaf",
+					"source": "http://i.imgur.com/Vjdh12S.jpg"
 				}
 			]
 		}
