@@ -150,8 +150,18 @@
 			"image_list":
 			[
 				{
+					"url": "bg-blossoming-pathway.jpg",
+					"source": "http://imgur.com/gallery/R59cJ"
+				},
+
+				{
 					"url": "bg-dock-street-market.jpg",
 					"source": "http://i.imgur.com/uGAulGd.jpg"
+				},
+
+				{
+					"url": "bg-pagoda.jpg",
+					"source": "http://imgur.com/gallery/R59cJ"
 				},
 
 				{
@@ -162,6 +172,11 @@
 				{
 					"url": "bg-staircase-leaf",
 					"source": "http://i.imgur.com/Vjdh12S.jpg"
+				},
+
+				{
+					"url": "bg-tokyo-tower.jpg",
+					"source": "http://i.imgur.com/X2tZxzn.jpg"
 				}
 			]
 		}
