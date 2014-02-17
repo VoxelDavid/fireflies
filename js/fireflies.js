@@ -58,13 +58,14 @@
 			queryOverride: function(data, query_string) {
 				var keywords = ['bg', 'bg_sub'],
 					bg = query_string[keywords[0]],
-					bg_sub = query_string[keywords[1]];
+					bg_sub = query_string[keywords[1]],
+					queried_image;
 
 				// Using numbers to navigate the arrays.
 				// fireflies.voxeldavid.com?bg=3&bg_sub=1
 				if (!isNaN(bg)) { // is a number
-					var queried_image = data.backgrounds[bg];
 					this.query_override = true;
+					queried_image = data.backgrounds[bg];
 
 					if (bg_sub)
 						queried_image = queried_image.image_list[bg_sub];
@@ -76,10 +77,10 @@
 				// Using a single string to navigate the array.
 				// fireflies.voxeldavid.com?bg=majestic-log.jpg
 				} else if (bg) {
-					var queried_image = getKeyByValue(data.backgrounds, bg);
 					this.query_override = true;
+					queried_image = getObjects(data.backgrounds, 'url', bg);
 
-					this.setImage(queried_image.url);
+					this.setImage(queried_image[0].url);
 				}
 			}
 		};
@@ -157,6 +158,29 @@
 				// This should be interesting.
 			}
 		};
+		// Used primarily to find images by value in the Background.queryOverride method.
+		// https://gist.github.com/iwek/3924925#file-find-in-json-js
+		function getObjects(obj, key, val) {
+			var objects = [];
+			for (var i in obj) {
+				if (obj.hasOwnProperty(i)) {
+					if (typeof obj[i] == 'object') {
+						objects = objects.concat(getObjects(obj[i], key, val));
+					} else if (i == key && obj[i] == val || i == key && val == '') {
+						// if key matches and value matches or if key matches and value is not passed
+						// (eliminating the case where key matches but passed value does not)
+						objects.push(obj);
+					} else if (obj[i] == val && key == '') {
+						//only add if the object is not already in the array
+						if (objects.lastIndexOf(obj) == -1) {
+							objects.push(obj);
+						}
+					}
+				}
+			}
+			return objects;
+		}
+
 
 		/**
 		 * Generates an integer value from 0 to the array parameter's length.
