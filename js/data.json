@@ -26,6 +26,29 @@
 		},
 
 		{
+			"author": "Jim Morrison",
+
+			"quote_list":
+			[
+				{
+					"text": "Friends can help each other &ndash; A true friend is someone who lets you have total freedom to be yourself &ndash; and especially to feel. Or, not feel. Whatever you happen to be feeling at the moment is fine with them. That's what real love amounts to &ndash; letting a person be what he really is."
+				}
+			]
+		},
+
+		{
+			"author": "&ldquo;Spaceship Earth&rdquo;",
+
+			"quote_list":
+			[
+				{
+					"text": "Like a grand and miraculous spaceship, our planet has sailed through the universe of time. And for a brief moment, we have been among its many passengers.",
+					"source": "http://www.imdb.com/title/tt0111251/quotes?item=qt0159348"
+				}
+			]
+		},
+
+		{
 			"author": "Steven &ldquo;Boogie&rdquo; Williams",
 
 			"quote_list":
@@ -36,6 +59,18 @@
 				}
 			]
 		},
+
+		{
+			"author": "Steve Jobs",
+
+			"quote_list":
+			[
+				{
+					"text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of other's opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary."
+				}
+			]
+		},
+
 
 		{
 			"author": "Steven Furtick",
@@ -60,6 +95,14 @@
 				{
 					"text": "Worrying does not take away tomorrow's troubles. It takes away today's peace.",
 					"source": "http://chibird.com/post/74443627055/"
+				},
+
+				{
+					"text": "The feeling of being in your arms, even just for a second when you hug me is the best feeling in the world."
+				},
+
+				{
+					"text": "I believe that two people are connected at the heart, and it doesn't matter what you do, or who you are or where you live; there are no boundaries or barriers if two people are destined to be together."
 				}
 			]
 		}
