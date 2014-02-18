@@ -100,7 +100,7 @@
 			 */
 			createMarkup: function(quote_array) {
 				var quote_id = options.quote_hook,
-					quote_root = quote_array.root,
+					quote_root = quote_array.prime_object,
 					chosen_quote = quote_array.chosen_object;
 
 
@@ -133,15 +133,14 @@
 				}
 
 				// This mess needs to get redone, though I can't think of how to do it.
-				if (quote_root.author && chosen_quote.source) {
+				if (quote_root.author && chosen_quote.source)
 					$(quote_id + ' cite a').prepend(quote_root.author);
-				} else if (quote_root.author) {
+				else if (quote_root.author)
 					$(quote_id + ' cite').prepend(quote_root.author);
-				} else if (chosen_quote.source) {
+				else if (chosen_quote.source)
 					$(quote_id + ' cite a').prepend('Unknown');
-				} else {
+				else
 					$(quote_id + ' cite').prepend('Unknown');
-				}
 			},
 
 			/**
