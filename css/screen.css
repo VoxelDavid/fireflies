@@ -195,15 +195,15 @@ a:hover {
 /* 5. Animations
  ============================================================================ */
 
-.anim-fade-in {
+.fade-in {
 	-webkit-animation: fade-in 2s;
 	animation: fade-in 2s;
 }
 
-.anim-slide-down {
+.slide-down {
 	position: relative;
-	-webkit-animation: slide-down 1.25s ease-out;
-	animation: slide-down 1.25s ease-out;
+	-webkit-animation: slide-down 1.25s;
+	animation: slide-down 1.25s;
 }
 
 @-webkit-keyframes fade-in {
