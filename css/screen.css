@@ -63,29 +63,6 @@ a:hover {
 }
 
 
-.no-js {
-	color: #DBDBDB;
-	font-size: 1.2em;
-	text-align: center;
-}
-
-.no-js .sad {
-	font-size: 1.25em;
-}
-
-.no-js a {
-	color: #FFB24D;
-}
-
-	.no-js a:hover {
-		text-decoration: none;
-	}
-
-.no-js .underline span {
-	background-color: #FFB24D;
-}
-
-
 .quote {
 	color: #F0EEDF;
 	text-shadow: 0 2px 3px #000000;
@@ -113,6 +90,29 @@ a:hover {
 
 .quote cite:before {
 	content: "\2014";
+}
+
+
+.no-js {
+	color: #DBDBDB;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.no-js .sad {
+	font-size: 1.25em;
+}
+
+.no-js a {
+	color: #FFB24D;
+}
+
+	.no-js a:hover {
+		text-decoration: none;
+	}
+
+.no-js .underline span {
+	background-color: #FFB24D;
 }
 
 
