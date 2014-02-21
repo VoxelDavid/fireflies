@@ -128,11 +128,13 @@
 			"image_list":
 			[
 				{
+					"name": "Lanterns in the Sky",
 					"url": "bg-lanterns-in-the-sky.jpg",
 					"source": "http://fav.me/d5wx4k7"
 				},
 
 				{
+					"name": "The Ocean Sky",
 					"url": "bg-the-ocean-sky.jpg",
 					"source": "http://fav.me/d5zs9y1"
 				}
@@ -158,6 +160,7 @@
 			"image_list":
 			[
 				{
+					"name": "Leap",
 					"url": "bg-leap.jpg",
 					"source": "http://fav.me/d614tj2"
 				}
@@ -170,6 +173,7 @@
 			"image_list":
 			[
 				{
+					"name": "Noc Kuplay",
 					"url": "bg-noc-kupaly.jpg",
 					"source": "https://secure.flickr.com/photos/pedro4d/5859464596/"
 				}
@@ -182,16 +186,19 @@
 			"image_list":
 			[
 				{
+					"name": "Autumn Grass",
 					"url": "bg-autumn-grass.jpg",
 					"source": "/img/hd/autumn-grass.jpg"
 				},
 
 				{
+					"name": "Majestic Log",
 					"url": "bg-majestic-log.jpg",
 					"source": "/img/hd/majestic-log.jpg"
 				},
 
 				{
+					"name": "Light to a Roadway",
 					"url": "bg-pathway-lamp.jpg",
 					"source": "/img/hd/pathway-lamp.jpg"
 				}
