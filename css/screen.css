@@ -17,11 +17,11 @@
  ============================================================================ */
 
 /* Normalize 3.0.0 */
-@import url(normalize.css);
+@import url("normalize.css");
 
 
 /* Fonts */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif);
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif");
 
 
 /* 2. Base
