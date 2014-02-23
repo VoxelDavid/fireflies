@@ -33,7 +33,7 @@
 			/**
 			 * Applies the randomly chosen background image to the body.
 			 *
-			 * @param {Array} image_array  The array containing the background image objects.
+			 * @param {String} image_url  A string value containing the file name of the image to load.
 			 */
 			setImage: function(image_url) {
 				var bg = options.background_hook;
@@ -44,19 +44,21 @@
 			},
 
 			/**
-			 * Overrides the getRandomBackground function to display an image specified
-			 * in the query string.
+			 * This method is used to override the main function from applying a random
+			 * background image.
 			 *
-			 * You can select the background to display in two ways: numbers or string.
+			 *   // First object in 'backgrounds', defaults to first object in the
+			 *   // 'image_list' array.
+			 *   fireflies.voxeldavid.com/?bg=0
 			 *
-			 * http://fireflies.voxeldavid.com?bg=3&bg=1 — Selects the 4th object under
-			 * 'backgrounds' and the second object under 'image_list'.
+			 * If the 'image_list' array inside the quote object has more than one
+			 * object, you can use the 'bg_sub' variable to iterate over it.
 			 *
-			 * http://fireflies.voxeldavid.com?bg=majestic-log.jpg — Searches through the
-			 * entire backgrounds array to find a 'url' key with that value.
+			 *   // First object in 'backgrounds', second object in 'image_list' array.
+			 *   fireflies.voxeldavid.com/?bg=0&bg_sub=1
 			 *
-			 * @param {Object} json         The json data retrieved by jQuery's getJSON function.
-			 * @param {Object} query_string Object of current query string values.
+			 * @param {Object} data         The json data retrieved by jQuery's getJSON function.
+			 * @param {Object} query_string Contains the query string extracted with getUrlParameters().
 			 */
 			queryOverride: function(data, query_string) {
 				var keywords = ['bg', 'bg_sub'],
@@ -80,7 +82,7 @@
 					this.setImage(queried_image.url);
 
 				// Using a single string to navigate the array.
-				// fireflies.voxeldavid.com?bg=majestic-log.jpg
+				// fireflies.voxeldavid.com?bg=bg-majestic-log.jpg
 				} else if (bg) {
 					this.query_override = true;
 					queried_image = getObjects(data.backgrounds, 'url', bg);
@@ -94,7 +96,7 @@
 			query_override: false,
 
 			/**
-			 * Creates the quote's markup.
+			 * Generates the quote's markup.
 			 *
 			 * @param {Array} quote_array The array containing the randomly chosen quote objects.
 			 */
@@ -144,8 +146,7 @@
 			},
 
 			/**
-			 * This method is used to override the main function from applying a
-			 * random background image.
+			 * This method is used to override the main function from applying a random quote.
 			 *
 			 *   // First object in 'quotes', defaults to first object in 'quote_list' array.
 			 *   fireflies.voxeldavid.com/?quote=0
@@ -156,8 +157,8 @@
 			 *   // First object in 'quotes', second object in 'quote_list' array.
 			 *   fireflies.voxeldavid.com/?quote=0&quote_sub=1
 			 *
-			 * @param {JSON}   data         The json data retrieved by jQuery's getJSON function.
-			 * @param {Object} query_string Contains the query string gathered from getUrlParameters().
+			 * @param {Object} data         The json data retrieved by jQuery's getJSON function.
+			 * @param {Object} query_string Contains the query string extracted with getUrlParameters().
 			 */
 			queryOverride: function(data, query_string) {
 				var keywords = ['quote', 'quote_sub'],
