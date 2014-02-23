@@ -105,32 +105,25 @@
 					quote_root = quote_array.prime_object,
 					chosen_quote = quote_array.chosen_object;
 
-
-				$('<p>')
+				var p = $('<p>')
 					.appendTo(quote_id)
-					.html(chosen_quote.text);
+					.html(chosen_quote.text),
 
-				$('<cite>')
+					cite = $('<cite>')
 					.appendTo(quote_id);
 
-				// Create the citation and optional link for the author
-				// of the quote.
-
 				if (chosen_quote.source) {
-					$('<a>')
-						.appendTo(quote_id + ' cite')
-						.attr('target', '_blank')
-						.attr('href', chosen_quote.source)
-						.addClass('underline');
-						// The html for the link is set farther down.
+					var link = $('<a>')
+							.appendTo(cite)
+							.prop('target', '_blank')
+							.prop('href', chosen_quote.source)
+							.addClass('underline'),
 
-					// Used with the 'underline' class.
-					$('<span>')
-						.appendTo(quote_id + ' cite a');
+						underline = $('<span>')
+							.appendTo(link);
 
 					if (quote_root.title) {
-						$(quote_id + ' cite a')
-							.attr('title', quote_root.title);
+						link.prop('title', quote_root.title);
 					}
 				}
 
