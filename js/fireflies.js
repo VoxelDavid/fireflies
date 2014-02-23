@@ -95,6 +95,15 @@
 		var Quote = {
 			query_override: false,
 
+			display: function(quote_root, chosen_quote) {
+				var quote_id = options.quote_hook;
+
+				console.log(quote_root);
+				console.log(chosen_quote);
+
+				// display the quote
+			},
+
 			/**
 			 * Generates the quote's markup.
 			 *
@@ -171,9 +180,7 @@
 					else
 						list_array = queried_quote.quote_list[0];
 
-					// createMarkup method needs to be revised, then I can
-					// uncomment the below line.
-					// this.displayQuote(queried_quote, list_array);
+					this.display(queried_quote, list_array);
 				}
 			}
 		};
