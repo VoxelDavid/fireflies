@@ -1,0 +1,14 @@
+{
+  "name": "fireflies",
+  "version": "2.0.0",
+  "homepage": "http://fireflies.voxeldavid.com",
+  "authors": [
+    "David Minnerly <me@voxeldavid.com>"
+  ],
+  "description": "A simple web application that displays a hand-picked quote and background image every time it's loaded.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+
+  }
+}
