@@ -4,5 +4,6 @@
 var app = angular.module('firefliesApp', []);
 
 app.controller('MainCtrl', function($scope) {
-	$scope.hello = 'Hello, world!';
+	$scope.quote = 'Hello, World!';
+	$scope.author = 'Brian Kernighan';
 });
