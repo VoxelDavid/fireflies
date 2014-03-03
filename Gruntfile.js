@@ -44,10 +44,6 @@ module.exports = function(grunt) {
 				files: ['<%= app.jsDir %>/{,*/}*.js'],
 				tasks: ['newer:jshint:lint']
 			},
-			bower: {
-				files: ['<%= app.bowerDir %>/{,*/}*'],
-				tasks: ['bowerInstall']
-			},
 			livereload: {
 				files: [
 					'<%= app.base %>/{,*/}*.html',
@@ -69,26 +65,11 @@ module.exports = function(grunt) {
 			lint: [
 				'<%= app.base %>/{,*/}*.js'
 			]
-		},
-
-
-		// Build Tasks
-
-		// Automatically inject tags for installed Bower packages.
-		bowerInstall: {
-			// Options reference:
-			// https://github.com/stephenplusplus/grunt-bower-install#getting-started
-
-			app: {
-				src: ['<%= app.base %>/index.html'],
-				ignorePath: '<%= app.base %>/'
-			}
 		}
 
 	});
 
 	grunt.registerTask('serve', [
-		'bowerInstall',
 		'connect',
 		'watch',
 		'jshint'
