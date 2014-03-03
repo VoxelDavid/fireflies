@@ -1,9 +1,7 @@
 
 'use strict';
 
-/* Controllers */
-
-app.controller('FirefliesCtrl', function($scope) {
+app.controller('FirefliesCtrl', function($scope, Quote, Photo) {
 	$scope.quote = 'Hello, World!';
 	$scope.author = 'Brian Kernighan';
 });
