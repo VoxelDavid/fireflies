@@ -20,10 +20,10 @@ module.exports = function(grunt) {
 
 		// Runs a web server for viewing the app.
 		connect: {
-			options: {
-				// Options reference:
-				// https://github.com/gruntjs/grunt-contrib-connect#options
+			// Options reference:
+			// https://github.com/gruntjs/grunt-contrib-connect#options
 
+			options: {
 				port: 8000,
 				hostname: 'localhost',
 				base: ['<%= app.base %>'],
@@ -34,9 +34,10 @@ module.exports = function(grunt) {
 
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
+			// Options reference:
+			// https://github.com/gruntjs/grunt-contrib-watch#settings
+
 			options: {
-				// Options reference:
-				// https://github.com/gruntjs/grunt-contrib-watch#settings
 				livereload: true
 			},
 			js: {
@@ -58,10 +59,10 @@ module.exports = function(grunt) {
 
 		// Make sure code styles are up to par and there are no obvious mistakes
 		jshint: {
-			options: {
-				// Options reference:
-				// https://github.com/gruntjs/grunt-contrib-jshint#options
+			// Options reference:
+			// https://github.com/gruntjs/grunt-contrib-jshint#options
 
+			options: {
 				jshintrc: '.jshintrc',
 				reporter: require('jshint-stylish')
 			},
