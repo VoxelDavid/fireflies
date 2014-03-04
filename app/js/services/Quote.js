@@ -12,22 +12,22 @@ app.factory('Quote', function() {
 			    j = randomArrayIndex(randomQuote.quote_list),
 			    randomQuoteListObj = randomQuote.quote_list[j],
 
-			    author = randomQuote.author,
 			    quote = randomQuoteListObj.text,
+			    quoteAuthor = randomQuote.author,
 			    quoteSource,
 			    quoteTitle;
 
-				if (randomQuote.hasOwnProperty('title')) {
-					quoteTitle = randomQuote.title;
-				}
+			if (randomQuoteListObj.hasOwnProperty('source')) {
+				quoteSource = randomQuoteListObj.source;
+			}
 
-				if (randomQuoteListObj.hasOwnProperty('source')) {
-					quoteSource = randomQuoteListObj.source;
-				}
+			if (randomQuote.hasOwnProperty('title')) {
+				quoteTitle = randomQuote.title;
+			}
 
 			return {
-				author: author,
 				quote: quote,
+				author: quoteAuthor,
 				source: quoteSource,
 				title: quoteTitle
 			};
