@@ -2,7 +2,8 @@
 'use strict';
 
 var app = angular.module('firefliesApp', [
-	'ngRoute'
+	'ngRoute',
+	'ngSanitize'
 ]);
 
 app.config(function($routeProvider) {
