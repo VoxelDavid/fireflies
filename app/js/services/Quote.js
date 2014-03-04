@@ -10,27 +10,22 @@ app.factory('Quote', function() {
 			    randomQuote = quoteArray[i],
 
 			    j = randomArrayIndex(randomQuote.quote_list),
-			    randomQuoteListObj = randomQuote.quote_list[j],
+			    randomQuoteListObj = randomQuote.quote_list[j];
 
-			    quote = randomQuoteListObj.text,
-			    quoteAuthor = randomQuote.author,
-			    quoteSource,
-			    quoteTitle;
+			var quoteData = {
+				quote: randomQuoteListObj.text,
+				author: randomQuote.author
+			};
 
 			if (randomQuoteListObj.hasOwnProperty('source')) {
-				quoteSource = randomQuoteListObj.source;
+				quoteData.source = randomQuoteListObj.source;
 			}
 
 			if (randomQuote.hasOwnProperty('title')) {
-				quoteTitle = randomQuote.title;
+				quoteData.title = randomQuote.title;
 			}
 
-			return {
-				quote: quote,
-				author: quoteAuthor,
-				source: quoteSource,
-				title: quoteTitle
-			};
+			return quoteData;
 		}
 	};
 
