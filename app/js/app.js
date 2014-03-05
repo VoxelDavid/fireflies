@@ -13,5 +13,6 @@ app.config(function($routeProvider, $locationProvider) {
 		.when('/', {
 			templateUrl: 'views/index.html',
 			controller: 'FirefliesCtrl'
-		});
+		})
+		.otherwise({ redirectTo: '/' });
 });
