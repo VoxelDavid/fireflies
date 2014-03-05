@@ -17,6 +17,10 @@ app.factory('Quote', function() {
 				author: randomQuote.author
 			};
 
+			if (!quoteData.author) {
+				quoteData.author = 'Unknown';
+			}
+
 			if (randomQuoteListObj.hasOwnProperty('source')) {
 				quoteData.source = randomQuoteListObj.source;
 			}
