@@ -5,12 +5,12 @@
 
 		<cite ng-if="!source" ng-bind-html="author"></cite>
 
-		<cite ng-if="source && !title">
-			<a ng-bind-html="author" href="{{ source }}" target="_blank"></a>
+		<cite ng-if="source &amp;&amp; !title">
+			<a ng-bind-html="author" class="underline" href="{{ source }}" target="_blank"></a>
 		</cite>
 
-		<cite ng-if="source && title">
-			<a ng-bind-html="author" href="{{ source }}" title="{{ title }}" target="_blank"></a>
+		<cite ng-if="source &amp;&amp; title">
+			<a ng-bind-html="author" class="underline" href="{{ source }}" title="{{ title }}" target="_blank"></a>
 		</cite>
 	</blockquote>
 </section>
