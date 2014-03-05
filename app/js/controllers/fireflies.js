@@ -8,9 +8,9 @@ app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote, Backgro
 
 		// Quote and author are applied via the ng-bind-html directive,
 		// which uses $sanitize the preserve html tags and entities.
-		$scope.quote = quoteData.quote;
+		$scope.quote  = quoteData.quote;
 		$scope.author = quoteData.author;
 		$scope.source = quoteData.source;
-		$scope.title = quoteData.title;
+		$scope.title  = quoteData.title;
 	});
 });
