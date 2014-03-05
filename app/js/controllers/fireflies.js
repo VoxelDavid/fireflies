@@ -1,7 +1,7 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote, Photo) {
+app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote, Background) {
 	Data.then(function(json) {
 		var quoteData = Quote.getRandom(json);
 
