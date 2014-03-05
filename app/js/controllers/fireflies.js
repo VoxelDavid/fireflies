@@ -3,7 +3,8 @@
 
 app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote, Background) {
 	Data.then(function(json) {
-		var quoteData = Quote.getRandom(json);
+		var quoteData = Quote.getRandom(json),
+		    imageData = Background.getRandom(json);
 
 		// Quote and author are applied via the ng-bind-html directive,
 		// which uses $sanitize the preserve html tags and entities.
