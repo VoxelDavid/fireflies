@@ -42,6 +42,10 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
+			bower: {
+				files: ['<%= app.bowerDir %>/{,*/}*'],
+				tasks: ['bowerInstall']
+			},
 			js: {
 				files: ['<%= app.jsDir %>/{,*/}*.js'],
 				tasks: ['newer:jshint:lint']
@@ -73,6 +77,17 @@ module.exports = function(grunt) {
 		/* Build tasks
 		   ======================================================================== */
 
+		// Automatically inject Bower components into the app.
+		bowerInstall: {
+			// Options reference:
+			// https://github.com/stephenplusplus/grunt-bower-install#getting-started
+
+			app: {
+				src: ['<%= app.base %>/index.html'],
+				ignorePath: '<%= app.base %>/'
+			}
+		},
+
 		// Reads HTML for usemin blocks to enable smart builds that automatically
 		// concat, minify and revision files. Creates configurations in memory so
 		// additional tasks can operate on them.
@@ -100,6 +115,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('serve', [
+		'bowerInstall',
 		'connect',
 		'watch',
 		'jshint'
@@ -108,6 +124,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		// concat, cssmin and uglify tasks are handled by Usemin.
 
+		'bowerInstall',
 		'useminPrepare',
 		'concat',
 		'cssmin',

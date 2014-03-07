@@ -11,7 +11,9 @@
 		<title>Fireflies</title>
 
 		<!-- build:css css/screen.css -->
+		<!-- bower:css -->
 		<link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+		<!-- endbower -->
 		<link rel="stylesheet" href="css/screen.css">
 		<!-- endbuild -->
 	</head>
@@ -33,9 +35,11 @@
 		<div ng-view></div>
 
 		<!-- build:js js/vendor.min.js -->
-		<script src="bower_components/angular/angular.min.js"></script>
-		<script src="bower_components/angular-route/angular-route.min.js"></script>
-		<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+		<!-- bower:js -->
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<!-- endbower -->
 		<!-- endbuild -->
 
 		<!-- build:js js/app.min.js -->
