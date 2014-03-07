@@ -122,7 +122,20 @@ module.exports = function(grunt) {
 
 			html: ['<%= app.buildDir %>/{,*/}*.html'],
 			css: ['<%= app.buildDir %>/css/{,*/}*.css']
+		},
 
+		// Allow the use of non-minsafe AngularJS files. Automatically makes it
+		// minsafe compatible so Uglify does not destroy the ng references
+		ngmin: {
+			// Options reference:
+			// https://github.com/btford/grunt-ngmin#example
+
+			build: {
+				expand: true,
+				cwd: '<%= app.tempDir %>/concat/js',
+				src: '*.js',
+				dest: '<%= app.tempDir %>/concat/js'
+			}
 		}
 
 	});
@@ -140,6 +153,7 @@ module.exports = function(grunt) {
 		'bowerInstall',
 		'useminPrepare',
 		'concat',
+		'ngmin',
 		'cssmin',
 		'copy:build',
 		'uglify',
