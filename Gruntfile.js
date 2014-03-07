@@ -88,6 +88,19 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Copies remaining files to places other tasks can use
+		copy: {
+			build: {
+				expand: true,
+				cwd: '<%= app.base %>',
+				src: [
+					// Don't copy any .js files, those are handled by the 'usemin' tasks.
+					'*.html'
+				],
+				dest: '<%= app.buildDir %>'
+			}
+		},
+
 		// Reads HTML for usemin blocks to enable smart builds that automatically
 		// concat, minify and revision files. Creates configurations in memory so
 		// additional tasks can operate on them.
@@ -128,6 +141,7 @@ module.exports = function(grunt) {
 		'useminPrepare',
 		'concat',
 		'cssmin',
+		'copy:build',
 		'uglify',
 		'usemin'
 	]);
