@@ -28,10 +28,19 @@ module.exports = function(grunt) {
 			options: {
 				port: 8000,
 				hostname: 'localhost',
-				base: ['<%= app.base %>'],
 				livereload: true
 			},
-			server: {}
+			dev: {
+				options: {
+					base: '<%= app.base %>'
+				}
+			},
+			build: {
+				options: {
+					livereload: false,
+					base: '<%= app.buildDir %>'
+				}
+			}
 		},
 
 		// Watches files for changes and runs tasks based on the changed files
@@ -140,12 +149,21 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('serve', [
-		'bowerInstall',
-		'connect',
-		'watch',
-		'jshint'
-	]);
+	grunt.registerTask('serve', function(target) {
+		if (target === 'build') {
+			return grunt.task.run([
+				'build',
+				'connect:build:keepalive'
+			]);
+		}
+
+		grunt.task.run([
+			'bowerInstall',
+			'connect:dev',
+			'watch',
+			'jshint'
+		])
+	})
 
 	grunt.registerTask('build', [
 		// concat, cssmin and uglify tasks are handled by Usemin.
