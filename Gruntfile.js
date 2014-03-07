@@ -12,6 +12,8 @@ module.exports = function(grunt) {
 		// Project settings.
 		app: {
 			base:     'app',
+			tempDir:  '.temp',
+			buildDir: 'build',
 			jsDir:    '<%= app.base %>/js',
 			cssDir:   '<%= app.base %>/css',
 			imageDir: '<%= app.base %>/img',
@@ -65,6 +67,34 @@ module.exports = function(grunt) {
 			lint: [
 				'<%= app.base %>/{,*/}*.js'
 			]
+		},
+
+
+		/* Build tasks
+		   ======================================================================== */
+
+		// Reads HTML for usemin blocks to enable smart builds that automatically
+		// concat, minify and revision files. Creates configurations in memory so
+		// additional tasks can operate on them.
+		useminPrepare: {
+			// Options reference:
+			// https://github.com/yeoman/grunt-usemin#options
+
+			options: {
+				dest: '<%= app.buildDir %>',
+				staging: '<%= app.tempDir %>'
+			},
+			html: '<%= app.base %>/index.html'
+		},
+
+		// Performs rewrites based on the useminPrepare configuration.
+		usemin: {
+			// Options reference:
+			// https://github.com/yeoman/grunt-usemin#options-1
+
+			html: ['<%= app.buildDir %>/{,*/}*.html'],
+			css: ['<%= app.buildDir %>/css/{,*/}*.css']
+
 		}
 
 	});
@@ -73,6 +103,16 @@ module.exports = function(grunt) {
 		'connect',
 		'watch',
 		'jshint'
+	]);
+
+	grunt.registerTask('build', [
+		// concat, cssmin and uglify tasks are handled by Usemin.
+
+		'useminPrepare',
+		'concat',
+		'cssmin',
+		'uglify',
+		'usemin'
 	]);
 
 	grunt.registerTask('default', ['serve']);

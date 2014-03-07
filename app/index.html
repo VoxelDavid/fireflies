@@ -10,8 +10,10 @@
 
 		<title>Fireflies</title>
 
+		<!-- build:css css/screen.css -->
 		<link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
 		<link rel="stylesheet" href="css/screen.css">
+		<!-- endbuild -->
 	</head>
 
 	<body class="fade-in" ng-app="firefliesApp">
@@ -30,13 +32,18 @@
 
 		<div ng-view></div>
 
+		<!-- build:js js/vendor.min.js -->
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 		<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+		<!-- endbuild -->
+
+		<!-- build:js js/app.min.js -->
 		<script src="js/app.js"></script>
 		<script src="js/controllers/fireflies.js"></script>
 		<script src="js/services/background.js"></script>
 		<script src="js/services/quote.js"></script>
 		<script src="js/services/data.js"></script>
+		<!-- endbuild -->
 	</body>
 </html>
