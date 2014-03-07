@@ -118,6 +118,9 @@ module.exports = function(grunt) {
 				cwd: '<%= app.base %>',
 				src: [
 					// Don't copy any .js files, those are handled by the 'usemin' tasks.
+					'img/**',
+					'views/**',
+					'js/data.json',
 					'*.html'
 				],
 				dest: '<%= app.buildDir %>'
