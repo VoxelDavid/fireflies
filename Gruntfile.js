@@ -97,6 +97,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Empties the directories to start fresh.
+		clean: {
+			build: [
+				// Remove everything inside the build directories.
+				'<%= app.tempDir %>/*',
+				'<%= app.buildDir %>/*'
+			],
+			buildDirs: [
+				// Remove the build directories themselves.
+				'<%= app.tempDir %>',
+				'<%= app.buildDir %>'
+			]
+		},
+
 		// Copies remaining files to places other tasks can use
 		copy: {
 			build: {
@@ -169,6 +183,7 @@ module.exports = function(grunt) {
 		// concat, cssmin and uglify tasks are handled by Usemin.
 
 		'bowerInstall',
+		'clean:build',
 		'useminPrepare',
 		'concat',
 		'ngmin',
