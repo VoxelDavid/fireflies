@@ -13,12 +13,20 @@ app.factory('Background', function() {
 			    randomImageListObj = randomImage.image_list[j];
 
 			var imageData = {
-				author: randomImage.author,
-				name: randomImageListObj.name,
-				url: randomImageListObj.url,
-				className: randomImageListObj.url.replace(/\.\w*/g, ''), // Remove the file extension
-				source: randomImageListObj.source
+				className: randomImageListObj.className,
 			};
+
+			if (randomImage.hasOwnProperty('author')) {
+				imageData.author = randomImage.author;
+			}
+
+			if (randomImageListObj.hasOwnProperty('name')) {
+				imageData.name = randomImageListObj.name;
+			}
+
+			if (randomImageListObj.hasOwnProperty('source')) {
+				imageData.source = randomImageListObj.source;
+			}
 
 			return imageData;
 		}
