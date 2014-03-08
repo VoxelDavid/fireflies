@@ -199,7 +199,6 @@ module.exports = function(grunt) {
 			'connect:dev',
 			'compass:compile',
 			'watch',
-			'jshint'
 		])
 	})
 
