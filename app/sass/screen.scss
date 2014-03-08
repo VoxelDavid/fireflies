@@ -63,30 +63,30 @@ a:hover {
 .quote {
 	color: #F0EEDF;
 	text-shadow: 0 2px 3px #000000;
-}
 
-.quote p {
-	font-size: 1.4em;
-	font-family: "Droid Serif", serif;
-	text-align: center;
-}
+	p {
+		font-size: 1.4em;
+		font-family: "Droid Serif", serif;
+		text-align: center;
+	}
 
-.quote a {
-	color: #FFDD76;
-	text-shadow: 0 2px 3px #453C16;
-	font-weight: bold;
-	text-decoration: none;
-}
+	a {
+		color: #FFDD76;
+		text-shadow: 0 2px 3px #453C16;
+		font-weight: bold;
+		text-decoration: none;
+	}
 
-.quote cite {
-	font-style: normal;
-	text-align: right;
-	display: block;
-	margin-right: 6em; /* Push the citation inward a bit */
-}
+	cite {
+		font-style: normal;
+		text-align: right;
+		display: block;
+		margin-right: 6em; /* Push the citation inward a bit */
+	}
 
-.quote cite:before {
-	content: "\2014";
+	cite:before {
+		content: "\2014";
+	}
 }
 
 
@@ -94,22 +94,22 @@ a:hover {
 	color: #DBDBDB;
 	font-size: 1.2em;
 	text-align: center;
-}
 
-.no-js .sad {
-	font-size: 1.25em;
-}
+	a {
+		color: #FFB24D;
+	}
 
-.no-js a {
-	color: #FFB24D;
-}
-
-	.no-js a:hover {
+	a:hover {
 		text-decoration: none;
 	}
 
-.no-js .underline span {
-	background-color: #FFB24D;
+	.sad {
+		font-size: 1.25em;
+	}
+
+	.underline span {
+		background-color: #FFB24D;
+	}
 }
 
 
@@ -170,19 +170,19 @@ a:hover {
 
 .underline {
 	display: inline-block;
-}
 
-.underline span {
-	background-color: #FFDD76;
-	position: relative;
-	display: block;
-	height: 2px;
-	@include scaleX(0);
-	@include transition(all, 0.2s, ease-in-out);
-}
+	span {
+		position: relative;
+		height: 2px;
+		display: block;
+		background-color: #FFDD76;
+		@include scaleX(0);
+		@include transition(all 0.2s ease-in-out);
+	}
 
-.underline:hover span {
-	@include scaleX(1);
+	&:hover span {
+		@include scaleX(1);
+	}
 }
 
 
