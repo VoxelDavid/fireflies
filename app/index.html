@@ -21,7 +21,7 @@
 
 	<body class="fade-in" ng-app="firefliesApp">
 		<!-- <div class="background-overlay"></div> -->
-		<div class="background-image"></div>
+		<div class="background-image {{backgroundClass}}" ng-controller="BackgroundCtrl"></div>
 
 		<section class="container  no-js  slide-down">
 			<noscript>
@@ -46,6 +46,7 @@
 		<!-- build:js js/app.min.js -->
 		<script src="js/app.js"></script>
 		<script src="js/controllers/fireflies.js"></script>
+		<script src="js/controllers/background.js"></script>
 		<script src="js/services/background.js"></script>
 		<script src="js/services/quote.js"></script>
 		<script src="js/services/data.js"></script>
