@@ -188,10 +188,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('serve', function(target) {
 		if (target === 'build') {
-			return grunt.task.run([
-				'build',
-				'connect:build:keepalive'
-			]);
+			return grunt.task.run(['connect:build:keepalive']);
 		}
 
 		grunt.task.run([
