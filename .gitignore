@@ -5,6 +5,7 @@
 
 .temp/
 build/
+app/css
 
 ##
 ## Bower

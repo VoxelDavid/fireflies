@@ -16,6 +16,7 @@ module.exports = function(grunt) {
 			buildDir: 'build',
 			jsDir:    '<%= app.base %>/js',
 			cssDir:   '<%= app.base %>/css',
+			sassDir:  '<%= app.base %>/sass',
 			imageDir: '<%= app.base %>/img',
 			bowerDir: '<%= app.base %>/bower_components'
 		},
@@ -54,6 +55,10 @@ module.exports = function(grunt) {
 			bower: {
 				files: ['<%= app.bowerDir %>/{,*/}*'],
 				tasks: ['bowerInstall']
+			},
+			compass: {
+				files: ['<%= app.sassDir %>/{,*/}*.{scss,sass}'],
+				tasks: ['compass:compile']
 			},
 			js: {
 				files: ['<%= app.jsDir %>/{,*/}*.js'],
@@ -97,6 +102,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Compiles Sass to CSS and generates necessary files if requested
+		compass: {
+			// Options reference:
+			// https://github.com/gruntjs/grunt-contrib-compass#options
+
+			options: {
+				sassDir: '<%= app.sassDir %>',
+				cssDir: '<%= app.cssDir %>',
+				importPath: '<%= app.bowerDir %>',
+				noLineComments: true
+			},
+			compile: {}
+		},
+
 		// Empties the directories to start fresh.
 		clean: {
 			build: [
@@ -107,7 +126,8 @@ module.exports = function(grunt) {
 			buildDirs: [
 				// Remove the build directories themselves.
 				'<%= app.tempDir %>',
-				'<%= app.buildDir %>'
+				'<%= app.buildDir %>',
+				'.sass-cache'
 			]
 		},
 
@@ -177,6 +197,7 @@ module.exports = function(grunt) {
 		grunt.task.run([
 			'bowerInstall',
 			'connect:dev',
+			'compass:compile',
 			'watch',
 			'jshint'
 		])
@@ -188,6 +209,7 @@ module.exports = function(grunt) {
 		'bowerInstall',
 		'clean:build',
 		'useminPrepare',
+		'compass:compile',
 		'concat',
 		'ngmin',
 		'cssmin',
