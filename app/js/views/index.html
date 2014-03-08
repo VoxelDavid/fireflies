@@ -1,0 +1,16 @@
+
+<section class="container  content  slide-down">
+	<blockquote class="quote">
+		<p class="quote-text" ng-bind-html="quote"></p>
+
+		<cite ng-if="!source" ng-bind-html="author" class="quote-source"></cite>
+
+		<cite class="quote-source">
+			<a ng-if="source &amp;&amp; !title" ng-bind-html="author"
+			   href="{{ source }}" target="_blank"></a>
+
+			<a ng-if="source &amp;&amp; title" ng-bind-html="author"
+			   href="{{ source }}" title="{{ title }}" target="_blank"></a>
+		</cite>
+	</blockquote>
+</section>

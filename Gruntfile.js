@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 				src: [
 					// Don't copy any .js files, those are handled by the 'usemin' tasks.
 					'img/**',
-					'views/**',
+					'js/views/**',
 					'js/data.json',
 					'*.html'
 				],

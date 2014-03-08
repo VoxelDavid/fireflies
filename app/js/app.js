@@ -11,7 +11,7 @@ app.config(function($routeProvider, $locationProvider) {
 
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/index.html',
+			templateUrl: 'js/views/index.html',
 			controller: 'FirefliesCtrl'
 		})
 		.otherwise({ redirectTo: '/' });
