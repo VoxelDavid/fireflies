@@ -129,13 +129,13 @@
 			[
 				{
 					"name": "Lanterns in the Sky",
-					"url": "bg-lanterns-in-the-sky.jpg",
+					"className": "bg-lanterns-in-the-sky",
 					"source": "http://fav.me/d5wx4k7"
 				},
 
 				{
 					"name": "The Ocean Sky",
-					"url": "bg-the-ocean-sky.jpg",
+					"className": "bg-the-ocean-sky",
 					"source": "http://fav.me/d5zs9y1"
 				}
 			]
@@ -148,7 +148,7 @@
 			"image_list":
 			[
 				{
-					"url": "bg-snowy-pine.jpg",
+					"className": "bg-snowy-pine",
 					"source": "http://www.joniniemela.com/wp-content/uploads/7080.jpg"
 				}
 			]
@@ -161,7 +161,7 @@
 			[
 				{
 					"name": "Leap",
-					"url": "bg-leap.jpg",
+					"className": "bg-leap",
 					"source": "http://fav.me/d614tj2"
 				}
 			]
@@ -174,7 +174,7 @@
 			[
 				{
 					"name": "Noc Kuplay",
-					"url": "bg-noc-kupaly.jpg",
+					"className": "bg-noc-kupaly",
 					"source": "https://secure.flickr.com/photos/pedro4d/5859464596/"
 				}
 			]
@@ -187,19 +187,19 @@
 			[
 				{
 					"name": "Autumn Grass",
-					"url": "bg-autumn-grass.jpg",
+					"className": "bg-autumn-grass",
 					"source": "/img/hd/autumn-grass.jpg"
 				},
 
 				{
 					"name": "Majestic Log",
-					"url": "bg-majestic-log.jpg",
+					"className": "bg-majestic-log",
 					"source": "/img/hd/majestic-log.jpg"
 				},
 
 				{
 					"name": "Light to a Roadway",
-					"url": "bg-pathway-lamp.jpg",
+					"className": "bg-pathway-lamp",
 					"source": "/img/hd/pathway-lamp.jpg"
 				}
 			]
@@ -211,32 +211,32 @@
 			"image_list":
 			[
 				{
-					"url": "bg-blossoming-pathway.jpg",
+					"className": "bg-blossoming-pathway",
 					"source": "http://imgur.com/gallery/R59cJ"
 				},
 
 				{
-					"url": "bg-dock-street-market.jpg",
+					"className": "bg-dock-street-market",
 					"source": "http://i.imgur.com/uGAulGd.jpg"
 				},
 
 				{
-					"url": "bg-pagoda.jpg",
+					"className": "bg-pagoda",
 					"source": "http://imgur.com/gallery/R59cJ"
 				},
 
 				{
-					"url": "bg-snow.jpg",
+					"className": "bg-snow",
 					"source": "/img/hd/snow.png"
 				},
 
 				{
-					"url": "bg-staircase-leaf.jpg",
+					"className": "bg-staircase-leaf",
 					"source": "http://i.imgur.com/Vjdh12S.jpg"
 				},
 
 				{
-					"url": "bg-tokyo-tower.jpg",
+					"className": "bg-tokyo-tower",
 					"source": "http://i.imgur.com/X2tZxzn.jpg"
 				}
 			]
