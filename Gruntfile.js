@@ -49,9 +49,6 @@ module.exports = function(grunt) {
 			// Options reference:
 			// https://github.com/gruntjs/grunt-contrib-watch#settings
 
-			options: {
-				livereload: true
-			},
 			bower: {
 				files: ['<%= app.bowerDir %>/{,*/}*'],
 				tasks: ['bowerInstall']
@@ -61,6 +58,9 @@ module.exports = function(grunt) {
 				tasks: ['compass:compile']
 			},
 			js: {
+				options: {
+					livereload: true
+				},
 				files: ['<%= app.jsDir %>/{,*/}*.js'],
 				tasks: ['newer:jshint:lint']
 			},
