@@ -3,14 +3,10 @@
 
 app.factory('Quote', function() {
 	var Quote = {
-		getRandom: function(json) {
-			var quoteArray = json.data.quotes,
-
-			    i = randomArrayIndex(quoteArray),
-			    randomQuote = quoteArray[i],
-
-			    j = randomArrayIndex(randomQuote.quote_list),
-			    randomQuoteListObj = randomQuote.quote_list[j];
+		getFrom: function(json) {
+			var quote = this.getRandom(json),
+				randomQuote = quote.quote,
+				randomQuoteListObj = quote.quoteList;
 
 			var quoteData = {
 				quote: randomQuoteListObj.text,
@@ -30,6 +26,21 @@ app.factory('Quote', function() {
 			}
 
 			return quoteData;
+		},
+
+		getRandom: function(json) {
+			var quoteArray = json.data.quotes,
+
+			    i = randomArrayIndex(quoteArray),
+			    randomQuote = quoteArray[i],
+
+			    j = randomArrayIndex(randomQuote.quote_list),
+			    randomQuoteListObj = randomQuote.quote_list[j];
+
+			return {
+				quote: randomQuote,
+				quoteList: randomQuoteListObj
+			};
 		}
 	};
 
