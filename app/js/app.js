@@ -12,5 +12,8 @@ app.config(function($routeProvider) {
 			templateUrl: 'js/views/index.html',
 			controller: 'FirefliesCtrl'
 		})
+		.when('/about', {
+			templateUrl: 'js/views/about.html'
+		})
 		.otherwise({ redirectTo: '/' });
 });
