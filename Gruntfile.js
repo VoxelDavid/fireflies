@@ -187,7 +187,7 @@ module.exports = function(grunt) {
 			build: {
 				expand: true,
 				cwd: '<%= app.tempDir %>/concat/js',
-				src: '*.js',
+				src: 'app.min.js',
 				dest: '<%= app.tempDir %>/concat/js'
 			}
 		}
