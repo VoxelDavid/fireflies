@@ -38,6 +38,8 @@ module.exports = function(grunt) {
 			},
 			build: {
 				options: {
+					// Livereload can't work for the build. Another watch task
+					// specifically for the build would need to be made.
 					livereload: false,
 					base: '<%= app.buildDir %>'
 				}
