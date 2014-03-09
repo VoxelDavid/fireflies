@@ -31,15 +31,15 @@ html {
 body {
 	font-size: 0.875em;
 	line-height: 1.5;
-	font-family: "Droid Sans", sans-serif;
+	font-family: $font-stack;
 	text-rendering: optimizelegibility;
-	color: #424D52;
-	background-color: #161616;
+	color: $text-color;
+	background-color: $background-color;
 }
 
 h1, h2, h3 {
-	color: #3D464A;
-	font-family: "Droid Serif", serif;
+	color: $header-color;
+	font-family: $header-font-stack;
 }
 
 p {
@@ -48,11 +48,11 @@ p {
 
 a {
 	font-weight: bold;
-	color: #54A9F0;
+	color: $link-color;
 	text-decoration: none;
 	@include transition(all .2s);
 	&:hover {
-		color: #427096;
+		color: $link-hover-color;
 	}
 }
 
@@ -63,19 +63,23 @@ a {
 .quote-view {
 	max-width: 960px;
 	margin: 15% auto 0 auto;
-	color: #F0EEDF;
+	color: $quote-color;
 	text-shadow: 0 2px 3px #000000;
 
 	a {
 		font-weight: bold;
-		color: #FFDD76;
+		color: $quote-link-color;
 		text-decoration: none;
 		text-shadow: 0 2px 3px #453C16;
 	}
 
+	.underline span {
+		background-color: $quote-link-color;
+	}
+
 	.quote-text {
 		font-size: 1.4em;
-		font-family: "Droid Serif", serif;
+		font-family: $header-font-stack;
 		text-align: center;
 	}
 
@@ -94,16 +98,13 @@ a {
 	max-width: 600px;
 	margin: 8% auto 0 auto;
 	padding: .15em 1.15em;
-	background-color: #fff;
-	border: 1px solid #CACACA;
+	background-color: $about-background-color;
+	border: 1px solid $about-border-color;
 	border-radius: .5em;
 }
 
 
 .no-js {
-	$no-js-color: #dbdbdb;
-	$no-js-a-color: #7abf63;
-
 	display: block;
 	margin: 15% auto 0 auto;
 	color: $no-js-color;
@@ -115,11 +116,11 @@ a {
 	}
 
 	a, a:hover {
-		color: $no-js-a-color;
+		color: $no-js-link-color;
 	}
 
 	.underline span {
-		background-color: $no-js-a-color;
+		background-color: $no-js-link-color;
 	}
 }
 
@@ -181,7 +182,7 @@ a {
 		position: relative;
 		height: 2px;
 		display: block;
-		background-color: #FFDD76;
+		background-color: #000;
 		@include scaleX(0);
 		@include transition(all 0.2s ease-in-out);
 	}
