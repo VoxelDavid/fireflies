@@ -140,8 +140,7 @@ a {
 }
 
 
-/* Background image classes, applied by the setImage method
-   in js/fireflies.js */
+// Classes for each image so they can be applied via the app logic.
 
 .bg-autumn-grass        { background-image: url("/img/bg-autumn-grass.jpg") }
 
