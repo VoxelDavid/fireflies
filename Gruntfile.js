@@ -69,6 +69,9 @@ module.exports = function(grunt) {
 				files: ['<%= app.jsDir %>/{,*/}*.js'],
 				tasks: ['newer:jshint:lint']
 			},
+			views: {
+				files: ['<%= app.jsDir %>/views/{,*/}*.html']
+			},
 			livereload: {
 				files: [
 					'<%= app.base %>/{,*/}*.html',
