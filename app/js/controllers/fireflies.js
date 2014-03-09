@@ -6,7 +6,7 @@ app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote) {
 		var quoteData = Quote.getRandom(json);
 
 		// Quote and author are applied via the ng-bind-html directive,
-		// which uses $sanitize the preserve html tags and entities.
+		// which uses $sanitize to preserve html tags and entities.
 		$scope.quote  = quoteData.quote;
 		$scope.author = quoteData.author;
 		$scope.source = quoteData.source;
