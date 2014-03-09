@@ -78,28 +78,27 @@ a {
 	color: #F0EEDF;
 	text-shadow: 0 2px 3px #000000;
 
-	p {
+	a {
+		font-weight: bold;
+		color: #FFDD76;
+		text-decoration: none;
+		text-shadow: 0 2px 3px #453C16;
+	}
+
+	.quote-text {
 		font-size: 1.4em;
 		font-family: "Droid Serif", serif;
 		text-align: center;
 	}
 
-	a {
-		color: #FFDD76;
-		text-shadow: 0 2px 3px #453C16;
-		font-weight: bold;
-		text-decoration: none;
-	}
-
-	cite {
-		font-style: normal;
-		text-align: right;
+	.quote-source {
 		display: block;
-		margin-right: 6em; /* Push the citation inward a bit */
-	}
+		margin-right: 6em; // Push the citation inward a bit.
+		text-align: right;
 
-	cite:before {
-		content: "\2014";
+		&:before {
+			content: "\2014"; // ndash (–)
+		}
 	}
 }
 

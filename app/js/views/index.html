@@ -3,14 +3,14 @@
 	<blockquote class="quote">
 		<p class="quote-text" ng-bind-html="quote"></p>
 
-		<cite ng-if="!source" ng-bind-html="author" class="quote-source"></cite>
+		<p class="quote-source" ng-if="!source" ng-bind-html="author"></p>
 
-		<cite class="quote-source">
-			<a ng-if="source &amp;&amp; !title" ng-bind-html="author"
-			   href="{{ source }}" target="_blank"></a>
+		<p class="quote-source" ng-if="source &amp;&amp; !title">
+			<a ng-bind-html="author" href="{{ source }}" target="_blank"></a>
+		</p>
 
-			<a ng-if="source &amp;&amp; title" ng-bind-html="author"
-			   href="{{ source }}" title="{{ title }}" target="_blank"></a>
-		</cite>
+		<p class="quote-source" ng-if="source &amp;&amp; title">
+			<a ng-bind-html="author" href="{{ source }}" title="{{ title }}" target="_blank"></a>
+		</p>
 	</blockquote>
 </section>
