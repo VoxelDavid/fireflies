@@ -1,9 +1,12 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, $sanitize, Data, Quote) {
+app.controller('FirefliesCtrl', function($scope, Data, Background, Quote) {
 	Data.then(function(json) {
-		var quoteData = Quote.getFrom(json);
+		var quoteData = Quote.getFrom(json),
+			imageData = Background.getFrom(json);
+
+		$scope.backgroundClass = imageData.className;
 
 		// Quote and author are applied via the ng-bind-html directive,
 		// which uses $sanitize to preserve html tags and entities.

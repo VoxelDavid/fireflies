@@ -9,8 +9,7 @@ var app = angular.module('firefliesApp', [
 app.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'js/views/index.html',
-			controller: 'FirefliesCtrl'
+			templateUrl: 'js/views/index.html'
 		})
 		.when('/about', {
 			templateUrl: 'js/views/about.html'
