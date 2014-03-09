@@ -1,16 +1,14 @@
 
 <section class="quote-view  slide-down">
-	<blockquote class="quote">
-		<p class="quote-text" ng-bind-html="quote"></p>
+	<p class="quote-text" ng-bind-html="quote"></p>
 
-		<p class="quote-source" ng-if="!source" ng-bind-html="author"></p>
+	<p class="quote-source" ng-if="!source" ng-bind-html="author"></p>
 
-		<p class="quote-source" ng-if="source &amp;&amp; !title">
-			<a ng-bind-html="author" href="{{ source }}" target="_blank"></a>
-		</p>
+	<p class="quote-source" ng-if="source &amp;&amp; !title">
+		<a ng-bind-html="author" href="{{ source }}" target="_blank"></a>
+	</p>
 
-		<p class="quote-source" ng-if="source &amp;&amp; title">
-			<a ng-bind-html="author" href="{{ source }}" title="{{ title }}" target="_blank"></a>
-		</p>
-	</blockquote>
+	<p class="quote-source" ng-if="source &amp;&amp; title">
+		<a ng-bind-html="author" href="{{ source }}" title="{{ title }}" target="_blank"></a>
+	</p>
 </section>
