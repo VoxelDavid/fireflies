@@ -100,24 +100,23 @@ a {
 
 
 .no-js {
-	color: #DBDBDB;
+	$no-js-color: #dbdbdb;
+	$no-js-a-color: #7abf63;
+
+	color: $no-js-color;
 	font-size: 1.2em;
 	text-align: center;
-
-	a {
-		color: #FFB24D;
-	}
-
-	a:hover {
-		text-decoration: none;
-	}
 
 	.sad {
 		font-size: 1.25em;
 	}
 
+	a, a:hover {
+		color: $no-js-a-color;
+	}
+
 	.underline span {
-		background-color: #FFB24D;
+		background-color: $no-js-a-color;
 	}
 }
 
