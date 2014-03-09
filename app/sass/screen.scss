@@ -16,9 +16,9 @@
 /* 1. Imports
  ============================================================================ */
 
-/* Fonts are loaded in the head of app/index.html */
-
-@import "compass/css3";
+/* '_base' contains all of the variables used throughout the
+   stylesheet, as well as Compass modules. */
+@import "base";
 
 
 /* 2. Base

@@ -1,0 +1,32 @@
+
+/* Table of Contents
+ ============================================================================ */
+
+/*
+
+  1. Compass
+  2. Fonts
+  3. Colors
+
+ */
+
+
+/* 1. Compass - Importing Gems and Modules.
+ ============================================================================ */
+
+/* Import Compass modules individually so it's clear what
+   is being used in the project */
+@import "compass/css3";
+
+
+/* 2. Fonts - Directly from Google
+ ============================================================================ */
+
+/* Fonts are loaded in the <head> of app/index.html */
+
+$font-stack: "Droid Sans", sans-serif;
+$header-font-stack: "Droid Serif", serif;
+
+
+/* 3. Colors - The look and feel of the site
+ ============================================================================ */
