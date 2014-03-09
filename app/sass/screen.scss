@@ -126,7 +126,6 @@ a {
 }
 
 
-.background-image,
 .background-overlay {
 	position: fixed;
 	top: 0;
@@ -139,12 +138,9 @@ a {
 	z-index: -100; /* Set the background below everything else. */
 	background-position: center center;
 	@include background-size(cover);
+	@extend .background-overlay;
 }
 
-.background-overlay {
-	background-image: url("/img/overlay.png");
-	background-repeat: repeat;
-}
 
 /* Background image classes, applied by the setImage method
    in js/fireflies.js */
