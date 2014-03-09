@@ -6,9 +6,7 @@ var app = angular.module('firefliesApp', [
 	'ngSanitize'
 ]);
 
-app.config(function($routeProvider, $locationProvider) {
-	$locationProvider.html5Mode(true);
-
+app.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'js/views/index.html',
