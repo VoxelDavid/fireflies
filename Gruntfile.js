@@ -52,6 +52,9 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
+			gruntfile: {
+				files: 'Gruntfile.js'
+			},
 			bower: {
 				files: ['<%= app.bowerDir %>/{,*/}*'],
 				tasks: ['bowerInstall']
