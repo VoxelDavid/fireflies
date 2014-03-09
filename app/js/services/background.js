@@ -3,6 +3,30 @@
 
 app.factory('Background', function() {
 	var Background = {
+		getFrom: function(json) {
+			var background = this.getRandom(json),
+				image = background.image,
+				imageList = background.imageList;
+
+			var imageData = {
+				className: imageList.className,
+			};
+
+			if (image.hasOwnProperty('author')) {
+				imageData.author = image.author;
+			}
+
+			if (imageList.hasOwnProperty('name')) {
+				imageData.name = imageList.name;
+			}
+
+			if (imageList.hasOwnProperty('source')) {
+				imageData.source = imageList.source;
+			}
+
+			return imageData;
+		},
+
 		getRandom: function(json) {
 			var backgroundArray = json.data.backgrounds,
 
@@ -12,23 +36,10 @@ app.factory('Background', function() {
 			    j = randomArrayIndex(randomImage.image_list),
 			    randomImageListObj = randomImage.image_list[j];
 
-			var imageData = {
-				className: randomImageListObj.className,
+			return {
+				image: randomImage,
+				imageList: randomImageListObj
 			};
-
-			if (randomImage.hasOwnProperty('author')) {
-				imageData.author = randomImage.author;
-			}
-
-			if (randomImageListObj.hasOwnProperty('name')) {
-				imageData.name = randomImageListObj.name;
-			}
-
-			if (randomImageListObj.hasOwnProperty('source')) {
-				imageData.source = randomImageListObj.source;
-			}
-
-			return imageData;
 		}
 	};
 
