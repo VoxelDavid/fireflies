@@ -5,7 +5,7 @@
 			"author": "chibird",
 			"title": "View Chibird's post on Tumblr",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "Sometimes you don't do ANYTHING all day. And then you feel guilty but <em>still</em> do nothing. But we shouldn't feel guilty because those days just happen. You're allowed to do nothing sometimes, especially when you just don't feel up to anything else.",
@@ -17,7 +17,7 @@
 		{
 			"author": "Grace Hopper",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "A ship in a harbour is safe, but that is not what ships are for."
@@ -28,7 +28,7 @@
 		{
 			"author": "Jim Morrison",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "Friends can help each other &ndash; A true friend is someone who lets you have total freedom to be yourself &ndash; and especially to feel. Or, not feel. Whatever you happen to be feeling at the moment is fine with them. That's what real love amounts to &ndash; letting a person be what he really is."
@@ -39,7 +39,7 @@
 		{
 			"author": "Julia Roberts",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "I believe that two people are connected at the heart, and it doesn't matter what you do, or who you are or where you live; there are no boundaries or barriers if two people are destined to be together."
@@ -50,7 +50,7 @@
 		{
 			"author": "&ldquo;Spaceship Earth&rdquo;",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "Like a grand and miraculous spaceship, our planet has sailed through the universe of time. And for a brief moment, we have been among its many passengers.",
@@ -62,7 +62,7 @@
 		{
 			"author": "Steven &ldquo;Boogie&rdquo; Williams",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "So what if God, or fate, or nature, or random chance put your life on hard-mode. Beat the game anyway.",
@@ -74,7 +74,7 @@
 		{
 			"author": "Steve Jobs",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of other's opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary."
@@ -86,7 +86,7 @@
 		{
 			"author": "Steven Furtick",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "The reason we struggle with insecurity is because we compare our behind-the-scenes to everyone else's highlight reel."
@@ -97,7 +97,7 @@
 		{
 			"_comment": "Unattributed quotes. If the source is found add them to their own object.",
 
-			"quote_list":
+			"quoteList":
 			[
 				{
 					"text": "Sometimes I dream of cheese."
@@ -125,7 +125,7 @@
 		{
 			"author": "Desmond Wong",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"name": "Lanterns in the Sky",
@@ -145,7 +145,7 @@
 			"author": "Joni Niemel\u00E4",
 			"homepage": "http://www.joniniemela.com/",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"className": "bg-snowy-pine",
@@ -157,7 +157,7 @@
 		{
 			"author": "Nuri",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"name": "Leap",
@@ -170,7 +170,7 @@
 		{
 			"author": "Piotr Stanislawski",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"name": "Noc Kuplay",
@@ -183,7 +183,7 @@
 		{
 			"author": "Rhean Propp",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"name": "Autumn Grass",
@@ -208,7 +208,7 @@
 		{
 			"_comment": "Unattributed images. Locate the source and add them to their own objects.",
 
-			"image_list":
+			"imageList":
 			[
 				{
 					"className": "bg-blossoming-pathway",

@@ -34,8 +34,8 @@ app.factory('Quote', function() {
 			    i = randomArrayIndex(quoteArray),
 			    randomQuote = quoteArray[i],
 
-			    j = randomArrayIndex(randomQuote.quote_list),
-			    randomQuoteListObj = randomQuote.quote_list[j];
+			    j = randomArrayIndex(randomQuote.quoteList),
+			    randomQuoteListObj = randomQuote.quoteList[j];
 
 			return {
 				quote: randomQuote,

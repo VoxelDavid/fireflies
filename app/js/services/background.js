@@ -42,8 +42,8 @@ app.factory('Background', function($location) {
 			    i = randomArrayIndex(backgroundArray),
 			    randomImage = backgroundArray[i],
 
-			    j = randomArrayIndex(randomImage.image_list),
-			    randomImageListObj = randomImage.image_list[j];
+			    j = randomArrayIndex(randomImage.imageList),
+			    randomImageListObj = randomImage.imageList[j];
 
 			return {
 				image: randomImage,
@@ -62,9 +62,9 @@ app.factory('Background', function($location) {
 			}
 
 			if (query.bgSub) {
-				queriedImageListObj = queriedImage.image_list[query.bgSub];
+				queriedImageListObj = queriedImage.imageList[query.bgSub];
 			} else {
-				queriedImageListObj = queriedImage.image_list[0];
+				queriedImageListObj = queriedImage.imageList[0];
 			}
 
 			return {
