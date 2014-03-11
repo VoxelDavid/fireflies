@@ -20,8 +20,6 @@
 	</head>
 
 	<body class="fade-in" ng-app="firefliesApp" ng-controller="FirefliesCtrl">
-		<!-- <div class="background-overlay"></div> -->
-		<div class="background-image {{backgroundClass}}"></div>
 
 		<noscript class="container  no-js  slide-down">
 			<p>JavaScript is required for this site to work properly.</p>
@@ -30,6 +28,8 @@
 
 			<p class="sad">:(</p>
 		</noscript>
+
+		<div class="background-image {{backgroundClass}}"></div>
 
 		<main ng-view role="main"></main>
 
