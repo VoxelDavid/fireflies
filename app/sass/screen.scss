@@ -103,6 +103,17 @@ a {
 	border-radius: .5em;
 }
 
+.about-view ::-moz-selection {
+	background-color: #B5DAFF;
+	color: #3D454D;
+	text-shadow: none;
+}
+.about-view ::selection {
+	background-color: #B5DAFF;
+	color: #3D454D;
+	text-shadow: none;
+}
+
 
 .no-js {
 	display: block;
