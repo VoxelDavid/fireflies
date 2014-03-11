@@ -13,7 +13,7 @@
  */
 
 
-/* 1. Imports
+/* 1. Imports - Getting Sass partials
  ============================================================================ */
 
 /* '_base' contains all of the variables used throughout the
@@ -21,7 +21,7 @@
 @import "base";
 
 
-/* 2. Base
+/* 2. General - Setting up the main styles
  ============================================================================ */
 
 html {
@@ -57,7 +57,7 @@ a {
 }
 
 
-/* 3. Structure
+/* 3. Structure - The look and feel of the site
  ============================================================================ */
 
 .quote-view {
@@ -175,7 +175,7 @@ a {
 .bg-tokyo-tower         { background-image: url("/img/bg-tokyo-tower.jpg") }
 
 
-/* 4. Utilities
+/* 4. Utilities - Things used all over the place
  ============================================================================ */
 
 .underline {
