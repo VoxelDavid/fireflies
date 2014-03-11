@@ -21,6 +21,16 @@
 /* Susy grid system */
 @import "susy";
 
+$primary-layout: (
+	column-width: 5em,
+	columns: 8
+);
+
+$quote-layout: (
+	column-width: 5em,
+	columns: 12,
+);
+
 
 /* 2. Fonts - Directly from Google
  ============================================================================ */

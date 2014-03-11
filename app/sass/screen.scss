@@ -60,6 +60,15 @@ a {
 /* 3. Structure - The look and feel of the site
  ============================================================================ */
 
+.container {
+  @include container($primary-layout)
+}
+
+.quote-container {
+  @include container($quote-layout);
+}
+
+
 .quote-view {
   max-width: 960px;
   margin: 15% auto 0 auto;
