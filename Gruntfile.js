@@ -116,6 +116,8 @@ module.exports = function(grunt) {
 			// https://github.com/gruntjs/grunt-contrib-compass#options
 
 			options: {
+				require: 'susy',
+
 				sassDir: '<%= app.sassDir %>',
 				cssDir: '<%= app.cssDir %>',
 				importPath: '<%= app.bowerDir %>',
