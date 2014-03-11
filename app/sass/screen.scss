@@ -137,21 +137,12 @@ a {
 }
 
 
-.background-overlay {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 .background-image {
   z-index: -100; /* Set the background below everything else. */
   background-position: center center;
   @include background-size(cover);
-  @extend .background-overlay;
+  @extend %background-overlay;
 }
-
 
 // Classes for each image so they can be applied via the app logic.
 
@@ -202,6 +193,14 @@ a {
   &:hover span {
     @include scaleX(1);
   }
+}
+
+%background-overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 
