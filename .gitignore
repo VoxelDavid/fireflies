@@ -8,6 +8,12 @@ build/
 app/css
 
 ##
+## Compass
+##
+
+.sass-cache/
+
+##
 ## Bower
 ##
 
