@@ -235,17 +235,3 @@ a {
   from { bottom: 3em; }
   to   { bottom: 0; }
 }
-
-
-/* 6. Media Queries
- ============================================================================ */
-
-@media (max-width: 480px) {
-  .quote {
-    margin: 0 1em;
-  }
-
-  .quote cite {
-    margin-right: 0;
-  }
-}
