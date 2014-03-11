@@ -1,52 +1,51 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-		<meta name="author" content="David Minnerly">
-		<meta name="description" content="A simple web application that displays a hand-picked quote and background image every time it's loaded.">
+        <meta name="author" content="David Minnerly">
+        <meta name="description" content="A simple web application that displays a hand-picked quote and background image every time it's loaded.">
 
-		<title>Fireflies</title>
+        <title>Fireflies</title>
 
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif">
-		<!-- build:css css/screen.css -->
-		<!-- bower:css -->
-		<link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
-		<!-- endbower -->
-		<link rel="stylesheet" href="css/screen.css">
-		<!-- endbuild -->
-	</head>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif">
+        <!-- build:css css/screen.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" href="css/screen.css">
+        <!-- endbuild -->
+    </head>
 
-	<body class="fade-in" ng-app="firefliesApp" ng-controller="FirefliesCtrl">
+    <body class="fade-in" ng-app="firefliesApp" ng-controller="FirefliesCtrl">
+        <noscript class="container  no-js  slide-down">
+            <p>JavaScript is required for this site to work properly.</p>
 
-		<noscript class="container  no-js  slide-down">
-			<p>JavaScript is required for this site to work properly.</p>
+            <p>Please <a href="http://enable-javascript.com/" class="underline">enable JavaScript <span></span></a> and try again. Sorry for the inconvenience!</p>
 
-			<p>Please <a href="http://enable-javascript.com/" class="underline">enable JavaScript <span></span></a> and try again. Sorry for the inconvenience!</p>
+            <p class="sad">:(</p>
+        </noscript>
 
-			<p class="sad">:(</p>
-		</noscript>
+        <div class="background-image {{backgroundClass}}"></div>
 
-		<div class="background-image {{backgroundClass}}"></div>
+        <main class="container" ng-view role="main"></main>
 
-		<main ng-view role="main"></main>
+        <!-- build:js js/vendor.min.js -->
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
-		<!-- build:js js/vendor.min.js -->
-		<!-- bower:js -->
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-
-		<!-- build:js js/app.min.js -->
-		<script src="js/app.js"></script>
-		<script src="js/controllers/fireflies.js"></script>
-		<script src="js/services/background.js"></script>
-		<script src="js/services/quote.js"></script>
-		<script src="js/services/data.js"></script>
-		<!-- endbuild -->
-	</body>
+        <!-- build:js js/app.min.js -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers/fireflies.js"></script>
+        <script src="js/services/background.js"></script>
+        <script src="js/services/quote.js"></script>
+        <script src="js/services/data.js"></script>
+        <!-- endbuild -->
+    </body>
 </html>

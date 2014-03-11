@@ -1,16 +1,16 @@
 
 <section class="quote-view  slide-down">
-	<p class="quote-text" ng-bind-html="quote"></p>
+    <p class="quote-text" ng-bind-html="quote"></p>
 
-	<p class="quote-source" ng-if="!source" ng-bind-html="author"></p>
+    <p class="quote-source" ng-if="!source" ng-bind-html="author"></p>
 
-	<p class="quote-source" ng-if="source &amp;&amp; !title">
-		<a class="underline" ng-bind-html="author + '<span></span>'"
-		   href="{{ source }}" target="_blank"></a>
-	</p>
+    <p class="quote-source" ng-if="source &amp;&amp; !title">
+        <a class="underline" ng-bind-html="author + '<span></span>'"
+           href="{{ source }}" target="_blank"></a>
+    </p>
 
-	<p class="quote-source" ng-if="source &amp;&amp; title">
-		<a class="underline" ng-bind-html="author + '<span></span>'"
-		   href="{{ source }}" title="{{ title }}" target="_blank"></a>
-	</p>
+    <p class="quote-source" ng-if="source &amp;&amp; title">
+        <a class="underline" ng-bind-html="author + '<span></span>'"
+           href="{{ source }}" title="{{ title }}" target="_blank"></a>
+    </p>
 </section>
