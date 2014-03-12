@@ -69,6 +69,10 @@ a {
 }
 
 .quote-container {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  left: 0;
   @include container($quote-layout);
 }
 
