@@ -46,11 +46,11 @@ $header-font-stack: "Droid Serif", serif;
 
 // Typography
 
-$text-color: #424D52;
+$text-color: #5A5A5A;
 $header-color: #3D464A;
 
-$link-color: #54A9F0;
-$link-hover-color: #427096;
+$link-color: #68B34F;
+$link-hover-color: shade($link-color, 28);
 
 $quote-color: #F0EEDF;
 $quote-link-color: #FFDD76;
