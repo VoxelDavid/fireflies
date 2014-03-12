@@ -38,7 +38,7 @@ $extended-layout: ( columns: 16 );
 // Fonts are loaded in the <head> of app/index.html
 
 $font-stack: "Droid Sans", sans-serif;
-$header-font-stack: "Droid Serif", serif;
+$header-font-stack: $font-stack;
 
 
 /* 3. Colors - The look and feel of the site
