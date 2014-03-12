@@ -28,7 +28,10 @@
             <p class="sad">:(</p>
         </noscript>
 
-        <main class="masthead  {{backgroundClass}}" ng-view role="main"></main>
+        <main class="masthead  {{backgroundClass}}" role="main">
+            <!-- ngView is applied one level down to prevent a flicker effect from loading. -->
+            <div ng-view></div>
+        </main>
 
         <!-- build:js js/vendor.min.js -->
         <!-- bower:js -->
