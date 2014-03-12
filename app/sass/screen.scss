@@ -33,7 +33,7 @@ html, body {
 }
 
 body {
-  font-size: 0.875em;
+  font-size: 1em;
   line-height: 1.5;
   font-family: $font-stack;
   text-rendering: optimizelegibility;
@@ -47,7 +47,7 @@ h1, h2, h3 {
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -102,13 +102,14 @@ a {
 }
 
 .quote-text {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-family: $header-font-stack;
   text-align: center;
   @include full;
 }
 
 .quote-source {
+  font-size: .9em;
   @include last;
 
   &:before {
