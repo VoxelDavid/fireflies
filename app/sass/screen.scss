@@ -159,6 +159,24 @@ a {
 }
 
 
+/* 4. Utilities - Things used all over the place
+ ============================================================================ */
+
+.underline {
+  display: inline-block;
+
+  span {
+    position: relative;
+    height: 2px;
+    display: block;
+    background-color: #000;
+    @include scaleX(0);
+    @include transition(all 0.2s ease-in-out);
+  }
+
+  &:hover span {
+    @include scaleX(1);
+  }
 }
 
 // Classes for each image so they can be applied via the app logic.
@@ -190,27 +208,6 @@ a {
 .bg-the-ocean-sky       { background-image: url("/img/bg-the-ocean-sky.jpg") }
 
 .bg-tokyo-tower         { background-image: url("/img/bg-tokyo-tower.jpg") }
-
-
-/* 4. Utilities - Things used all over the place
- ============================================================================ */
-
-.underline {
-  display: inline-block;
-
-  span {
-    position: relative;
-    height: 2px;
-    display: block;
-    background-color: #000;
-    @include scaleX(0);
-    @include transition(all 0.2s ease-in-out);
-  }
-
-  &:hover span {
-    @include scaleX(1);
-  }
-}
 
 
 /* 5. Animations
