@@ -68,6 +68,10 @@ a {
   @include container($quote-layout);
 }
 
+.extended-container {
+  @include container($extended-layout);
+}
+
 
 .quote-view {
   max-width: 960px;
