@@ -105,12 +105,11 @@ a {
   font-size: 1.4em;
   font-family: $header-font-stack;
   text-align: center;
+  @include full;
 }
 
 .quote-source {
-  display: block;
-  margin-right: 6em; // Push the citation inward a bit.
-  text-align: right;
+  @include last;
 
   &:before {
     content: "\2014"; // ndash (–)
