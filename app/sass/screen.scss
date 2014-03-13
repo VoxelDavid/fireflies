@@ -24,6 +24,17 @@
 /* 2. General - Setting up the main styles
  ============================================================================ */
 
+*::-moz-selection {
+  background: none repeat scroll 0 0 #B5DAFF;
+  color: #3D454D;
+  text-shadow: none;
+}
+*::selection {
+  background: none repeat scroll 0 0 #B5DAFF;
+  color: #3D454D;
+  text-shadow: none;
+}
+
 html, body {
   /* <html> and <body> need their heights set to 100% for the
    * background image to remain covering the entire screen,
@@ -139,17 +150,6 @@ a {
   background-color: $about-background-color;
   border: 1px solid $about-border-color;
   border-radius: .5em;
-}
-
-.about-view ::-moz-selection {
-  background-color: #B5DAFF;
-  color: #3D454D;
-  text-shadow: none;
-}
-.about-view ::selection {
-  background-color: #B5DAFF;
-  color: #3D454D;
-  text-shadow: none;
 }
 
 
