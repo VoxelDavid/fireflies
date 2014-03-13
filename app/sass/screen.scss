@@ -147,6 +147,17 @@ a {
   }
 }
 
+.site-footer {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: $footer-bg-color;
+}
+
+.copyright {
+  text-align: center;
+  @include full;
+}
+
 
 .about-view {
   max-width: 600px;
