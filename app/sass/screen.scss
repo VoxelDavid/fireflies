@@ -29,11 +29,13 @@
   color: #3D454D;
   text-shadow: none;
 }
+
 *::selection {
   background: none repeat scroll 0 0 #B5DAFF;
   color: #3D454D;
   text-shadow: none;
 }
+
 
 html, body {
   /* <html> and <body> need their heights set to 100% for the
@@ -52,14 +54,17 @@ body {
   background-color: $background-color;
 }
 
+
 h1, h2, h3 {
   color: $header-color;
   font-family: $header-font-stack;
 }
 
+
 p {
   margin-bottom: 1em;
 }
+
 
 a {
   font-weight: bold;
