@@ -80,6 +80,11 @@ a {
 /* 3. Structure - The look and feel of the site
  ============================================================================ */
 
+.container,
+.extended-container {
+  @include bleed-x(1.25em);
+}
+
 .container {
   @include container($primary-layout)
 }
