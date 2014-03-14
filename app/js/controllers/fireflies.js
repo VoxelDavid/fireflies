@@ -1,7 +1,9 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, Data, Background, Quote) {
+app.controller('FirefliesCtrl', function($scope, Data, Background, Quote, jQueryStellar) {
+	jQueryStellar.init();
+
 	Data.then(function(json) {
 		var quoteData = Quote.getFrom(json),
 			imageData = Background.getFrom(json);
