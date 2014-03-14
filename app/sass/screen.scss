@@ -133,6 +133,7 @@ a {
 
 .quote-source {
   font-size: .9em;
+  @include suffix(10%);
   @include last;
 
   &:before {
