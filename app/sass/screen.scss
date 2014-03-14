@@ -25,14 +25,14 @@
  ============================================================================ */
 
 *::-moz-selection {
-  background: none repeat scroll 0 0 #B5DAFF;
-  color: #3D454D;
+  background-color: $selection-background-color;
+  color: $selection-color;
   text-shadow: none;
 }
 
 *::selection {
-  background: none repeat scroll 0 0 #B5DAFF;
-  color: #3D454D;
+  background-color: $selection-background-color;
+  color: $selection-color;
   text-shadow: none;
 }
 
