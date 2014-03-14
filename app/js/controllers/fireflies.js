@@ -1,8 +1,8 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, Data, Background, Quote, jQueryStellar) {
-	jQueryStellar.init();
+app.controller('FirefliesCtrl', function($scope, Data, Background, Quote, Stellar) {
+	Stellar.init();
 
 	Data.then(function(json) {
 		var quoteData = Quote.getFrom(json),
