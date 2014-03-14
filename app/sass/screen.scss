@@ -148,8 +148,7 @@ a {
   background-color: $sub-content-bg-color;
   border-top: .25em solid #20242E;
 
-  .about,
-  .contact {
+  .about {
     @include full;
   }
 }
