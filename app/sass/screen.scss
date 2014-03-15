@@ -154,16 +154,36 @@ a {
   }
 }
 
+
 .site-footer {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  font-size: .9em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: .85em;
+  text-align: center;
   background-color: $footer-bg-color;
 }
 
-.copyright {
-  text-align: center;
-  @include full;
+.footer-links {
+  margin-bottom: .4em;
+  display: inline-block;
+
+  li {
+    display: inline;
+    float: left;
+    list-style-type: none;
+
+    &:after {
+      padding-right: .65em;
+      padding-left: .65em;
+      display: inline;
+      content: "\00B7"; // Mid dot (·)
+    }
+    &:last-child:after {
+      /* Set the content to nothing on the last child, so
+       * dots will only appear in between elements. */
+      content: "";
+    }
+  }
 }
 
 
