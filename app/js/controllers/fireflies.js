@@ -1,12 +1,12 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, Data, Background, Quote, Stellar) {
+app.controller('FirefliesCtrl', function($scope, data, background, quote, Stellar) {
 	Stellar.init();
 
-	Data.then(function(json) {
-		var quoteData = Quote.getFrom(json),
-			imageData = Background.getFrom(json);
+	data.then(function(json) {
+		var quoteData = quote.getFrom(json),
+			imageData = background.getFrom(json);
 
 		// Apply the class of the chosen image to the scope.
 		$scope.backgroundClass = imageData.className;

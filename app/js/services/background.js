@@ -1,8 +1,8 @@
 
 'use strict';
 
-app.factory('Background', function($location) {
-	var Background = {
+app.factory('background', function($location) {
+	var background = {
 		getFrom: function(json) {
 			var background;
 
@@ -91,6 +91,6 @@ app.factory('Background', function($location) {
 		return Math.floor(Math.random() * array.length);
 	}
 
-	return Background;
+	return background;
 });
 

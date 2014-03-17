@@ -1,8 +1,8 @@
 
 'use strict';
 
-app.factory('Quote', function() {
-	var Quote = {
+app.factory('quote', function() {
+	var quote = {
 		getFrom: function(json) {
 			var quote = this.getRandom(json),
 				randomQuote = quote.quote,
@@ -47,5 +47,5 @@ app.factory('Quote', function() {
 		return Math.floor(Math.random() * array.length);
 	}
 
-	return Quote;
+	return quote;
 });

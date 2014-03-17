@@ -1,6 +1,6 @@
 
 'use strict';
 
-app.factory('Data', function($http) {
+app.factory('data', function($http) {
 	return $http.get('js/data.json');
 });
