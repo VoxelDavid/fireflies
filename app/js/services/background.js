@@ -6,8 +6,8 @@ app.factory('Background', function($location) {
 		getFrom: function(json) {
 			var background;
 
-			// Check if a query string is set to determine the image to display,
-			// otherwise get a random one.
+			/* Check if the URL contains a query stringfor setting the background.
+			 * If not, get a random image from the json file. */
 			if (detectImageQuery()) {
 				background = this.getFromQuery(json);
 			} else {
@@ -18,17 +18,18 @@ app.factory('Background', function($location) {
 				imageList = background.imageList;
 
 			var imageData = {
+				/* The 'className' property is required to be inside of the
+				 * imageList object, so it's safe to put it directly in here. */
 				className: imageList.className,
 			};
 
+			// Propagate the imageData object.
 			if (image.hasOwnProperty('author')) {
 				imageData.author = image.author;
 			}
-
 			if (imageList.hasOwnProperty('name')) {
 				imageData.name = imageList.name;
 			}
-
 			if (imageList.hasOwnProperty('source')) {
 				imageData.source = imageList.source;
 			}
@@ -61,6 +62,8 @@ app.factory('Background', function($location) {
 				queriedImage = backgroundArray[query.bg];
 			}
 
+			// Check if 'bgSub' is set in the query string. If not, set the
+			// imageList index to the first object.
 			if (query.bgSub) {
 				queriedImageListObj = queriedImage.imageList[query.bgSub];
 			} else {
@@ -74,6 +77,8 @@ app.factory('Background', function($location) {
 		}
 	};
 
+	/* Checks the current url for a query string. Used to decide
+	 * between query based or random image setting. */
 	function detectImageQuery() {
 		var query = $location.search();
 

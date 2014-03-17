@@ -13,14 +13,13 @@ app.factory('Quote', function() {
 				author: randomQuote.author
 			};
 
+			// Propagate the quoteData object.
 			if (!quoteData.author) {
 				quoteData.author = 'Unknown';
 			}
-
 			if (randomQuoteListObj.hasOwnProperty('source')) {
 				quoteData.source = randomQuoteListObj.source;
 			}
-
 			if (randomQuote.hasOwnProperty('title')) {
 				quoteData.title = randomQuote.title;
 			}
