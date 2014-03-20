@@ -6,7 +6,7 @@ app.factory('background', function($location) {
 		getFrom: function(json) {
 			var background;
 
-			/* Check if the URL contains a query stringfor setting the background.
+			/* Check if the URL contains a query string for setting the background.
 			 * If not, get a random image from the json file. */
 			if (detectImageQuery()) {
 				background = this.getFromQuery(json);
@@ -18,9 +18,7 @@ app.factory('background', function($location) {
 				imageList = background.imageList;
 
 			var imageData = {
-				/* The 'className' property is required to be inside of the
-				 * imageList object, so it's safe to put it directly in here. */
-				className: imageList.className,
+				className: imageList.className
 			};
 
 			// Propagate the imageData object.
