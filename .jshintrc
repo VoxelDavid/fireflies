@@ -10,7 +10,7 @@
   "eqeqeq": true,
   "forin": false,
   "freeze": true,
-  "indent": 4,
+  "indent": 2,
   "latedef": true,
   "newcap": true,
   "noarg": true,
@@ -24,7 +24,6 @@
 
   "boss": false,
   "eqnull": false,
-  "smarttabs": true,
 
   "browser": true,
   "node": true
