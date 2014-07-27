@@ -1,51 +1,50 @@
 
 'use strict';
 
-app.factory('quote', function() {
-  var quote = {
-    getFrom: function(json) {
-      var quote = this.getRandom(json),
-          randomQuote = quote.quote,
-          randomQuoteListObj = quote.quoteList;
+var NO_AUTHOR = 'Unknown';
 
-      var quoteData = {
-        quote: randomQuoteListObj.text,
-        author: randomQuote.author
-      };
+function randomArrayIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
 
-      // Propagate the quoteData object.
-      if (!quoteData.author) {
-        quoteData.author = 'Unknown';
-      }
-      if (randomQuoteListObj.hasOwnProperty('source')) {
-        quoteData.source = randomQuoteListObj.source;
-      }
-      if (randomQuote.hasOwnProperty('title')) {
-        quoteData.title = randomQuote.title;
-      }
+function randomQuote(json) {
+  var quoteData = json.data.quoteData,
 
-      return quoteData;
-    },
+      i = randomArrayIndex(quoteData),
+      quoteMeta = quoteData[i],
+      quoteList = quoteMeta.quotes,
 
-    getRandom: function(json) {
-      var quoteArray = json.data.quotes,
+      j = randomArrayIndex(quoteList),
+      quoteObject = quoteList[j];
 
-          i = randomArrayIndex(quoteArray),
-          randomQuote = quoteArray[i],
-
-          j = randomArrayIndex(randomQuote.quoteList),
-          randomQuoteListObj = randomQuote.quoteList[j];
-
-      return {
-        quote: randomQuote,
-        quoteList: randomQuoteListObj
-      };
-    }
+  return {
+    meta: quoteMeta,
+    data: quoteObject
   };
+}
 
-  function randomArrayIndex(array) {
-    return Math.floor(Math.random() * array.length);
+function getQuoteData(json) {
+  var quote  = randomQuote(json),
+      meta   = quote.meta,
+      data   = quote.data,
+
+      author = meta.author,
+      title  = meta.title,
+      source = data.source,
+      text   = data.text;
+
+  if (!author) {
+    author = NO_AUTHOR;
   }
 
-  return quote;
+  return {
+    author: author,
+    title: title,
+    source: source,
+    text: text
+  };
+}
+
+app.factory('Quote', function() {
+  return getQuoteData;
 });
