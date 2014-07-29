@@ -78,7 +78,7 @@
     }
   ],
 
-  "backgroundList": [
+  "imageData": [
     {
       "author": "Desmond Wong",
       "images": [
@@ -123,8 +123,7 @@
 
     {
       "author": "Rhean Propp",
-      "images":
-      [
+      "images": [
         { "name": "Autumn Grass",
           "className": "bg-autumn-grass",
           "source": "/img/hd/autumn-grass.jpg" },
@@ -142,8 +141,7 @@
     {
       "_comment": "Unattributed images. Locate the source and add them to their own objects.",
 
-      "imageList":
-      [
+      "images": [
         { "className": "bg-blossoming-pathway",
           "source": "http://imgur.com/gallery/R59cJ" },
 
