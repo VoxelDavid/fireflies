@@ -23,7 +23,7 @@ app.factory('Quote', function() {
     };
   }
 
-  function getQuoteData(json) {
+  function combineData(json) {
     var quote  = randomQuote(json),
         meta   = quote.meta,
         data   = quote.data,
