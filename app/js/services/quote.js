@@ -32,9 +32,7 @@ app.factory('Quote', function() {
         source = data.source,
         text   = data.text;
 
-    if (!author) {
-      author = NO_AUTHOR;
-    }
+    if (!author) { author = NO_AUTHOR; }
 
     return {
       author: author,
