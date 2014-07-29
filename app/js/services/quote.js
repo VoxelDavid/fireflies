@@ -12,16 +12,14 @@ app.factory('Quote', function() {
     return array[index];
   }
 
-  function randomQuote(json) {
-    var quoteData = json.data.quoteData,
-        quoteMeta = randomIndex(quoteData),
-        quoteList = quoteMeta.quotes,
-        quoteObject = randomIndex(quoteList);
-
+  function randomObject(array, listName) {
+    var meta = randomIndex(array),
+        list = meta[listName],
+        data = randomIndex(list);
 
     return {
-      meta: quoteMeta,
-      data: quoteObject
+      meta: meta,
+      data: data
     };
   }
 
