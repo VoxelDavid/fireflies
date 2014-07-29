@@ -3,20 +3,21 @@
 
 var NO_AUTHOR = 'Unknown';
 
+var floor  = Math.floor,
+    random = Math.random;
+
 app.factory('Quote', function() {
-  function randomArrayIndex(array) {
-    return Math.floor(Math.random() * array.length);
+  function randomIndex(array) {
+    var index = floor(random() * array.length)
+    return array[index];
   }
 
   function randomQuote(json) {
     var quoteData = json.data.quoteData,
-
-        i = randomArrayIndex(quoteData),
-        quoteMeta = quoteData[i],
+        quoteMeta = randomIndex(quoteData),
         quoteList = quoteMeta.quotes,
+        quoteObject = randomIndex(quoteList);
 
-        j = randomArrayIndex(quoteList),
-        quoteObject = quoteList[j];
 
     return {
       meta: quoteMeta,
