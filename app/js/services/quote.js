@@ -23,10 +23,9 @@ app.factory('Quote', function() {
     };
   }
 
-  function combineData(json) {
-    var quote  = randomQuote(json),
-        meta   = quote.meta,
-        data   = quote.data,
+  function combineData(obj) {
+    var meta = obj.meta,
+        data = obj.data,
 
         author = meta.author,
         title  = meta.title,
