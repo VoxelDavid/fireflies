@@ -8,7 +8,7 @@ var floor  = Math.floor,
 
 app.factory('Quote', function() {
   function randomIndex(array) {
-    var index = floor(random() * array.length)
+    var index = floor(random() * array.length);
     return array[index];
   }
 
