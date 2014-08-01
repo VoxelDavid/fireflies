@@ -42,5 +42,12 @@ app.factory('Quote', function() {
     };
   }
 
-  return getQuoteData;
+  function getRandom(array, listName) {
+    var object = randomObject(array, listName),
+        data   = combineData(object);
+
+    return data;
+  }
+
+  return getRandom;
 });
