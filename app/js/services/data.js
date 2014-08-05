@@ -92,7 +92,7 @@ Data.background = function(json) {
 /* Services & Factories
 ============================================================================= */
 
-app.service('siteData', function($http) {
+app.factory('siteData', function($http) {
 //  return $http.get('js/data.json');
   var data = $http.get(JSON_PATH).then(function(json) {
     return json.data;
@@ -101,7 +101,7 @@ app.service('siteData', function($http) {
   return data;
 });
 
-app.service('quote', function(siteData) {
+app.factory('quote', function(siteData) {
   var quote = siteData.then(function(json) {
     return Data.quote(json);
   });
@@ -109,7 +109,7 @@ app.service('quote', function(siteData) {
   return quote;
 });
 
-app.service('image', function(siteData) {
+app.factory('image', function(siteData) {
   var image = siteData.then(function(json) {
     return Data.background(json);
   });
