@@ -18,7 +18,7 @@ app.config(function($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
-      templateUrl: 'js/views/index.html'
+      templateUrl: 'js/views/quote.html'
     })
     .otherwise({ redirectTo: '/' });
 });
