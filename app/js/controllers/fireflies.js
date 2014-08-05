@@ -1,8 +1,8 @@
 
 'use strict';
 
-app.controller('FirefliesCtrl', function($scope, Stellar, randomQuote, randomImage) {
-  Stellar.init();
+app.controller('FirefliesCtrl', function($scope, stellar, randomQuote, randomImage) {
+  stellar();
   
   randomImage.then(function(data) {
     // Apply the class of the chosen image to the scope.

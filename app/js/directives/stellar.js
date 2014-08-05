@@ -1,14 +1,10 @@
 
 'use strict';
 
-// Include as a dependency and initialize with Stellar.init();
+// Used to allow us to work with Stellar.js from within Angular.
 
-app.factory('Stellar', function() {
-  function init(options) {
-    angular.element.stellar(options);
-  }
-
-  return {
-    init: init
+app.factory('stellar', function() {
+  return function(options) {
+    return angular.element.stellar(options);
   };
 });
