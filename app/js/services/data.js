@@ -101,7 +101,7 @@ app.service('siteData', function($http) {
   return data;
 });
 
-app.service('randomQuote', function(siteData) {
+app.service('quote', function(siteData) {
   var quote = siteData.then(function(json) {
     return Data.quote(json);
   });
@@ -109,7 +109,7 @@ app.service('randomQuote', function(siteData) {
   return quote;
 });
 
-app.service('randomImage', function(siteData) {
+app.service('image', function(siteData) {
   var image = siteData.then(function(json) {
     return Data.background(json);
   });
