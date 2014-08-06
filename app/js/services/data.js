@@ -65,7 +65,7 @@ Data.randomObject = function(array, listName) {
   var meta = randomIndex(array),
       list = meta[listName],
       data = randomIndex(list);
-  
+
   return {
     meta: meta,
     data: data
@@ -76,7 +76,7 @@ Data.quote = function(json) {
   var quoteData = json.quoteData,
       randomQuoteData = this.randomObject(quoteData, 'quotes'),
       quote = toplevel(randomQuoteData, 'quote');
-  
+
   return quote;
 };
 
@@ -105,7 +105,7 @@ app.factory('quote', function(siteData) {
   var quote = siteData.then(function(json) {
     return Data.quote(json);
   });
-  
+
   return quote;
 });
 
@@ -113,6 +113,6 @@ app.factory('image', function(siteData) {
   var image = siteData.then(function(json) {
     return Data.background(json);
   });
-  
+
   return image;
 });
