@@ -6,6 +6,8 @@ var app = angular.module('firefliesApp', [
   'ngSanitize'
 ]);
 
+app.constant('JSON_PATH', 'js/data.json');
+
 app.config(function($routeProvider, $locationProvider) {
   $locationProvider
     /* With this enabled, the url will appear as www.example.com/, without

@@ -4,8 +4,6 @@
 // The text displayed when there is no author set for the quote/background.
 var NO_AUTHOR = 'Unknown';
 
-var JSON_PATH = 'js/data.json';
-
 var random = Math.random,
     floor  = Math.floor;
 
@@ -92,8 +90,7 @@ Data.background = function(json) {
 /* Services & Factories
 ============================================================================= */
 
-app.factory('siteData', function($http) {
-//  return $http.get('js/data.json');
+app.factory('siteData', function($http, JSON_PATH) {
   var data = $http.get(JSON_PATH).then(function(json) {
     return json.data;
   });
