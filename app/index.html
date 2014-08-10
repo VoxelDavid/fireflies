@@ -29,8 +29,7 @@
         </noscript>
 
         <main ng-controller="ImageController as image" class="masthead  {{image.className}}" data-stellar-background-ratio=".35" role="main">
-            <!-- ngView is applied one level down to prevent a flicker effect from loading. -->
-            <div ng-view></div>
+            <fireflies-quote></fireflies-quote>
         </main>
 
         <section class="sub-content">
@@ -66,6 +65,7 @@
         <script src="js/app.js"></script>
         <script src="js/controllers/ImageController.js"></script>
         <script src="js/controllers/QuoteController.js"></script>
+        <script src="js/directives/quote/quote.js"></script>
         <script src="js/services/data.js"></script>
         <script src="js/services/stellar.js"></script>
         <!-- endbuild -->
