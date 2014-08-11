@@ -5,7 +5,7 @@ app.controller('ImageController', function(image, stellar) {
 
   stellar();
 
-  image.then(function(json) {
-    scope.className = json.className;
+  image.then(function(data) {
+    scope.className = data.className;
   });
 });
