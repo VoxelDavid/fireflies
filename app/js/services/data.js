@@ -70,22 +70,6 @@ Data.randomObject = function(array, listName) {
   };
 };
 
-Data.quote = function(json) {
-  var quoteData = json.quoteData,
-      randomQuoteData = this.randomObject(quoteData, 'quotes'),
-      quote = toplevel(randomQuoteData, 'quote');
-
-  return quote;
-};
-
-Data.background = function(json) {
-  var imageData = json.imageData,
-      randomImageData = this.randomObject(imageData, 'images'),
-      image = toplevel(randomImageData, 'image');
-
-  return image;
-};
-
 
 /* Services & Factories
 ============================================================================= */
@@ -99,17 +83,21 @@ app.factory('siteData', function($http, JSON_PATH) {
 });
 
 app.factory('quote', function(siteData) {
-  var quote = siteData.then(function(json) {
-    return Data.quote(json);
-  });
+  return siteData.then(function(json) {
+    var quoteData = json.quoteData,
+        randomQuoteData = Data.randomObject(quoteData, 'quotes'),
+        quote = toplevel(randomQuoteData, 'quote');
 
-  return quote;
+    return quote;
+  });
 });
 
 app.factory('image', function(siteData) {
-  var image = siteData.then(function(json) {
-    return Data.background(json);
-  });
+  return siteData.then(function(json) {
+    var imageData = json.imageData,
+        randomImageData = Data.randomObject(imageData, 'images'),
+        image = toplevel(randomImageData, 'image');
 
-  return image;
+    return image;
+  });
 });
