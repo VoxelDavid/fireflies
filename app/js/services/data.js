@@ -18,9 +18,9 @@ function randomIndex(array) {
   return array[index];
 }
 
-function authorName(author) {
-  if (author) {
-    return author;
+function checkAuthor(authorName) {
+  if (authorName) {
+    return authorName;
   } else {
     return NO_AUTHOR;
   }
