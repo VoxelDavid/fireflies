@@ -26,33 +26,32 @@ function checkAuthor(authorName) {
   }
 }
 
-function toplevel(obj, type) {
-  var meta = obj.meta,
-      data = obj.data;
+function toplevel(obj) {
+  var data = obj.data,
+      content = obj.content;
 
-  function quote() {
-    return {
-      author: authorName(meta.author),
-      title: data.title,
-      source: data.source,
-      text: data.text
-    };
+  data.author = checkAuthor(data.author);
+
+  var merge = mergeObjects(data, content);
+
+  return merge;
+}
+
+function mergeObjects() {
+  var args = arguments,
+      merged = {};
+
+  if (args.length < 2) { return; }
+
+  for (var i = 0; i < args.length; i++) {
+    var obj = args[i];
+
+    for (var attr in obj) {
+      merged[attr] = obj[attr];
+    }
   }
 
-  function image() {
-    return {
-      author: authorName(meta.author),
-      name: data.name,
-      className: data.className,
-      source: data.source
-    };
-  }
-
-  if (type === 'quote') {
-    return quote();
-  } else if (type === 'image') {
-    return image();
-  }
+  return merged;
 }
 
 
