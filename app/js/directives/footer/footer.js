@@ -1,8 +1,14 @@
-'use strict';
+(function() {
+  'use strict';
 
-app.directive('firefliesFooter', function() {
-  return {
-    restrict: 'E',
-    templateUrl: '/js/directives/footer/footer.html'
-  };
-});
+  angular
+    .module('fireflies')
+    .directive('firefliesFooter', firefliesFooter);
+
+  function firefliesFooter() {
+    return {
+      restrict: 'E',
+      templateUrl: '/js/directives/footer/footer.html'
+    };
+  }
+})();

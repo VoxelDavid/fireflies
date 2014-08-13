@@ -1,10 +1,15 @@
+(function() {
+  'use strict';
 
-'use strict';
+  // Allows us to work with StellarJS from within the app.
 
-// Used to allow us to work with Stellar.js from within Angular.
+  angular
+    .module('fireflies')
+    .factory('stellar', stellar);
 
-app.factory('stellar', function() {
-  return function(options) {
-    return angular.element.stellar(options);
-  };
-});
+  function stellar() {
+    return function(options) {
+      return angular.element.stellar(options);
+    };
+  }
+})();

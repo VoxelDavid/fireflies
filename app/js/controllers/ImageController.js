@@ -1,11 +1,17 @@
-'use strict';
+(function() {
+  'use strict';
 
-app.controller('ImageController', function(image, stellar) {
-  var scope = this;
+  angular
+    .module('fireflies')
+    .controller('ImageController', ImageController);
 
-  stellar();
+  function ImageController(dataService, stellar) {
+    var vm = this;
 
-  image.then(function(data) {
-    scope.className = data.className;
-  });
-});
+    stellar();
+
+    dataService.randomImage().then(function(data) {
+      vm.className = data.className;
+    });
+  }
+})();

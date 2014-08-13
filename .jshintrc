@@ -1,7 +1,6 @@
 {
   "globals": {
-    "angular": true,
-    "app": true
+    "angular": true
   },
 
   "bitwise": true,
@@ -11,7 +10,7 @@
   "forin": false,
   "freeze": true,
   "indent": 2,
-  "latedef": true,
+  "latedef": "nofunc",
   "newcap": true,
   "noarg": true,
   "noempty": true,

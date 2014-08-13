@@ -1,14 +1,21 @@
-'use strict';
+(function() {
+  'use strict';
 
-app.controller('QuoteController', function(quote) {
-  var scope = this;
+  angular
+    .module('fireflies')
+    .controller('QuoteController', QuoteController);
 
-  quote.then(function(data) {
-    // The quote's author and text are set by the 'ng-bind-html' directive,
-    // which uses $sanitize to preserve html tags and entities.
-    scope.text   = data.text;
-    scope.author = data.author;
-    scope.source = data.source;
-    scope.title  = data.title;
-  });
-});
+  // The quote's author and text are set by the 'ng-bind-html' directive,
+  // which uses $sanitize to preserve html tags and entities.
+
+  function QuoteController(dataService) {
+    var vm = this;
+
+    dataService.randomQuote().then(function(data) {
+      vm.text   = data.text;
+      vm.author = data.author;
+      vm.source = data.source;
+      vm.title  = data.title;
+    });
+  }
+})();

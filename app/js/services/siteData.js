@@ -1,9 +1,13 @@
-'use strict';
+(function() {
+  'use strict';
 
-app.factory('siteData', function($http, JSON_PATH) {
-  var data = $http.get(JSON_PATH).then(function(json) {
-    return json.data;
-  });
+  angular
+    .module('fireflies')
+    .factory('siteData', siteData);
 
-  return data;
-});
+  function siteData($http, DATA_PATH) {
+    return $http.get(DATA_PATH).then(function(json) {
+      return json.data;
+    });
+  }
+})();

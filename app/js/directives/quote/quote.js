@@ -1,10 +1,16 @@
-'use strict';
+(function() {
+  'use strict';
 
-app.directive('firefliesQuote', function() {
-  return {
-    restrict: 'E',
-    templateUrl: '/js/directives/quote/quote.html',
-    controller: 'QuoteController',
-    controllerAs: 'quote'
+  angular
+    .module('fireflies')
+    .directive('firefliesQuote', firefliesQuote);
+
+  function firefliesQuote() {
+    return {
+      restrict: 'E',
+      templateUrl: '/js/directives/quote/quote.html',
+      controller: 'QuoteController',
+      controllerAs: 'quote'
+    }
   }
-});
+})();
