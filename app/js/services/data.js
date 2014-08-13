@@ -19,10 +19,10 @@ function randomIndex(array) {
 }
 
 function authorName(author) {
-  if (!author) {
-    return NO_AUTHOR;
-  } else {
+  if (author) {
     return author;
+  } else {
+    return NO_AUTHOR;
   }
 }
 
