@@ -59,13 +59,13 @@ function mergeObjects() {
 ============================================================================= */
 
 Data.randomObject = function(array, listName) {
-  var meta = randomIndex(array),
-      list = meta[listName],
-      data = randomIndex(list);
+  var data = randomIndex(array),
+      objectList = data[listName],
+      content = randomIndex(objectList);
 
   return {
-    meta: meta,
-    data: data
+    data: data,
+    content: content
   };
 };
 
