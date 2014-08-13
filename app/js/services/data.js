@@ -13,11 +13,13 @@ var Data = {};
 /* Utilities
 ============================================================================= */
 
+// Used to find the initial data and metadata objects in the json file
 function randomIndex(array) {
   var index = floor(random() * array.length);
   return array[index];
 }
 
+// Used to make checking if an author exists easier
 function checkAuthor(authorName) {
   if (authorName) {
     return authorName;
@@ -26,6 +28,8 @@ function checkAuthor(authorName) {
   }
 }
 
+// Takes the data that's seperated in the data and metadata objects and places
+// their values into a new object.
 function toplevel(obj) {
   var data = obj.data,
       content = obj.content;
@@ -37,6 +41,20 @@ function toplevel(obj) {
   return merge;
 }
 
+// Combines any number of objects into a single object.
+//
+// Example usage:
+//
+//   var obj1 = { hi: "Hello, World", bye: "Goodbye" },
+//       obj2 = { yes: "Yes", no: "No", hi: "Hello" },
+//       merged = mergeObjects(obj1, obj2)
+//
+//   merged = {
+//     hi: "Hello",
+//     bye: "Goodbye",
+//     yes: "Yes",
+//     no: "No"
+//   }
 function mergeObjects() {
   var args = arguments,
       merged = {};
