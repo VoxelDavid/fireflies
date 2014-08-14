@@ -6,9 +6,10 @@
     .directive('firefliesFooter', firefliesFooter);
 
   function firefliesFooter() {
-    return {
+    var directive = {
       restrict: 'E',
       templateUrl: '/js/directives/footer/footer.html'
     };
+    return directive;
   }
 })();

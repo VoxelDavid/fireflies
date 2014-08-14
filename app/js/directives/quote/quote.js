@@ -6,11 +6,12 @@
     .directive('firefliesQuote', firefliesQuote);
 
   function firefliesQuote() {
-    return {
+    var directive = {
       restrict: 'E',
       templateUrl: '/js/directives/quote/quote.html',
       controller: 'QuoteController',
       controllerAs: 'quote'
-    }
+    };
+    return directive;
   }
 })();

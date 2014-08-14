@@ -6,9 +6,10 @@
     .directive('firefliesInfo', firefliesInfo);
 
   function firefliesInfo() {
-    return {
+    var directive = {
       restrict: 'E',
       templateUrl: '/js/directives/siteInfo/siteInfo.html'
     };
+    return directive;
   }
 })();
