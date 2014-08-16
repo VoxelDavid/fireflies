@@ -3,6 +3,7 @@
 
   angular
     .module('fireflies', [
+      'ngRoute',
       'ngSanitize'
     ]);
 })();
