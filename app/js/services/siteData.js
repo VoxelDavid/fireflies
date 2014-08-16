@@ -6,8 +6,12 @@
     .factory('siteData', siteData);
 
   function siteData($http, DATA_PATH) {
-    return $http.get(DATA_PATH).then(function(json) {
+    var data = $http.get(DATA_PATH);
+
+    function getData(json) {
       return json.data;
-    });
+    }
+
+    return data.then(getData);
   }
 })();
