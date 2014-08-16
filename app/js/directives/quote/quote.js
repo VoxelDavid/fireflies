@@ -8,6 +8,7 @@
   function firefliesQuote() {
     var directive = {
       restrict: 'E',
+      replace: true,
       templateUrl: '/js/directives/quote/quote.html',
       controller: 'QuoteController',
       controllerAs: 'quote'

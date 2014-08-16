@@ -8,6 +8,7 @@
   function firefliesInfo() {
     var directive = {
       restrict: 'E',
+      replace: true,
       templateUrl: '/js/directives/siteInfo/siteInfo.html'
     };
     return directive;
