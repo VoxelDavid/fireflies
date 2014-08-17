@@ -18,13 +18,11 @@
  * is being used in the project */
 @import "compass/css3";
 
-
 /* Susy grid system */
-
 @import "susy";
 
 $susy: (
-	column-width: 5em
+  column-width: 5em
 );
 
 $primary-layout:  ( columns: 6 );
