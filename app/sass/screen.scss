@@ -70,12 +70,11 @@ h1, h2, h3 {
 }
 
 a {
-  font-weight: bold;
   color: $link-color;
   text-decoration: none;
-  @include transition(all .2s);
+
   &:hover {
-    color: $link-hover-color;
+    text-decoration: underline;
   }
 }
 
