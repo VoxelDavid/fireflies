@@ -57,26 +57,19 @@ module.exports = function(grunt) {
 			gruntfile: {
 				files: 'Gruntfile.js'
 			},
-			bower: {
-				files: ['<%= app.bowerDir %>/{,*/}*'],
-				tasks: ['bowerInstall']
-			},
 			compass: {
-				files: ['<%= app.sassDir %>/{,*/}*.{scss,sass}'],
+				files: '<%= app.sassDir %>/**/*.{scss,sass}',
 				tasks: ['compass:compile']
 			},
 			js: {
-				files: ['<%= app.jsDir %>/{,*/}*.js'],
+				files: '<%= app.jsDir %>/**/*.js',
 				tasks: ['newer:jshint:lint']
-			},
-			views: {
-				files: ['<%= app.jsDir %>/views/{,*/}*.html']
 			},
 			livereload: {
 				files: [
-					'<%= app.base %>/{,*/}*.html',
-					'<%= app.cssDir %>/{,*/}*.css',
-					'<%= app.imageDir %>/{,*/}*.{png,jpg,jpeg,gif}'
+					'<%= app.base %>/**/*.html',
+					'<%= app.cssDir %>/**/*.css',
+					'<%= app.imageDir %>/**/*.{png,jpg,jpeg,gif}'
 				]
 			}
 		},
@@ -91,7 +84,7 @@ module.exports = function(grunt) {
 				reporter: require('jshint-stylish')
 			},
 			lint: [
-				'<%= app.jsDir %>/{,*/}*.js'
+				'<%= app.jsDir %>/**/*.js'
 			]
 		},
 
@@ -196,6 +189,8 @@ module.exports = function(grunt) {
 
 	});
 
+	// Allows us to view the site in our browser. Can optionally be run with
+	// `grunt serve:build` to display the compiled version of the site.
 	grunt.registerTask('serve', function(target) {
 		if (target === 'build') {
 			return grunt.task.run(['connect:build:keepalive']);
@@ -207,7 +202,9 @@ module.exports = function(grunt) {
 			'compass:compile',
 			'watch',
 		])
-	})
+	});
+
+	grunt.registerTask('bower', [ 'bowerInstall' ]);
 
 	grunt.registerTask('build', [
 		// concat, cssmin and uglify tasks are handled by Usemin.
