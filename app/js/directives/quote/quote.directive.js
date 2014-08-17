@@ -9,7 +9,7 @@
     var directive = {
       restrict: 'E',
       replace: true,
-      templateUrl: '/js/directives/quote/quote.html',
+      templateUrl: '/js/directives/quote/quote.directive.html',
       controller: 'QuoteController',
       controllerAs: 'quote'
     };

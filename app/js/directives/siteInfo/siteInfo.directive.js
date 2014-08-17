@@ -3,13 +3,13 @@
 
   angular
     .module('fireflies')
-    .directive('firefliesFooter', firefliesFooter);
+    .directive('firefliesInfo', firefliesInfo);
 
-  function firefliesFooter() {
+  function firefliesInfo() {
     var directive = {
       restrict: 'E',
       replace: true,
-      templateUrl: '/js/directives/footer/footer.html'
+      templateUrl: '/js/directives/siteInfo/siteInfo.directive.html'
     };
     return directive;
   }
