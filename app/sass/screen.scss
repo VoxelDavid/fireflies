@@ -84,6 +84,7 @@ a {
 
 .container,
 .extended-container {
+  // For padding the sides of the screen on smaller resolutions
   @include bleed-x(1.25em);
 }
 
