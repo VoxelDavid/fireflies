@@ -9,7 +9,7 @@
     var homepage = {
       controller: 'FirefliesController',
       controllerAs: 'vm',
-      templateUrl: '/js/directives/quote/quote.directive.html',
+      templateUrl: '/js/quote/quote.directive.html',
       resolve: {
         quotePrepService: function(dataService) {
           return dataService.randomQuote();
