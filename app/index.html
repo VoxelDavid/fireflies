@@ -28,8 +28,7 @@
             <p class="sad">:(</p>
         </noscript>
 
-        <main ng-controller="ImageController as image" class="masthead  {{image.className}}" data-stellar-background-ratio=".15" role="main">
-            <fireflies-quote></fireflies-quote>
+        <main ng-view ng-class="vm.image.className" class="masthead" data-stellar-background-ratio=".15" role="main">
         </main>
 
         <fireflies-info></fireflies-info>
@@ -49,9 +48,9 @@
         <!-- build:js js/app.min.js -->
         <script src="js/app.js"></script>
         <script src="js/app.constants.js"></script>
+        <script src="js/app.routes.js"></script>
 
-        <script src="js/controllers/ImageController.js"></script>
-        <script src="js/controllers/QuoteController.js"></script>
+        <script src="js/controllers/FirefliesController.js"></script>
 
         <script src="js/directives/quote/quote.directive.js"></script>
         <script src="js/directives/siteInfo/siteInfo.directive.js"></script>
