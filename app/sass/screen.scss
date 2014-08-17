@@ -16,7 +16,7 @@
 /* 1. Imports - Getting Sass partials
  ============================================================================ */
 
-/* '_base' contains all of the variables used throughout the
+/* The _base partial contains all of the variables used throughout the
  * stylesheet, as well as Compass modules. */
 @import "base";
 
@@ -38,9 +38,9 @@
 
 
 html, body {
-  /* <html> and <body> need their heights set to 100% for the
-   * background image to remain covering the entire screen,
-   * while allowing for more content below it. */
+  /* <html> and <body> need their heights set to 100% for the background image
+   * to remain covering the entire screen, while allowing for more content below
+   * it. */
   height: 100%;
   min-height: 100%;
 }
@@ -178,8 +178,8 @@ a {
       content: "\00B7"; // Mid dot (·)
     }
     &:last-child:after {
-      /* Set the content to nothing on the last child, so
-       * dots will only appear in between elements. */
+      /* Set the content to nothing on the last child, so dots will only appear
+       * in between elements. */
       content: "";
     }
   }
