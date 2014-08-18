@@ -5,6 +5,8 @@
     .module('fireflies')
     .factory('siteData', siteData);
 
+  siteData.$inject = ['$http', 'DATA_PATH'];
+
   function siteData($http, DATA_PATH) {
     var data = $http.get(DATA_PATH);
 

@@ -5,6 +5,8 @@
     .module('fireflies')
     .service('dataService', dataService);
 
+  dataService.$inject = ['siteData', 'NO_AUTHOR'];
+
   function dataService(siteData, NO_AUTHOR) {
     var service = {
       randomQuote: randomQuote,
