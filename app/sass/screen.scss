@@ -166,24 +166,7 @@ a {
 .footer-links {
   margin-bottom: .4em;
   display: inline-block;
-
-  li {
-    display: inline;
-    float: left;
-    list-style-type: none;
-
-    &:after {
-      padding-right: .65em;
-      padding-left: .65em;
-      display: inline;
-      content: "\00B7"; // Mid dot (·)
-    }
-    &:last-child:after {
-      /* Set the content to nothing on the last child, so dots will only appear
-       * in between elements. */
-      content: "";
-    }
-  }
+  @extend %dot-links;
 }
 
 
@@ -245,6 +228,25 @@ a {
 .bg-the-ocean-sky       { background-image: url("/img/bg-the-ocean-sky.jpg") }
 .bg-tokyo-tower         { background-image: url("/img/bg-tokyo-tower.jpg") }
 
+%dot-links {
+  li {
+    display: inline;
+    float: left;
+    list-style-type: none;
+
+    &:after {
+      padding-right: .65em;
+      padding-left: .65em;
+      display: inline;
+      content: "\00B7"; // Mid dot (·)
+    }
+    &:last-child:after {
+      /* Set the content to nothing on the last child, so dots will only appear
+       * in between elements. */
+      content: "";
+    }
+  }
+}
 
 /* 5. Animations
  ============================================================================ */
