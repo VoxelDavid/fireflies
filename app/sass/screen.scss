@@ -36,15 +36,6 @@
   text-shadow: none;
 }
 
-
-html, body {
-  /* <html> and <body> need their heights set to 100% for the background image
-   * to remain covering the entire screen, while allowing for more content below
-   * it. */
-  height: 100%;
-  min-height: 100%;
-}
-
 body {
   font-size: 1em;
   line-height: 1.5;
@@ -78,8 +69,47 @@ a {
   }
 }
 
+/* 3. Full Page Background
+ ============================================================================ */
 
-/* 3. Structure - The look and feel of the site
+// All of these elements need their height and min-height set to 100% for the
+// background to take up the full height of the page.
+html,
+body,
+.masthead,
+.background,
+.dark-layer {
+  height: 100%;
+  min-height: 100%;
+}
+
+.masthead {
+  // Needed by the Background class for absolute positioning.
+  position: relative;
+}
+
+.background {
+  /* Absolute positioning and z-index are needed to keep the background behind
+   * the quote, while still allowing for 100% height.
+   *
+   * Then the width is there so the background will actually display. */
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+
+  // Needed for parallax scrolling
+  background-attachment: fixed;
+
+  @include background-size(cover);
+}
+
+.dark-layer {
+  background-color: #000000;
+  opacity: .35;
+}
+
+
+/* 4. Structure - The look and feel of the site
  ============================================================================ */
 
 .container,
@@ -191,7 +221,7 @@ a {
 }
 
 
-/* 4. Utilities - Things used all over the place
+/* 5. Utilities - Things used all over the place
  ============================================================================ */
 
 .underline {
@@ -248,7 +278,7 @@ a {
   }
 }
 
-/* 5. Animations
+/* 6. Animations
  ============================================================================ */
 
 .fade-in {
