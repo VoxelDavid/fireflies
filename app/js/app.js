@@ -6,6 +6,7 @@
       'ngRoute',
       'ngSanitize',
 
+      'fireflies.background',
       'fireflies.quote'
     ]);
 })();
