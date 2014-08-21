@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 		'useminPrepare',
 		'compass:compile',
 		'concat',
-		'ngmin',
+		// 'ngmin',
 		'cssmin',
 		'copy:build',
 		'uglify',
