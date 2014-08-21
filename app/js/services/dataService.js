@@ -3,11 +3,11 @@
 
   angular
     .module('fireflies')
-    .service('dataService', dataService);
+    .service('dataservice', dataservice);
 
-  dataService.$inject = ['siteData', 'NO_AUTHOR'];
+  dataservice.$inject = ['siteData', 'NO_AUTHOR'];
 
-  function dataService(siteData, NO_AUTHOR) {
+  function dataservice(siteData, NO_AUTHOR) {
     var service = {
       randomQuote: randomQuote,
       randomImage: randomImage

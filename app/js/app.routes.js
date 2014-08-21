@@ -13,11 +13,11 @@
       controllerAs: 'vm',
       templateUrl: '/js/quote/quote.directive.html',
       resolve: {
-        quotePrepService: function(dataService) {
-          return dataService.randomQuote();
+        quotePrepService: function(dataservice) {
+          return dataservice.randomQuote();
         },
-        imagePrepService: function(dataService) {
-          return dataService.randomImage();
+        imagePrepService: function(dataservice) {
+          return dataservice.randomImage();
         }
       }
     };
