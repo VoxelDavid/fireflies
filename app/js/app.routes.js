@@ -14,10 +14,10 @@
       templateUrl: '/js/quote/quote.directive.html',
       resolve: {
         quotePrepService: function(dataservice) {
-          return dataservice.getRandomQuote();
+          return dataservice.getQuote();
         },
         imagePrepService: function(dataservice) {
-          return dataservice.getRandomImage();
+          return dataservice.getImage();
         }
       }
     };

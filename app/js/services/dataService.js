@@ -10,8 +10,8 @@
   function dataservice($http, DATA_PATH, NO_AUTHOR) {
     return {
       siteData: siteData,
-      getRandomQuote: getRandomQuote,
-      getRandomImage: getRandomImage
+      getQuote: getQuote,
+      getImage: getImage
     };
 
 
@@ -26,6 +26,22 @@
         return json.data;
       }
     }
+
+    /* These two functions are placeholders for now. Soon the service will be
+     * checking the query string to get quotes/images, and then falling back to
+     * the random ones, if no query is specified. */
+
+    function getQuote() {
+      return getRandomQuote();
+    }
+
+    function getImage() {
+      return getRandomImage();
+    }
+
+
+    /* Utilites
+    ========================================================================= */
 
     function getRandomQuote() {
       return siteData()
@@ -52,10 +68,6 @@
         return image;
       }
     }
-
-
-    /* Utilites
-    ========================================================================= */
 
     // Used to find the initial data and metadata objects in the json file
     function randomIndex(array) {
