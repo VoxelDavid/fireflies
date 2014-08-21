@@ -5,9 +5,9 @@
     .module('fireflies')
     .service('dataservice', dataservice);
 
-  dataservice.$inject = ['siteData', 'NO_AUTHOR'];
+  dataservice.$inject = ['$http', 'DATA_PATH', 'NO_AUTHOR'];
 
-  function dataservice(siteData, NO_AUTHOR) {
+  function dataservice($http, DATA_PATH, NO_AUTHOR) {
     return {
       siteData: siteData,
       getRandomQuote: getRandomQuote,
@@ -18,24 +18,39 @@
     /* Methods
     ========================================================================= */
 
+    function siteData() {
+      return $http.get(DATA_PATH)
+        .then(success);
+
+      function success(json) {
+        return json.data;
+      }
+    }
+
     function getRandomQuote() {
-      return siteData.then(function(json) {
+      return siteData()
+        .then(success);
+
+      function success(json) {
         var quoteData = json.quoteData,
             randomQuoteData = randomObject(quoteData, 'quotes'),
             quote = toplevel(randomQuoteData, 'quote');
 
         return quote;
-      });
+      }
     }
 
     function getRandomImage() {
-      return siteData.then(function(json) {
+      return siteData()
+        .then(success);
+
+      function success(json) {
         var imageData = json.imageData,
             randomImageData = randomObject(imageData, 'images'),
             image = toplevel(randomImageData, 'image');
 
         return image;
-      });
+      }
     }
 
 
