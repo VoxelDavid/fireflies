@@ -8,12 +8,11 @@
   dataservice.$inject = ['siteData', 'NO_AUTHOR'];
 
   function dataservice(siteData, NO_AUTHOR) {
-    var service = {
+    return {
+      siteData: siteData,
       getRandomQuote: getRandomQuote,
       getRandomImage: getRandomImage
     };
-
-    return service;
 
 
     /* Methods
