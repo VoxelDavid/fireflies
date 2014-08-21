@@ -4,6 +4,8 @@
   angular
     .module('fireflies', [
       'ngRoute',
-      'ngSanitize'
+      'ngSanitize',
+
+      'fireflies.quote'
     ]);
 })();

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('fireflies')
+    .module('fireflies.quote')
     .directive('firefliesQuote', firefliesQuote);
 
   function firefliesQuote() {
