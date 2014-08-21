@@ -169,8 +169,8 @@ module.exports = function(grunt) {
 			// Options reference:
 			// https://github.com/yeoman/grunt-usemin#options-1
 
-			html: ['<%= app.buildDir %>/{,*/}*.html'],
-			css: ['<%= app.buildDir %>/css/{,*/}*.css']
+			html: ['<%= app.buildDir %>/**/*.html'],
+			css: ['<%= app.buildDir %>/css/**/*.css']
 		},
 
 		// Allow the use of non-minsafe AngularJS files. Automatically makes it
