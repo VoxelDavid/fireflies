@@ -9,8 +9,8 @@
 
   function dataservice(siteData, NO_AUTHOR) {
     var service = {
-      randomQuote: randomQuote,
-      randomImage: randomImage
+      getRandomQuote: getRandomQuote,
+      getRandomImage: getRandomImage
     };
 
     return service;
@@ -19,7 +19,7 @@
     /* Methods
     ========================================================================= */
 
-    function randomQuote() {
+    function getRandomQuote() {
       return siteData.then(function(json) {
         var quoteData = json.quoteData,
             randomQuoteData = randomObject(quoteData, 'quotes'),
@@ -29,7 +29,7 @@
       });
     }
 
-    function randomImage() {
+    function getRandomImage() {
       return siteData.then(function(json) {
         var imageData = json.imageData,
             randomImageData = randomObject(imageData, 'images'),
