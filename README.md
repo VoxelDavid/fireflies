@@ -1,18 +1,14 @@
 
 ## Fireflies
 
-Fireflies is a single-page application built off of Angular.js. It displays a quote and background image at random every time the page is loaded.
+Fireflies is a small application that displays a quote and background image at
+random every time the page is loaded.
 
-I've learned a lot since starting Fireflies, namely the awesomeness that is [NPM], [Bower], [Grunt] and of course [Angular].
+It was inspired by [Chibird's post on Tumblr][chibird]. What she said stood out
+to me, and I wanted to make something to commemorate it. Soon after, Fireflies
+was born.
 
-Fireflies was inspired by Chibird's posts on Tumblr. [One of her posts in particular] stood out to me, and soon after Fireflies was born. It was merely a way for me to learn some stuff about JavaScript, now it's turned into a full blown web app.
+![Screenshot of Fireflies in action][screenshot]
 
-I wonder where I'll take it next :)
-
-Cheers!
-
-[Angular]: http://angularjs.org
-[NPM]: http://npmjs.org
-[Bower]: bower.io
-[Grunt]: gruntjs.com
-[One of her posts in particular]: http://chibird.com/post/74996652847/
+[screenshot]: screenshots/example-background-and-quote.png
+[chibird]: http://chibird.com/post/74996652847/

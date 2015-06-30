@@ -1,27 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-##
-## Project
-##
-
-.temp/
+# Distribution / packaging
+.Python
+env/
 build/
-app/css
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
-##
-## Compass
-##
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-.sass-cache/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
 
-##
-## Bower
-##
-
-app/bower_components
-
-##
-## Node
-##
-
-node_modules
+# Django stuff:
 *.log
