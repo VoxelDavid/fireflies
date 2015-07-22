@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 
-from apps.quote.views import QuoteView
+from .views import IndexView
 
 urlpatterns = [
-    url(r"^$", QuoteView.as_view())
+    url(r"^$", IndexView.as_view())
 ]

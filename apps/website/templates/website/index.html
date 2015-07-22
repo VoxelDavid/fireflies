@@ -1,2 +1,5 @@
 {% extends "website/base.html" %}
-{% include "quote/quote.html" %}
+
+{% block quote %}
+  {% include "website/quote.html" %}
+{% endblock %}
