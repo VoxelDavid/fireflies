@@ -4,11 +4,11 @@ from django.db import models
 
 class Quote(models.Model):
     author = models.CharField(blank=True, max_length=50)
-    body = models.TextField()
+    content = models.TextField()
     source = models.URLField(blank=True)
 
     def __str__(self):
-        return self.author
+        return self.content
 
     def get_random():
         """Gets a random quote from the database."""
