@@ -1,0 +1,11 @@
+{% block quote %}
+  <section>
+    <p>{{ random_quote.body|safe }}</p>
+
+    {% if random_quote.source %}
+      <p><a href="{{ random_quote.source }}">{{ random_quote.author }}</a></p>
+    {% else %}
+      <p>{{ random_quote.author }}</p>
+    {% endif %}
+  </section>
+{% endblock %}
