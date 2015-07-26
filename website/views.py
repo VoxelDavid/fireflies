@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
-from apps.quote.models import Quote
-from apps.background.models import Image
+from quote.models import Quote
+from background.models import Image
 
 class IndexView(TemplateView):
     template_name = "website/index.html"
