@@ -11,7 +11,7 @@ class Photographer(models.Model):
 class Image(models.Model):
     photographer = models.ForeignKey(Photographer, blank=True, null=True)
     name = models.CharField(max_length=50)
-    source = models.URLField(blank=True)
+    source = models.URLField()
     objects = RandomManager()
 
     def __str__(self):
