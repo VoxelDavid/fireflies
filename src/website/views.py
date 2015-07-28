@@ -8,6 +8,6 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context["random_quote"] = Quote.get_random()
-        context["random_image"] = Image.get_random()
+        context["random_quote"] = Quote.objects.get_random()
+        context["random_image"] = Image.objects.get_random()
         return context
