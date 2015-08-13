@@ -1,3 +1,9 @@
+.sass-cache/
+
+# Gems are only used locally for compiling SASS files. There isn't a need for
+# Gemfile.lock to be committed.
+Gemfile.lock
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,7 +1,25 @@
-<p>&ldquo;{{ random_quote.content|safe }}&rdquo;</p>
 
-{% if random_quote.source %}
-  <p><a href="{{ random_quote.source }}">{{ random_quote.author }}</a></p>
-{% else %}
-  <p>{{ random_quote.author }}</p>
-{% endif %}
+<section class="quote-container  quote-view  slide-down">
+  <p class="quote-text">{{ random_quote.content|safe }}</p>
+
+  <p class="quote-source">
+  {% if random_quote.author %}
+
+    {% if random_quote.source %}
+      <a class="underline" href="{{ random_quote.source}}">{{ random_quote.author }}<span></span></a>
+    {% else %}
+      {{ random_quote.author }}
+    {% endif %}
+
+  {% else %}
+
+    {# There can be a source to a quote, but that doesn't mean it has an author #}
+    {% if random_quote.source %}
+      <a class="underline" href="{{ random_quote.source }}">Unattributed<span></span></a>
+    {% else %}
+      Unattributed
+    {% endif %}
+
+  {% endif %}
+  </p>
+</section>

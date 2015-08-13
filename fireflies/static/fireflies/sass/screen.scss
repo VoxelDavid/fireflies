@@ -1,0 +1,298 @@
+
+/* Table of Contents
+ ============================================================================ */
+
+/*
+
+  1. Imports
+  2. Base
+  3. Structure
+  4. Utilities
+  5. Animations
+
+ */
+
+
+/* 1. Imports - Getting Sass partials
+ ============================================================================ */
+
+/* The _base partial contains all of the variables used throughout the
+ * stylesheet, as well as Compass modules. */
+@import "base";
+
+/* A copy of Normalize.css to take care of browser inconsistencies. It also acts
+ * as a reset stylesheet.
+ * https://necolas.github.io/normalize.css/ */
+@import "normalize";
+
+/* 2. General - Setting up the main styles
+ ============================================================================ */
+
+*::-moz-selection {
+  background-color: $selection-background-color;
+  color: $selection-color;
+  text-shadow: none;
+}
+
+*::selection {
+  background-color: $selection-background-color;
+  color: $selection-color;
+  text-shadow: none;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: $font-stack;
+  text-rendering: optimizelegibility;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, blockquote,
+pre, table, fieldset, hr {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+h1, h2, h3 {
+  margin-top: .8em;
+  margin-bottom: .6em;
+  color: $header-color;
+  font-family: $header-font-stack;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 3. Full Page Background
+ ============================================================================ */
+
+// All of these elements need their height and min-height set to 100% for the
+// background to take up the full height of the page.
+html,
+body,
+.masthead,
+.background,
+.dark-layer {
+  height: 100%;
+  min-height: 100%;
+}
+
+.masthead {
+  // Needed by the Background class for absolute positioning.
+  position: relative;
+}
+
+.background {
+  /* Absolute positioning and z-index are needed to keep the background behind
+   * the quote, while still allowing for 100% height.
+   *
+   * Then the width is there so the background will actually display. */
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+
+  // Needed for parallax scrolling
+  background-attachment: fixed;
+
+  @include background-size(cover);
+}
+
+.dark-layer {
+  background-color: #000000;
+  opacity: .35;
+}
+
+
+/* 4. Structure - The look and feel of the site
+ ============================================================================ */
+
+.container,
+.extended-container {
+  // For padding the sides of the screen on smaller resolutions
+  @include bleed-x(1.25em);
+}
+
+.container {
+  @include container($primary-layout)
+}
+
+.quote-container {
+  @include container($quote-layout);
+}
+
+.extended-container {
+  @include container($extended-layout);
+}
+
+
+.masthead {
+  height: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+  @include background-size(cover);
+}
+
+
+.quote-view {
+  padding-top: 15%;
+  color: $quote-color;
+  text-shadow: 0 2px 3px #000000;
+
+  a {
+    font-weight: bold;
+    color: $quote-link-color;
+    text-decoration: none;
+    text-shadow: 0 2px 3px #453C16;
+  }
+
+  .underline span {
+    background-color: $quote-link-color;
+  }
+}
+
+.quote-text {
+  font-size: 1.3em;
+  font-family: $quote-font-stack;
+  text-align: center;
+  @include full;
+}
+
+.quote-source {
+  font-size: .9em;
+  @include suffix(10%);
+  @include last;
+
+  &:before {
+    content: "\2014"; // ndash (–)
+  }
+}
+
+
+.sub-content {
+  padding-bottom: 1em;
+  background-color: $sub-content-bg-color;
+  border-top: .5em solid #20242E;
+
+  .about {
+    @include full;
+  }
+}
+
+
+.site-footer {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: .85em;
+  text-align: center;
+  background-color: $footer-bg-color;
+}
+
+.footer-links {
+  margin-bottom: .4em;
+  display: inline-block;
+  @extend %dot-links;
+}
+
+
+.no-js {
+  display: block;
+  margin: 15% auto 0 auto;
+  color: $no-js-color;
+  font-size: 1.2em;
+  text-align: center;
+
+  .sad {
+    font-size: 1.25em;
+  }
+
+  a, a:hover {
+    color: $no-js-link-color;
+  }
+
+  .underline span {
+    background-color: $no-js-link-color;
+  }
+}
+
+
+/* 5. Utilities - Things used all over the place
+ ============================================================================ */
+
+.underline {
+  display: inline-block;
+
+  span {
+    position: relative;
+    height: 2px;
+    display: block;
+    background-color: #000;
+    @include scaleX(0);
+    @include transition(all 0.2s ease-in-out);
+  }
+
+  &:hover span {
+    @include scaleX(1);
+  }
+}
+
+%dot-links {
+  li {
+    display: inline;
+    float: left;
+    list-style-type: none;
+
+    &:after {
+      padding-right: .65em;
+      padding-left: .65em;
+      display: inline;
+      content: "\00B7"; // Mid dot (·)
+    }
+    &:last-child:after {
+      /* Set the content to nothing on the last child, so dots will only appear
+       * in between elements. */
+      content: "";
+    }
+  }
+}
+
+/* 6. Animations
+ ============================================================================ */
+
+.fade-in {
+  -webkit-animation: fade-in 2s;
+  animation: fade-in 2s;
+}
+
+.slide-down {
+  position: relative;
+  -webkit-animation: slide-down 1.25s;
+  animation: slide-down 1.25s;
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes slide-down {
+  from { bottom: 3em; }
+  to   { bottom: 0; }
+}
+@keyframes slide-down {
+  from { bottom: 3em; }
+  to   { bottom: 0; }
+}

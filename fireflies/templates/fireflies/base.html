@@ -1,13 +1,42 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="David Minnerly">
+
     <title>{% block title %}Fireflies{% endblock %}</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif">
+    <link rel="stylesheet" href="{% static "fireflies/css/screen.css" %}">
   </head>
 
-  <body>
-    <main role="main">
-      <div class="background">{% block background %}{% endblock %}</div>
-      <div class="quote">{% block quote %}{% endblock %}</div>
+  <body class="fade-in">
+    <main class="masthead" role="main">
+      {% block background %}{% endblock %}
+      {% block quote %}{% endblock %}
     </main>
+
+    <section class="sub-content">
+      <div class="container">
+        <div class="about" id="about">
+          <h1>About Fireflies</h1>
+
+          <p>Fireflies is a little single-page application built off of <a href="http://angularjs.org">AngularJS</a>, with <a href="http://npmjs.org">NPM</a> and <a href="http://bower.io">Bower</a> handling my dependencies, and <a href="http://gruntjs.com">Grunt</a> running tasks to automate my build process &ndash; amongst other things.</p>
+
+          <p>I was inspired to make Fireflies by <a href="http://i.imgur.com/DIU1JR7.png">about:mozilla</a> and the Tumblr user <a href="http://chibird.com">Chibird</a>. I loved some of her posts and I wanted to incorporate them into something, and with about:mozilla giving me a nice idea of where to start, Fireflies was born.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <ul class="footer-links">
+        <li><a href="http://github.com/voxeldavid/fireflies">Website Source</a></li>
+        <li>A thing by <a href="http://twitter.com/voxeldavid">David Minnerly</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
