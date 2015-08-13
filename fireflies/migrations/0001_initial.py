@@ -15,20 +15,29 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False, auto_created=True, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('source', models.URLField(blank=True)),
+                ('source', models.URLField()),
             ],
         ),
         migrations.CreateModel(
-            name='Photographer',
+            name='Person',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False, auto_created=True, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
                 ('website', models.URLField(blank=True)),
             ],
         ),
+        migrations.CreateModel(
+            name='Quote',
+            fields=[
+                ('id', models.AutoField(primary_key=True, serialize=False, auto_created=True, verbose_name='ID')),
+                ('content', models.TextField()),
+                ('source', models.URLField(blank=True)),
+                ('author', models.ForeignKey(null=True, blank=True, to='fireflies.Person')),
+            ],
+        ),
         migrations.AddField(
             model_name='image',
             name='photographer',
-            field=models.ForeignKey(null=True, to='background.Photographer', blank=True),
+            field=models.ForeignKey(null=True, blank=True, to='fireflies.Person'),
         ),
     ]

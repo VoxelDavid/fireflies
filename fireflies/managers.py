@@ -7,5 +7,6 @@ class RandomManager(models.Manager):
 
     def get_random(self):
         objects = self.model.objects.all()
-        random_object = random.choice(objects)
-        return random_object
+        if objects:
+            random_object = random.choice(objects)
+            return random_object

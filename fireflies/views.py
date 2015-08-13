@@ -1,10 +1,9 @@
 from django.views.generic import TemplateView
 
-from quote.models import Quote
-from background.models import Image
+from fireflies.models import Image, Quote
 
 class IndexView(TemplateView):
-    template_name = "website/index.html"
+    template_name = "fireflies/index.html"
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
