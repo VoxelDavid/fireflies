@@ -4,7 +4,13 @@ from fireflies.managers import RandomManager
 
 class Person(models.Model):
     name = models.CharField(max_length=50)
+    # first_name = models.CharField(max_length=50)
+    # last_name = models.CharField(max_length=50)
+    # nickname = models.CharField(blank=True, max_length=50)
     website = models.URLField(blank=True)
+
+    class Meta:
+        verbose_name_plural = "people"
 
     def __str__(self):
         return self.name
