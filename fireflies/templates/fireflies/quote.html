@@ -6,9 +6,9 @@
   {% if random_quote.author %}
 
     {% if random_quote.source %}
-      <a class="underline" href="{{ random_quote.source}}">{{ random_quote.author }}<span></span></a>
+      <a class="underline" href="{{ random_quote.source}}">{{ random_quote.author|safe }}<span></span></a>
     {% else %}
-      {{ random_quote.author }}
+      {{ random_quote.author|safe }}
     {% endif %}
 
   {% else %}
