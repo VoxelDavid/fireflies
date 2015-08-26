@@ -1,3 +1,4 @@
 include LICENSE.txt
 include README.md
-recursive-include fireflies/templates *
+recursive-include fireflies/templates/fireflies *
+recursive-include fireflies/static/fireflies *
